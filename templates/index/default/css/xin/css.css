@@ -1,0 +1,52 @@
+body, form { margin: 0px; padding: 0px; font-family: '\5FAE\8F6F\96C5\9ED1';  color: #333; }
+body { background: #f9f9f9; }
+h1 { margin: 0; padding: 0; font-size: 100%; font-weight: 500; }
+h2 { margin: 0; padding: 0; font-size: 100%; font-weight: 500; }
+.logo-title { float: left; display: inline-block; width: auto; height: 30px; padding: 10px 0 0 15px; line-height: 30px; font-size: 24px; color: gray; }
+.head { width: 100%; height: 74px; background-color: #fff; border-bottom: 1px solid #e3e3e3; }
+.head_box { width: 90%; height: 74px; margin: 0 auto; }
+.head_list { padding: 17px 0; }
+.head_list .logo { float: left; display: inline-block; height: 40px; }
+.head a { color: #FFF; }
+.nav_box { width: 90%; height: 50px; margin: 0 auto; }
+.nav_box .list { float: left; width: 880px; height: 26px; margin-top: 15px; }
+.menu li { height: 35px; font-size: 14px; float: left; position: relative; color: #357d13; text-shadow: 0 0px 1px #fff; text-align: center; padding: 0 12px; }
+.nav_box .right { float: right; line-height: 20px; padding-top: 15px; font-size: 14px; color: #fff; text-shadow: 0 0px 1px #fff; }
+.nav_box .right .right_box { height: 20px; overflow: hidden; }
+.nav_box .right .right_box a { color: #fff; text-decoration: none; margin: 0 5px; }
+.logo_box { clear: both; width: 1200px; height: 104px; margin: 0 auto; }
+.logo_box .logo { float: left; margin-top: 38px; margin-left: 10px; }
+div, form, ul, ol, li, span, p, dl, dt, dd { margin: 0; padding: 0; border: 0; }
+.logo_box .word { float: left; font-size: 24px; line-height: 26px; height: 26px; color: #666666; border-left: 1px solid #666666; margin-left: 14px; padding-left: 14px; margin-top: 50px; _display: inline; }
+.main { width: 90%; height: 340px; margin: 0 auto; border: 1px solid #d7d7d7; background: #fff; padding: 100px 0; margin-bottom: 10px; margin-top: 10px; }
+.left_list { float: left; width: 725px; border-right: 1px solid #cccccc; min-height: 350px; height: auto!important; }
+.right_login { float: left; width: 270px; }
+.right_list { width: 168px; margin: 0 auto; color: #999999; }
+.right_list li.btn_box { margin-top: 16px; margin-bottom: 36px; }
+.right_list li { margin-bottom: 10px; }
+ul, ol, li { list-style: none; }
+.right_list .btn_css { width: 100%; height: 38px; background: #4fc0e8; color: #ffffff; font-size: 14px; border: 3px solid #4fc0e8; border-bottom: 3px solid #2b9ec7; border-radius: 5px; font-family: MicroSoft YaHei; cursor: pointer; }
+.left_list .intro_box { margin: 0 90px; font-size: 14px; color: #999999; margin-bottom: 20px; }
+.left_list .title_box { margin: 0 90px 40px; overflow: hidden; zoom: 1; }
+.step { border-bottom: 1px solid #cccccc; font-size: 16px; height: 45px; width: 100%; }
+.step.item3 li { width: 33%; }
+.step li { float: left; height: 45px; }
+.step li span { display: inline-block; height: 20px; line-height: 20px; padding: 12px 18px; border-bottom: 1px solid #fff; color: #999999; _float: left; }
+.step .item3 li span { cursor: pointer; }
+.step li.on span { border-bottom: 2px solid #4fc0e8; margin-bottom: -1px; color: #333333; }
+.form_list li { height: 36px; margin-bottom: 36px; }
+.form_list { font-size: 14px; }
+.form_list label { float: left; width: 240px; padding: 5px; line-height: 26px; text-align: right; color: #999999; }
+.red { color: #ff0000; }
+em { font-style: normal; }
+.form_list .input_text { float: left; width: 268px; height: 24px; padding: 5px; border: 1px solid #cccccc; font-size: 14px; }
+.form_list .btn_css { width: 280px; height: 44px; background: #c00; border: none; color: #fff; font-size: 18px; cursor: pointer; font-family: MicroSoft YaHei; }
+.blue { color: #4fc0e8!important; }
+a { outline-style: none; color: #4fc0e8; text-decoration: none; }
+.clear { clear: both; font-size: 0; height: 0; line-height: 0; overflow: hidden; }
+.tip { width: 210px; height: 26px; line-height: 26px; padding: 0px 10px 0px 33px; color: #FF5243; margin-top: 6px; position: absolute; top: 33px; left: 220px; display: none; }
+.mail_ok { width: 100%; height: 48px; line-height: 48px; font-size: 18px; text-align: center; font-weight: bold; font-family: "Î¢ÈíÑÅºÚ", "ºÚÌå"; color: #009208; margin: 0 auto 30px auto; display: none; }
+.mail_ok img { vertical-align: middle; padding-right: 20px; }
+.to_email { display: block; padding: 5px; line-height: 26px; }
+.other img { vertical-align: top; }
+

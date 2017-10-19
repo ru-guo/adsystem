@@ -1,0 +1,35 @@
+<?php
+
+$cache_contents   = array (
+  0 => 
+  array (
+    35 => 
+    array (
+      'adsid' => '35',
+      'imageurl' => '/a/2013-12-09/138657167629106445.jpg',
+      'alt' => '',
+      'url' => 'http://105437.x7shop.com',
+      'adstypeid' => '7',
+      'priority' => '1',
+      'htmlcode' => '',
+      'width' => '350',
+      'height' => '300',
+      'checkplan' => 'true',
+      'expire' => '0000-00-00',
+      'planid' => '24',
+      'audit' => 'n',
+      'clearing' => 'day',
+      'plantype' => 'cpc',
+      'uid' => '1023',
+      'resuid' => '1020',
+      'restrictions' => '2',
+    ),
+  ),
+  1 => 1,
+  2 => 35,
+);
+
+$cache_name       = 'cpc_7_350_300';
+$cache_time       = 1387676277;
+$cache_complete   = true;
+

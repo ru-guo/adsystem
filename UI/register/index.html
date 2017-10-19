@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>会员注册_AK广告联盟</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="广告联盟,效果营销,网络广告,网站联盟,唯告" />
+<meta name="description" content="一起走提供专业的网络广告营销服务,免费为长提供单价最高的各类CPA、CPC、CPS、CPM等广告,佣金单价比同类联盟高,支付信用优,是各类站长投放广告的最佳选择." />
+<link href="templates/index/default/style.css" type="text/css" rel="stylesheet" />
+<link href="templates/index/default/wix.css" type="text/css" rel="stylesheet" />
+<script src="/javascript/jquery/jquery.js" type="text/javascript"></script>
+<script src="/javascript/function.js" type="text/javascript"></script>
+<script src="/javascript/jquery/thickbox.js" type="text/javascript"></script>
+<SCRIPT language=JavaScript type=text/javascript>
+window.onerror = C;
+function C(){
+	return true
+}
+function refurbish(){
+    var img = document.getElementById("varImg");
+    img.src = "?action=imgcode&rand=" + Math.random();
+}
+$(document).ready(function() {
+
+$("#postlogin").click(function() { 
+		var username = $("#username").val();
+		var password = $("#password").val();
+		var checkcod = $("#checkcod").val();
+		$.post("?action=postlogin",{ username: username, password: password,checkcod: checkcod }, function(data){
+				if(data == 'ok'){
+					location.href='/member';
+				}
+				else if(data == 'login_err'){
+					html = "登录用户名或密码错误，请重新输入";
+				}else if(data == 'login_email_lock'){
+					html = "等待激活邮件或联系客服审核";
+				}
+				else if(data == 'login_lock'){
+					html = "当前用户已被锁定";
+				}
+				else if(data == 'login_lock_0'){
+					html = "用户还未激活";
+				}
+				else if(data == 'checkcod')
+				{
+					html = "您输入的验证码错误，请重新输入";
+				}
+				else {
+					html = "出现系统错误，无法登录";
+				}
+				$('#login_err').show(); 		
+				$('#login_err').html(html); 			
+				//alert(data)
+			});  
+		});
+});
+function FindPw(){
+	tb_remove();
+	setTimeout("tb_show('找回密码','?action=findpasswd&keepThis=true&TB_iframe=true&height=120&width=380')",300);
+}
+//-->
+</SCRIPT>
+<LINK href="images/thickbox.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.6000.17023" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=head>
+<DIV id=t960>
+<TABLE cellSpacing=0 cellPadding=0 width=960 border=0>
+  <TBODY>
+  <TR>
+    <TD width=218><A href="/"><IMG height=60 
+      src="images/logo.png" width=200 border=0></a></a></td>
+    <td width="636" align="center"><table width="700" height="117" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+          <td width="689" height="18" valign="bottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您来到AK广告联盟 | <a href="?action=register" title=用户登录 target="_blank">注册会员</a>
+ | <A href="/?action=login" title=用户登录 target="_blank">用户登录</A> | <A href="/?action=login" title=积分兑奖 target="_blank">积分兑奖</a> | <a href="/?action=login" >联系我们</a> | <a href="javascript:window.external.AddFavorite('http://www.cpa556.com', '“AK广告联盟”')" target="_self" >加入收藏</a></td>
+          <td width="11" align="right"></TD>
+
+        </TR>
+        <TR>
+          <TD height=29>
+            <DIV class=nav_item>
+            <UL class=nav_item_list>
+              <LI class=active><A id=menu_home title="首 页" href="/">首 页</A> </LI>
+              <li class=active><a id=menu_home title="结算规则" href="?action=contact">结算规则</A> </LI>
+              <li class=active><a id=menu_home title="网站主优势" href="?action=affiliate">网站主</A> </LI>
+              <li class=active><a id=menu_home title="广告主优势" href="?action=advertiser">广告主</A> </LI>
+              <li class=active><a id=menu_home title="加盟优势说明" href="?action=union">加盟优势</A> </LI>
+              <li class=active><a id=menu_home title="常见问题解决" href="?action=help">常见问题</A>
+			  <li class=active><a id=menu_home title="注册会员" href="?action=register">注册会员</A> </LI>
+              </LI></UL></DIV></TD></TR></TABLE></TD></TR></TBODY></TABLE></DIV></DIV>
+<div id="head_b"></div>
+<link type="text/css" rel="stylesheet" href="/javascript/jquery/css/validator.css"></link>
+<script src="/javascript/jquery/jquery.js" type="text/javascript"></script>
+<script src="/javascript/jquery/formValidator_min.js" type="text/javascript"></script>
+<script src="/javascript/jquery/formValidatorRegex.js" type="text/javascript"></script>
+<style type="text/css">
+<!--
+.STYLE1 {color: #0033FF}
+.STYLE5 {color: #FF0000}
+.STYLE6 {color: #0000FF}
+-->
+</style>
+<div class="regtbg"></div>
+
+<form id="form1" name="form1" method="post" action="http://127.0.0.1/index.php?action=regsave" onsubmit="return jQuery.formValidator.PageIsValid('1')">
+        <input name="siteurl" type="hidden" value="" />
+        <input name="pertainurl" type="hidden" value="" />
+        <input name="sitename" type="hidden" value="" />
+        <input name="beian" type="hidden" value="" />
+        <input name="siteinfo" type="hidden" value="" />
+        <input name="sitetype" type="hidden" value="" />	
+ <table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="134" valign="top">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="33" class="tit_250"><span class="b14 red" style="margin-left:15px;">联盟公告</span></td>
+
+      </tr>
+      <tr>
+        <td class="zybk"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td colspan="2" class="c">
+			  
+			                       <tr>
+                      <td height="25"><label><a href="?action=shownews&id=43" target="_blank">任何人作弊,直接封号,不通知...</a></label></td>
+                      <td class="en">03-04</td>
+                    </tr>
+                                        <tr>
+                      <td height="25"><label><a href="?action=shownews&id=42" target="_blank">任何人作弊,直接封号,不通知...</a></label></td>
+                      <td class="en">03-04</td>
+                    </tr>
+                                        <tr>
+                      <td height="25"><label><a href="?action=shownews&id=41" target="_blank">任何人作弊,直接封号,不通知...</a></label></td>
+                      <td class="en">02-18</td>
+                    </tr>
+                                        <tr>
+                      <td height="25"><label><a href="?action=shownews&id=38" target="_blank">25号前结算完毕！lyw999的银...</a></label></td>
+                      <td class="en">06-20</td>
+                    </tr>
+                                        <tr>
+                      <td height="25"><label><a href="?action=shownews&id=37" target="_blank">dy88516 银行开户名称没有写...</a></label></td>
+                      <td class="en">06-20</td>
+                    </tr>
+                                        <tr>
+                      <td height="25"><label><a href="?action=shownews&id=36" target="_blank">任何人作弊,直接封号,不通知...</a></label></td>
+                      <td class="en">06-20</td>
+                    </tr>
+                                        <tr>
+                      <td height="25"><label><a href="?action=shownews&id=35" target="_blank">hybbq 银行开户名称不对。联...</a></label></td>
+                      <td class="en">06-20</td>
+                    </tr>
+                                        <tr>
+                      <td height="25"><label><a href="?action=shownews&id=34" target="_blank">cq532 联系客服 工行名称不对...</a></label></td>
+                      <td class="en">06-19</td>
+                    </tr>
+                                        <tr>
+                      <td height="25"><label><a href="?action=shownews&id=33" target="_blank">wealin 联系客服修改银行名称...</a></label></td>
+                      <td class="en">06-19</td>
+                    </tr>
+                    			  
+			  </td>
+            </tr>
+            
+          </table>
+            </td>
+      </tr>
+      <tr>
+        <td><img src="images/img01_29.gif" width="250" height="10" /></td>
+
+      </tr>
+    </table>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="top10">
+        <tr>
+          <td height="33" class="tit_250"><span class="b14 red" style="margin-left:15px;">联系我们</span></td>
+        </tr>
+        <tr>
+          <td class="zybk"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+              <tr>
+                <td><a target="blank" href="tencent://message/?uin=545421536&amp;Site=&amp;Menu=yes"><img border="0" SRC=images/qq.gif></a></td>
+<td>客服:545421536</td>
+            </tr>
+			   <tr>
+
+              <td colspan="2" class="b red">广告投放咨询</td>
+            </tr>
+            <tr>
+              <td><a target="blank" href="tencent://message/?uin=545421536&amp;Site=&amp;Menu=yes"><img border="0" SRC=images/qq.gif></a></td>
+              <td>客服:545421536</td>
+            </tr>
+            <tr>
+
+              <td colspan="2" class="b red">广告投放咨询</td>
+            </tr>
+            <tr>
+              <td><a target="blank" href="tencent://message/?uin=545421536&amp;Site=&amp;Menu=yes"><img border="0" SRC=images/qq.gif></a></td>
+              <td>商务:545421536</td>
+            </tr>
+			            <tr>
+
+              <td colspan="2" class="b red">商务投放咨询</td>
+            </tr>
+            <tr>
+              <td><img src="images/tel.gif" width="81" height="23" /></td>
+
+              <td>电话：</td>
+            </tr>
+            </table>
+              <div class="b142 top10">邮箱：545421536@qq.com</div></td>
+
+        </tr>
+        <tr>
+          <td><img src="images/img01_29.gif" width="250" height="10" /></td>
+        </tr>
+      </table></td>
+    <td width="10">&nbsp;</td>
+    <td width="806" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="2"><img src="templates/index/default/images/lan_l.jpg" width="2" height="28" /></td>
+        <td valign="bottom" background="templates/index/default/images/lan_bg.jpg"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="14" height="23"><img src="templates/index/default/images/biao.gif" width="10" height="10" /></td>
+              <td width="71"><span class="STYLE1">会员注册：</span> </td>
+              <td width="576" class="en">Announcement</td>
+              </tr>
+        </table></td>
+        <td width="2"><img src="templates/index/default/images/lan_r.jpg" width="2" height="28" /></td>
+      </tr>
+    </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="1">
+        <tr>
+          <td bgcolor="#CCCCCC"><table width="100%" height="303" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+              <tr>
+                <td align="center"><table width="100%" height="243" border="0" cellpadding="0" cellspacing="0" style="margin-top:5px">
+                  <tr>
+                    <td height="197"><table width="330" border="0" align="center" cellpadding="0" cellspacing="0" class="regtb">
+  <tr>
+    <th width="130"  align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"> 账户类型： </th>
+    <td bgcolor="#E7F0F5">      <input  type="radio" value="1" name="type" size="24"  style="border: medium none ; width: auto;"  checked />
+      网站主
+            </td>
+  </tr>
+  <!--<tr>
+    <th  colspan="2" align="center" valign="middle" class="reg_t14b">（用户名不能使用中文）</th>
+   </tr>-->
+  <tr>
+    <th height="35" align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"> <span class="required"></span>用户名称： </th>
+    <td bgcolor="#E7F0F5"><input name="username" type="text"  class="reg_input" id="username" maxlength="20" />
+    <span id="usernameTip"></span></td>
+  </tr>
+  <tr>
+    <th height="35" align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"> <span class="required">用户</span>密码： </th>
+    <td bgcolor="#E7F0F5"><input name="password" type="password" class="reg_input" id="password" size="22" maxlength="16"/>
+    <span id="passwordTip"></span></td>
+  </tr>
+  <tr>
+    <th height="35" align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"><span class="required"></span>密码确认：</th>
+    <td bgcolor="#E7F0F5"><input name="passwordre" type="password" class="reg_input" id="passwordre" size="22" maxlength="16"/>
+    <span id="passwordreTip"></span></td>
+  </tr>
+   <tr>
+     <th  align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"> <span class="required"></span>安全问题：</th>
+     <td bgcolor="#E7F0F5"><input name="question" type="text"  class="reg_input" id="question" value="" maxlength="40"/> 
+     <span id="questionTip"></span></td>
+   </tr>
+   <tr>
+     <th  align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"><span class="required"></span>问题答案：</th>
+     <td bgcolor="#E7F0F5"><input name="answer" type="text" class="reg_input" id="answer" value="" maxlength="20"/> 
+     <span id="answerTip"></span> </td>
+   </tr>
+   <tr>
+     <th align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"><span class="required"></span>你的名字：</th>
+    <td bgcolor="#E7F0F5"><input name="contact" type="text" class="reg_input" id="contact" value="" maxlength="4" />
+        <span id="contactTip"></span></td>
+  </tr>
+  <tr>
+    <th align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1">站长 Q Q：</th>
+    <td bgcolor="#E7F0F5"><input name="qq" type="text" class="reg_input" id="qq" maxlength="15"/>
+        <span id="qqTip"></span></td>
+  </tr>
+  <tr>
+    <th align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"><span class="required"></span>邮箱地址：</th>
+    <td bgcolor="#E7F0F5"><input name="email" type="text" class="reg_input" id="email" maxlength="30"/>
+        <span id="emailTip"></span></td>
+   </tr>
+   <tr id="bank0">
+    <td  colspan="2" bgcolor="#E7F0F5" class="reg_t14b">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="STYLE5">【填写收款信息，建议选择支付宝！支付宝优先收款】</span></td>
+   </tr>
+  <tr id="bank1">
+    <th align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1">选择银行：</th>
+    <td bgcolor="#E7F0F5"><select name="bank" id="bank" style="width:130px;" onchange="Dobank()">
+                  <option value="icbc">工商银行</option>
+                                                                        <option value="alipay">支付宝</option>
+                            </select></td>
+  </tr>
+  <tr id="bank2">
+    <th align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"><span class="required"></span>收款姓名：</th>
+    <td bgcolor="#E7F0F5"><input name="accountname" type="text" class="reg_input" id="accountname" maxlength="4"/>
+        <span id="accountnameTip"></span></td>
+  </tr>
+  <tr id="bank3">
+    <th align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1">银行地址：</th>
+    <td bgcolor="#E7F0F5"><input name="bankname" type="text" class="reg_input" id="bankname" maxlength="40"/>
+        <span id="banknameTip"></span></td>
+  </tr>
+  <tr id="bank4">
+    <th align="right" bgcolor="#E7F0F5" class="reg_tit STYLE1"><span class="required"></span>收款帐号：</th>
+    <td bgcolor="#E7F0F5"><input name="bankacc" type="text" class="reg_input" id="bankacc" maxlength="22" />
+        <span id="bankaccTip"></span></td>
+  </tr>
+
+  <tr id="d_service">
+    <th align="right" bgcolor="#E7F0F5"  class="reg_tit STYLE1">选择客服： </th>
+    <td bgcolor="#E7F0F5">  
+            
+      
+     <input name="serviceid" type="radio" value="1003" />
+     <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=350826748&site=qq&menu=yes">小李<img border="0" src="http://wpa.qq.com/pa?p=2:350826748:17" alt="点击这里给我发消息" title="点击这里给我发消息"></a>&nbsp;&nbsp;
+
+       
+      <span id="serviceidTip"></span></td>
+  </tr>
+  <tr id="d_advservice">
+    <th align="right" bgcolor="#E7F0F5"  class="reg_tit STYLE1">选择商务： </th>
+    <td bgcolor="#E7F0F5">
+          <input name="advserviceid" type="radio" value="1005" /><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=350826748&site=qq&menu=yes">小刘<img border="0" src="http://wpa.qq.com/pa?p=2:350826748:17" alt="点击这里给我发消息" title="点击这里给我发消息"></a>&nbsp;&nbsp;
+
+            
+        <span id="advserviceidTip"></span> </td>
+  </tr>
+    <tr >
+    <td align="right" bgcolor="#E7F0F5"  class="reg_tit">&nbsp;</td>
+    <td bgcolor="#E7F0F5"><span style=" ">
+      <input type="submit" value="同意以下服务条款，提交注册信息" name="event_submit_do_register" tabindex="16" style="border: 2px outset rgb(236, 233, 216); margin: 10px auto 20px; padding: 0pt 6px; background-color: rgb(218, 218, 218); height: 26px; width: auto; color: rgb(17, 17, 17);"/>
+    </span></td>
+  </tr>
+  <tr >
+    <td colspan="2" align="right" bgcolor="#E7F0F5"  class="reg_tit"><div style="background-color:#FAFAFA;border:1px solid #CCCCCC;height:100px; overflow:auto;padding:5px;text-align:left;width:700px; margin-left:30px"> 一、合作协议的确认和接纳<br />
+          AK广告联盟（127.0.0.1）所提供的合作项目的所有权和运作权归AK广告联盟所有。您通过完成注册程序并点击选择“同意以下服务条款，提交注册信息”，表示您与AK广告联盟网站签订本合作协议（下称“本合作协议”）并接受所有相关条款的约束，以及表示您成为AK广告联盟的成员（“联盟成员”）。
+      <p></p>
+      <p>二、 合作内容及费用说明<br />
+              AK广告联盟成员注册成功后，即可登录系统，获得相关产品代码。联盟成员在其网站页面中嵌入其从系统中获得的产品代码后，该网站的访问者可以获得AK广告联盟提供的产品及/或相关服务。<br />
+              AK广告联盟根据各种产品的不同计费方式统计带有联盟成员特征代码的产品流量，并按此流量向AK广告联盟成员支付相应合作费用。其各类产品收益模式及分成比例请登录后仔细阅读相关说明，合作费用支付以AK广告联盟（127.0.0.1）网站上发布的标准为准，除非AK广告联盟与联盟成员间有另行约定并就此另行达成书面协议的。AK广告联盟有权根据联盟策略随时更改产品的收益模式、分成比例及结算策略，您在此同意始终遵守。</p>
+      <p>关于违规及作弊<br />
+        加AK广告联盟的成员，必须自觉遵守本合作协议，如发现任何违规或作弊行为，AK广告联盟将停止付费并取消其联盟成员资格，同时保留进一步追究法律责任的权利。</p>
+      <p>联盟代码能且只能投放在联盟成员提交的域名下，否则被视为违规投放。若要在多个网站或域名下投放联盟代码，须在注册成功后，在“会员管理中心”中登记所有投放AK广告联盟代码的域名。</p>
+      <p>违规或作弊行为包含但不限于：<br />
+        1. 任何形式的分拆代码：<br />
+        联盟成员注册成功并经审核通过后，需要将从联盟获取的代码完整拷贝到相应页面，不能进行任何形式的代码分拆；<br />
+        2. 通过人工及程序制造的无效点击提高流量：<br />
+        1）当用户访问成员网站或鼠标经过联盟产品时，自动弹出联盟产品窗口；<br />
+        2）通过代理服务器点击，互换点击等一切不产生任何效益的虚假无效点击；<br />
+        3）其他无效点击形式；<br />
+        3.<br />
+        一切非正常投放的产品形式，一切以文字诱导或强制用户点击的行为：<br />
+        1）非正当投放方式：<br />
+        * 在无实质内容的页面全部投放AK广告联盟代码；<br />
+        * 以电子邮件的形式制造产品点击； <br />
+        2）利用文字诱导、强制用户点击或下载：<br />
+        <br />
+        如这样的描述：“点击此处，可成为本站VIP用户免费获得更多资源”</p>
+      <p>三、联盟成员的注册规则<br />
+        1. 联盟成员的用户名的管理：<br />
+        A、联盟成员的用户名的注册及使用须遵守中华人民共和国的有关法律法规、尊重网络道德；<br />
+        B、联盟成员的用户名不得含有任何威胁、恐吓、漫骂、庸俗、亵渎、色情、淫秽、非法、攻击性、伤害性、骚扰性、诽谤性、辱骂性的或其他侵害他人合法权益的信息；<br />
+        C、联盟成员不得以任何方式盗用、冒充他人用户名；<br />
+        D、如联盟成员违反上述规定，应自行承担相应法律后果；AK广告联盟有权在必要时采取相应措施以维护相关合法权益。<br />
+        2.<br />
+        联盟成员的帐号、密码和安全性：您一旦注册成功并经AK广告联盟审核通过，成为AK广告联盟的合法成员，将得到一个密码和用户名。联盟成员将对用户名和密码安全负全部责任，且联盟成员对以其用户名在AK广告联盟进行的所有行为承担全部责任。联盟成员必须保管好自己的用户名和密码，谨防被盗或泄露；如因保管不善导致帐号和密码被盗或泄露，联盟成员自行承担相应后果。如果联盟成员在发现有任何非法使用联盟成员帐号或安全漏洞的情况，可以立即通告AK广告联盟以协助处理。<br />
+        3.<br />
+        提供详尽、准确的个人资料，并不断更新注册资料，符合及时、详尽、准确的要求。真实的联盟成员资料将作为AK广告联盟提供服务的依据和联盟成员获得法律保障的前提。若联盟成员提供的资料包含有不正确的信息，AK广告联盟保留停止向该联盟成员付费的权利，因虚假资料造成的任何损失，与AK广告联盟无关，AK广告联盟不负任何责任。</p>
+      <p>四、 隐私保护政策<br />
+        每当联盟成员提供给AK广告联盟个人信息时，AK广告联盟会采取合理的步骤保护联盟成员的个人信息，AK广告联盟也会采取合理的安全手段保护已存储的个人信息。由于网上技术发展的突飞猛进，AK广告联盟会随时更新并公布AK广告联盟的信息保密制度，除非以下三种情况外，AK广告联盟不会在未经合法联盟成员授权时，公开、编辑或透露联盟成员资料及其它保存在AK广告联盟中的保密性内容：<br />
+        1) 根据有关法律规定要求；<br />
+        2) 有关权力机关要求；<br />
+        3)<br />
+        联盟成员授权（包括，如果联盟成员要求AK广告联盟提供特定服务时，AK广告联盟则需要把联盟成员的姓名和地址提供给与此相关联的第三方如邮政服务单位）。</p>
+      <p>五、 暂停与终止合作<br />
+              AK广告联盟将根据联盟成员合作效果保留暂停或终止合作的权利。<br />
+        任何经AK广告联盟确认已违反了合作协议的联盟成员，AK广告联盟有权决定是否给予其暂停或终止合作的处理，对屡犯者将立即给予暂停合作或终止合作的处理。<br />
+        AK广告联盟保留其单方暂停或终止本合作协议的权利。但若AK广告联盟单方决定终止的，应提前一个月通知。通知做出的形式依据本合作协议第七条的规定。</p>
+      <p>六、 风险分担<br />
+        联盟成员使用本网站将承担一定风险：AK广告联盟将不承担由于联盟成员自身过错、技术或其它不可控原因导致网站页面信息或其它方面的错误而给联盟成员造成的损失。</p>
+      <p>七、 通知<br />
+        所有发给联盟成员的通知都将通过网站页面的公告或电子邮件传送。协议条款的修改、服务变更、或其它重要事件的通知都会以此形式进行。</p>
+      <p>八、 协议条款和资费标准的修改<br />
+              AK广告联盟有权在必要时修改本合作协议条款的内容和合作资费标准，且该修改以符合国家法律法规的规定，并不侵害联盟成员的合法权益为必要前提。AK广告联盟合作协议条款一旦发生变动，AK广告联盟将在网页上公布修改内容。修改后的合作协议一旦在网页上公布即有效代替原来的合作协议。您可随时造访127.0.0.1查阅最新版合作协议。联盟成员若不同意合作协议改动的内容，可以主动退出AK广告联盟；若AK广告联盟没有收到联盟成员书面通知，明确表示其退出AK广告联盟的，则视为该联盟成员选择继续享用AK广告联盟服务，已接受该协议条款的变动并受变动后协议条款的约束。</p>
+      <p>九、 法律适用<br />
+        本合作协议条款应符合中华人民共和国法律法规的规定，联盟成员和AK广告联盟一致同意接受中华人民共和国法律的管辖。当本合作协议条款与中华人民共和国法律相抵触时，则这些条款将完全按法律规定重新解释或重新修订，而其它条款则依旧对AK广告联盟及联盟成员产生法律效力。</p>
+      <p>十、 争议解决<br />
+        与本合作协议有关的一切争议，双方应通过协商方式友好解决；如协商未果，应将争议提交北京仲裁委员会进行仲裁，该仲裁结果是终局的并对双方均有约束力。</p>
+      <p>十一、AK广告联盟欢迎联盟成员对网站服务条款给予评论或提出质疑。<br />
+              AK广告联盟 将根据网站发展的需求和技术的发展不断完善本合作协议。请将与本合作协议有关的所有评论或疑问发往a@zyiis.com。<br />
+        警告： <br />
+        对任何违反国家法律和AK广告联盟网站相应管理规定且侵害了AK广告联盟网站合法权益的行为，AK广告联盟将保留追究其法律责任的权利。</p>
+    </div></td>
+   </tr>
+  <tr >
+    <td align="right" bgcolor="#E7F0F5"  class="reg_tit">&nbsp;</td>
+    <td bgcolor="#E7F0F5">&nbsp;</td>
+  </tr>
+</table>
+                        <!--<table width="100%" height="108" border="0" cellpadding="5" cellspacing="0">
+                          <tr>
+                            <td align="left">上一篇：<a href="?action=showhelp&id="></a></td>
+                          </tr>
+                          <tr>
+                            <td align="left">下一篇：<a href="?action=showhelp&id="></a> </td>
+                          </tr>
+                      </table></td>-->
+                  </tr>
+                </table></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</form>
+ <script language="JavaScript" type="text/javascript">
+$(document).ready(function(){
+ $.formValidator.initConfig({alertMessage:false});
+$("#username").formValidator({onshow:"请输入用户名,3-20位",onfocus:"请输入用户名,3-20位",oncorrect:"您的用户名可用"}).InputValidator({min:3,max:20,onerror:"请输入一个3-20位用户名"}).RegexValidator({regexp:"username",datatype:"enum",onerror:"请使用数字、26个英文字母或者下划线组成"})
+	    .AjaxValidator({
+	    type : "get",
+		url : "/index.php?action=userinfo&username="+$("#username"),
+		datatype : "json",
+		success : function(data){	
+            if( data == "1" ){
+                return true;
+			}
+            else{
+                return false;
+			}
+		},
+		buttons: $("#button"),
+		error: function(){alert("服务器没有返回数据，可能服务器忙，请重试");},
+		onerror : "您的用户名已被注册",
+		onwait : "正在对用户名进行合法性校验，请稍候..."
+	});
+$("#password").formValidator({onshow:"请输入密码",onfocus:"使用英文字母加数字的组合，且在6-16个字符以内",oncorrect:"填写正确"}).InputValidator({min:6,max:16,onerror:"使用英文字母加数字的组合，且在6-16个字符以内"});
+	$("#passwordre").formValidator({onshow:"请再输入一遍您上面输入的密码",onfocus:"请再输入一遍您上面输入的密码",oncorrect:"填写正确"}).InputValidator({min:6,max:16,onerror:"请再输入一遍您上面输入的密码"}).CompareValidator({desID:"password",operateor:"=",onerror:"请再输入一遍您上面输入的密码"});
+	
+	$("#question").formValidator({onshow:"为您自动取回密码时的依据",onfocus:"为您自动取回密码时的依据",oncorrect:"填写正确"}).InputValidator({min:1,onerror:"请填写一个问题"});
+	
+	$("#answer").formValidator({onshow:"请输入您上面的提示问题答案",onfocus:"请输入您上面的提示问题答案",oncorrect:"填写正确"}).InputValidator({min:1,onerror:"请输入您上面的提示问题答案"});	
+	
+$("#contact").formValidator({onshow:"请输入联系人姓名",onfocus:"请输入联系人姓名",oncorrect:"填写正确"}).InputValidator({min:1,max:20,onerror:"联系人姓名长度为1至20个字符，且为必填项"});
+	
+	$("#tel").formValidator({empty:true,onshow:"请输入您的固定电话",onfocus:"格式例如：0797-88888888",oncorrect:"填写正确"}).RegexValidator({regexp:"^[[0-9]{3}-|\[0-9]{4}-]?([0-9]{8}|[0-9]{7})?$",onerror:"您输入的联系电话格式不正确"});
+	
+	
+$("#mobile").formValidator({empty:true,onshow:"请输入您的手机号码",onfocus:"请输您的入手机号码",oncorrect:"填写正确"}).InputValidator({min:11,max:11,onerror:"请输入11位的手机号码"}).RegexValidator({regexp:"mobile",datatype:"enum",onerror:"手机号码格式不正确"});
+
+	$("#qq").formValidator({empty:true,onshow:"请输入QQ号码",onfocus:"请输入QQ号码",oncorrect:"填写正确"}).RegexValidator({regexp:"qq",datatype:"enum",onerror:"QQ格式不正确"});
+
+$("#email").formValidator({onshow:"请输入您的邮箱",onfocus:"请确保他的真实有效，找回密码必用",oncorrect:"填写正确"}).InputValidator({min:6,max:100,onerror:"Email地址长度为6至100个字符"}).RegexValidator({regexp:"^([\\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$",onerror:"邮箱格式不正确：例如：123456@qq.com"});
+
+
+ 
+
+			
+$("#bankname").formValidator({empty:true,onshow:"请务必填写详细的开户分行，如：xx省xx市xx分行xx支行",onfocus:"请务必填写详细的开户分行，如：xx省xx市xx分行xx支行",oncorrect:"填写正确"}).InputValidator({min:1,onerror:"请务必填写详细的开户分行，如：xx省xx市xx分行xx支行"});
+
+$("#accountname").formValidator({onshow:"必须要跟开户银行帐号一致。注册后不可修改",onfocus:"必须要跟开户银行帐号一致。注册后不可修改",oncorrect:"填写正确"}).InputValidator({min:3,onerror:"收款姓名长度最少需要3个字符"});
+
+$("#bankacc").formValidator({onshow:"请输入您的收款帐号",onfocus:"请输入您的收款帐号",oncorrect:"填写正确"}).InputValidator({min:6,onerror:"收款帐号长度最少需要6个字符"});
+
+
+var t = $("input:radio[@name='type'][@checked]").val();
+if(t == "2"){
+			$i("bank0").style.display ='none';
+			$i("bank1").style.display ='none';
+			$i("bank2").style.display ='none';
+			$i("bank3").style.display ='none';
+			$i("bank4").style.display ='none';　
+			$i("d_service").style.display ='none';　 　 
+			$("#accountname,#bankacc").formValidator({empty:true});
+}else {
+	$i("d_advservice").style.display ='none';　 　 
+}
+
+
+
+/*
+$("#serviceid").formValidator({empty:true,onshow:"如不选择，我们会为您随机分配一名客服人员 ",onfocus:"如不选择，我们会为您随机分配一名客服人员 ",oncorrect:"填写正确"}).InputValidator({min:1,onerror:"如不选择，我们会为您随机分配一名客服人员 "});
+	$("#advserviceid").formValidator({empty:true,onshow:"如不选择，我们会为您随机分配一名商务人员与您联系 ",onfocus:"如不选择，我们会为您随机分配一名商务人员与您联系",oncorrect:"填写正确"}).InputValidator({min:1,onerror:"如不选择，我们会为您随机分配一名商务人员与您联系 "});
+*/
+ 
+
+ 
+
+
+$("input:radio[@name='type']").click(function() {
+		var t = $("input:radio[@name='type'][@checked]").val();
+		if(t == "1"){
+			$i("bank0").style.display ='';
+			$i("bank1").style.display ='';
+			$i("bank2").style.display ='';
+			$i("bank3").style.display ='';
+			$i("bank4").style.display ='';
+			$i("d_service").style.display ='';
+			$i("d_advservice").style.display ='none';　 
+			$("#accountname").formValidator({onshow:"必须要跟开户银行帐号一致。注册后不可修改",onfocus:"必须要跟开户银行帐号一致。注册后不可修改",oncorrect:"填写正确"}).InputValidator({min:3,onerror:"收款姓名长度最少需要3个字符"});
+
+$("#bankacc").formValidator({onshow:"请输入您的收款帐号",onfocus:"请输入您的收款帐号",oncorrect:"填写正确"}).InputValidator({min:6,onerror:"收款帐号长度最少需要6个字符"});
+　 
+		}
+		if(t == "2"){
+			$i("bank0").style.display ='none';
+			$i("bank1").style.display ='none';
+			$i("bank2").style.display ='none';
+			$i("bank3").style.display ='none';
+			$i("bank4").style.display ='none';
+			$i("d_service").style.display ='none'; 　
+			$i("d_advservice").style.display ='';
+			$("#accountname,#bankacc").formValidator({empty:true});
+ 			 　 
+		}
+});
+
+
+
+});	
+
+function Dobank(){
+	var bank = $i("bank").value;
+	$i("bank3").style.display ='';
+	if(bank=='alipay' || bank=='tenpay'  ){
+		$i("bank3").style.display ='none';
+	}
+}
+function Doqq(){
+	
+}
+</script>
+  
+
+<DIV class="top10 c" style="BORDER-TOP: #e5e5e5 1px solid">
+<TABLE cellSpacing=10 cellPadding=0 width=960 border=0>
+  <TBODY>
+  <TR>
+    <TD class="h20 hui" width=408><A 
+      href="?action=company">关于我们</A> | <A 
+      href="?action=affiliate">网站主</A> | <A 
+      href="?action=advertiser">广告主</A> | <A 
+      href="?action=union">加盟优势</A> | <A 
+      href="?action=help">常见问题</A> <BR>
+
+    Copyright 2013 
+      127.0.0.1 All rights reserved<BR>
+      
+<A 
+      href="http://www.miibeian.gov.cn/" target=_blank>浙ICP备5906196号</A>|
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5702298'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D5702298%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+|今日广告展示:<span id='pvsum'>正在读取...</span>次</TD>
+    <TD align=left width=49><A href="#" 
+      target=_blank><IMG height=45 src="images/logo_d.gif" 
+width=45></A></TD>
+    <TD align=left width=49><A href="#" 
+      target=_blank><IMG height=45 src="images/logo_c.gif" 
+width=45></A></TD>
+    <TD align=left width=116><A href="#" 
+      target=_blank><IMG height=45 src="images/logo_e.gif" 
+width=45></A></TD>
+    <TD class=r width=278><A href="/" target=_blank><IMG 
+      height=45 src="images/logo20.jpg" 
+width=156></A></TD></TR></TBODY></TABLE></DIV>
+</body>
+</html>
+<script language="JavaScript" type="text/javascript"> pvs()</script>
+

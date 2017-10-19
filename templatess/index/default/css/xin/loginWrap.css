@@ -1,0 +1,201 @@
+/* CSS Document */
+
+@charset "uft-8";
+
+	fieldset{border:0 none;}
+
+	.login_wrap{
+
+	position: absolute;
+
+	top: 75px;
+
+	left: -60px;
+
+	width: 337px;
+
+	height: 392px;
+
+	background: url("/templates/index/default/images/login_wrap_1.png")/*tpa=http://www.jiameilm.com/templates/index/def/images/login_wrap_1.png*/ no-repeat;
+
+	}
+
+	.login_wrap form {
+
+	color: #666;
+
+	font-size: 14px;
+
+	font-family: "微软雅黑", "宋体", arial;
+
+	}
+
+	.login_wrap .login_up {
+
+	display: block;
+
+	width: 19px;
+
+	height: 19px;
+
+	background: url("/templates/index/default/images/bt_01.png")/*tpa=http://www.jiameilm.com/templates/index/def/images/bt_01.png*/ scroll -257px -80px transparent;
+
+	margin: 17px auto 0 auto;
+
+	cursor: pointer;
+
+	}
+
+	.login_wrap .item {
+
+	height: 60px;
+
+	}
+
+	.login_wrap form .item label {
+
+	float: left;
+
+	width: 86px;
+
+	padding-right: 6px;
+
+	text-align: right;
+
+	line-height: 34px;
+
+	_width: 83px;}
+
+	.login_wrap form .item .in_text {
+
+	width: 196px;
+
+	height: 32px;
+
+	padding-left: 4px;
+
+	line-height: 34px;
+
+	border: 1px solid #bcbcbc;
+
+	background: url("/templates/index/default/images/login_input_bg.gif")/*tpa=http://www.jiameilm.com/templates/index/def/images/login_input_bg.gif*/ repeat-x;
+
+	color: #666;}
+
+	.login_wrap .loginBox legend {
+
+	display: block;
+
+	padding-bottom: 14px;
+
+	height: 60px;
+
+	text-indent: -999em;
+
+	overflow: hidden;}
+
+	.login_wrap .login_ft {
+
+	overflow: hidden;}
+
+	.login_wrap form .item .verifyWrapper img {
+
+	float: left;
+
+	width: 71px;
+
+	height: 32px;
+
+	margin-right: 5px;
+
+	border: 1px solid #bcbcbc;
+
+	}
+
+	.login_wrap form .item .verifyField {
+
+	float: left;
+
+	width: 115px;
+
+	margin-right: 8px;
+
+	}
+
+	.login_wrap form .login_ft .loginBtn {
+
+	float: left;
+
+	width: 85px;
+
+	height: 34px;
+
+	margin: 3px 15px 0 92px;
+
+	_display: inline;
+
+	background: url("/templates/index/default/images/bt_01.png")/*tpa=http://www.jiameilm.com/templates/index/def/images/bt_01.png*/ no-repeat scroll -136px -1px transparent;
+
+	text-indent: -999em;
+
+	line-height: 400px;
+
+	overflow: hidden;
+
+	border:none;
+
+	}
+
+	.login_wrap form .login_ft .loginBtn:hover {
+
+	background: url("/templates/index/default/images/bt_01.png")/*tpa=http://www.jiameilm.com/templates/index/def/images/bt_01.png*/ no-repeat scroll -136px -42px transparent;
+
+	}
+
+	.login_wrap form .login_ft a {
+
+	float: left;
+
+	_width: 93px;
+
+	font-size: 12px;
+
+	color: #666;
+
+	padding-left: 19px;
+
+	line-height: 19px;
+
+	margin-left: 20px;}
+
+	.login_wrap form .login_ft a.register {
+
+background: url("/templates/index/default/images/help_ico.png")/*tpa=http://www.jiameilm.com/templates/index/def/images/help_ico.png*/ 0 2px no-repeat;
+
+}
+
+    .login_wrap form .login_ft a.find_pwd {
+
+background: url("/templates/index/default/images/question_ico.png")/*tpa=http://www.jiameilm.com/templates/index/def/images/question_ico.png*/ 0 2px no-repeat;
+
+}
+
+	.login_wrap form .login_ft a:hover{
+
+	text-decoration:underline;
+
+	}
+
+	.login_wrap form #usernameTip,.login_wrap form #passwordTip{
+
+	margin-left: 92px;
+
+	color: #f00;
+
+	font-size: 12px;
+
+	line-height: 2;
+
+	clear: both;
+
+	}

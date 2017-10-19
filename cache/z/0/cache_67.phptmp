@@ -1,0 +1,30 @@
+<?php
+
+$cache_contents   = array (
+  'zoneid' => '67',
+  'siteid' => '29',
+  'uid' => '1056',
+  'plantype' => 'cpc',
+  'sitetype' => '110',
+  'siteurl' => 'hztyn.com,www.hztyn.com',
+  'adstypeid' => '7',
+  'framework' => 'iframe',
+  'width' => '350',
+  'height' => '300',
+  'viewtype' => '1',
+  'viewadsid' => '35',
+  'alternatetype' => '0',
+  'alternateurl' => '',
+  'codestyle' => '',
+  'auditplanid' => NULL,
+  'userstatus' => '2',
+  'sitestatus' => NULL,
+  'insite' => '1',
+  'cpmtime' => '0',
+  'cpmtimenum' => '0',
+);
+
+$cache_name       = '67';
+$cache_time       = 1387676277;
+$cache_complete   = true;
+

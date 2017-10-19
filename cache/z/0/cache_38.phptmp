@@ -1,0 +1,30 @@
+<?php
+
+$cache_contents   = array (
+  'zoneid' => '38',
+  'siteid' => '17',
+  'uid' => '1032',
+  'plantype' => 'cpc',
+  'sitetype' => '110',
+  'siteurl' => 'prod9a75a61.isitestar.cn,www.isitestar.cn',
+  'adstypeid' => '11',
+  'framework' => 'script',
+  'width' => '300',
+  'height' => '250',
+  'viewtype' => '1',
+  'viewadsid' => '21',
+  'alternatetype' => '0',
+  'alternateurl' => '',
+  'codestyle' => '',
+  'auditplanid' => NULL,
+  'userstatus' => '2',
+  'sitestatus' => NULL,
+  'insite' => '1',
+  'cpmtime' => '0',
+  'cpmtimenum' => '0',
+);
+
+$cache_name       = '38';
+$cache_time       = 1387614779;
+$cache_complete   = true;
+

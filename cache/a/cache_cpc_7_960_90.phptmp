@@ -1,0 +1,35 @@
+<?php
+
+$cache_contents   = array (
+  0 => 
+  array (
+    20 => 
+    array (
+      'adsid' => '20',
+      'imageurl' => '/a/2013-12-06/138632884443530273.gif',
+      'alt' => '',
+      'url' => 'http://jifendownload.2345.cn/jifen_2345/sohuva_k2208867_208027709.exe',
+      'adstypeid' => '7',
+      'priority' => '1',
+      'htmlcode' => '',
+      'width' => '960',
+      'height' => '90',
+      'checkplan' => 'true',
+      'expire' => '0000-00-00',
+      'planid' => '23',
+      'audit' => 'n',
+      'clearing' => 'day',
+      'plantype' => 'cpc',
+      'uid' => '1023',
+      'resuid' => '1020',
+      'restrictions' => '2',
+    ),
+  ),
+  1 => 1,
+  2 => 20,
+);
+
+$cache_name       = 'cpc_7_960_90';
+$cache_time       = 1387631964;
+$cache_complete   = true;
+

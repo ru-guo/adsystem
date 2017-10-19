@@ -1,0 +1,426 @@
+BODY {
+	FONT-SIZE: 12px; BACKGROUND: #f7f8fa; MARGIN: 0px; COLOR: #666666; LINE-HEIGHT: 24px; FONT-FAMILY: "宋体","Arial Narrow"
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	FONT-SIZE: 12px; LINE-HEIGHT: 16px
+}
+SELECT {
+	FONT-SIZE: 12px; LINE-HEIGHT: 16px
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+LI {
+	LIST-STYLE-TYPE: none
+}
+BODY {
+	TEXT-ALIGN: center
+}
+TABLE {
+	MARGIN: auto
+}
+DIV {
+	MARGIN: auto
+}
+DIV {
+	TEXT-ALIGN: left
+}
+TD {
+	TEXT-ALIGN: left
+}
+LI {
+	TEXT-ALIGN: left
+}
+.b14 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+.h16 {
+	LINE-HEIGHT: 16px
+}
+.h18 {
+	LINE-HEIGHT: 18px
+}
+.h20 {
+	LINE-HEIGHT: 20px
+}
+.h22 {
+	LINE-HEIGHT: 22px
+}
+.h24 {
+	LINE-HEIGHT: 24px
+}
+.h26 {
+	LINE-HEIGHT: 26px
+}
+.h28 {
+	LINE-HEIGHT: 28px
+}
+.h30 {
+	LINE-HEIGHT: 30px
+}
+.b142 {
+	FONT-SIZE: 14px
+}
+.bt {
+	FONT-SIZE: 16px; COLOR: #cc0001; LINE-HEIGHT: 60px; BORDER-BOTTOM: #e5e5e5 1px solid; FONT-FAMILY: 黑体; HEIGHT: 60px; TEXT-ALIGN: center
+}
+.b {
+	FONT-WEIGHT: bold
+}
+P {
+	TEXT-ALIGN: left
+}
+.bai {
+	COLOR: #ffffff
+}
+.lv {
+	COLOR: #008000
+}
+A.lv:link {
+	COLOR: #008000; TEXT-DECORATION: none
+}
+A.lv:visited {
+	COLOR: #008000; TEXT-DECORATION: none
+}
+A.lv:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.zong {
+	COLOR: #f2ab57
+}
+A.zong:link {
+	COLOR: #f2ab57; TEXT-DECORATION: none
+}
+A.zong:visited {
+	COLOR: #f2ab57; TEXT-DECORATION: none
+}
+A.zong:hover {
+	COLOR: #f2ab57; TEXT-DECORATION: underline
+}
+.szong {
+	COLOR: #824710
+}
+A.szong:link {
+	COLOR: #824710; TEXT-DECORATION: none
+}
+A.szong:visited {
+	COLOR: #824710; TEXT-DECORATION: none
+}
+A.szong:hover {
+	COLOR: #824710; TEXT-DECORATION: underline
+}
+.lan {
+	COLOR: #0066aa
+}
+A.lan:link {
+	COLOR: #0066aa; TEXT-DECORATION: none
+}
+A.lan:visited {
+	COLOR: #0066aa; TEXT-DECORATION: none
+}
+A.lan:hover {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.bR {
+	FONT-WEIGHT: bold; COLOR: #ad1755
+}
+.hui {
+	COLOR: #7a7a7a
+}
+A.hui:link {
+	COLOR: #7a7a7a; TEXT-DECORATION: none
+}
+A.hui:visited {
+	COLOR: #7a7a7a; TEXT-DECORATION: none
+}
+A.hui:hover {
+	COLOR: #7a7a7a; TEXT-DECORATION: underline
+}
+.qhui {
+	COLOR: #999999
+}
+A.qhui:link A.hui:visited {
+	COLOR: #999999; TEXT-DECORATION: none
+}
+A.qhui:hover {
+	COLOR: #999999; TEXT-DECORATION: underline
+}
+.hui10 {
+	FONT-SIZE: 10px; COLOR: #888888
+}
+.b12 {
+	FONT-SIZE: 12px
+}
+.bff {
+	COLOR: #dddddd
+}
+A:link {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.bai {
+	COLOR: #ffffff
+}
+A.bai:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.bai:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.bai:hover {
+	COLOR: #eadfc0; TEXT-DECORATION: none
+}
+.red {
+	COLOR: #cc0001
+}
+A.red:link {
+	COLOR: #cc0001; TEXT-DECORATION: none
+}
+A.red:visited {
+	COLOR: #cc0001; TEXT-DECORATION: none
+}
+A.red:hover {
+	COLOR: #cc0001; TEXT-DECORATION: underline
+}
+.ju {
+	COLOR: #e2551f
+}
+A.ju:link {
+	COLOR: #e2551f; TEXT-DECORATION: none
+}
+A.ju:visited {
+	COLOR: #e2551f; TEXT-DECORATION: none
+}
+A.ju:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.huang {
+	COLOR: #ffe600
+}
+A.huang:link {
+	COLOR: #ffe600; TEXT-DECORATION: none
+}
+A.huang:visited {
+	COLOR: #ffe600; TEXT-DECORATION: none
+}
+A.huang:hover {
+	COLOR: #ffe600; TEXT-DECORATION: underline
+}
+.wr {
+	COLOR: #ffffff
+}
+A.wr:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.wr:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.wr:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.sl {
+	COLOR: #414a50
+}
+A.sl:link {
+	COLOR: #414a50; TEXT-DECORATION: none
+}
+A.sl:visited {
+	COLOR: #414a50; TEXT-DECORATION: none
+}
+A.sl:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.input {
+	BORDER-RIGHT: #e5e5e5 1px solid; BORDER-TOP: #e5e5e5 1px solid; BORDER-LEFT: #e5e5e5 1px solid; WIDTH: 150px; BORDER-BOTTOM: #e5e5e5 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #f7f8fa
+}
+.input02 {
+	BORDER-RIGHT: #a6ddf3 1px solid; BORDER-TOP: #a6ddf3 1px solid; BORDER-LEFT: #a6ddf3 1px solid; WIDTH: 150px; LINE-HEIGHT: 22px; BORDER-BOTTOM: #a6ddf3 1px solid; HEIGHT: 22px; BACKGROUND-COLOR: #ffffff
+}
+.top10 {
+	MARGIN-TOP: 10px
+}
+.top9 {
+	MARGIN-TOP: 9px
+}
+.top8 {
+	MARGIN-TOP: 8px
+}
+.top5 {
+	MARGIN-TOP: 5px
+}
+.top3 {
+	MARGIN-TOP: 3px
+}
+.top2 {
+	MARGIN-TOP: 2px
+}
+.c0 {
+	FONT-SIZE: 20px; COLOR: #ffffff; FONT-FAMILY: 黑体
+}
+.lined5 {
+	BORDER-RIGHT: #f8d1a4 1px solid; BORDER-TOP: #f8d1a4 1px solid; BORDER-LEFT: #f8d1a4 1px solid; BORDER-BOTTOM: #f8d1a4 1px solid
+}
+.findInto {
+	BORDER-RIGHT: #4194cf 1px solid; BORDER-TOP: #4194cf 1px solid; BORDER-LEFT: #4194cf 1px solid; WIDTH: 310px; COLOR: #808080; TEXT-INDENT: 5px; BORDER-BOTTOM: #4194cf 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 22px
+}
+.xx {
+	BORDER-BOTTOM: #d5d5d5 1px dashed
+}
+.td10 {
+	PADDING-RIGHT: 30px; PADDING-LEFT: 30px; PADDING-BOTTOM: 30px; COLOR: #999999; LINE-HEIGHT: 32px; PADDING-TOP: 30px
+}
+#t960 {
+	MARGIN-LEFT: auto; WIDTH: 960px; MARGIN-RIGHT: auto
+}
+.sxs {
+	BORDER-TOP: #e5e5e5 1px solid
+}
+.sxx {
+	BORDER-BOTTOM: #e5e5e5 1px solid
+}
+.sxxh {
+	BORDER-BOTTOM: #aaaaaa 1px solid
+}
+.hsbks {
+	BORDER-TOP: #e75575 1px solid
+}
+.hsbkx {
+	BORDER-BOTTOM: #e75575 1px solid
+}
+.hsbkz {
+	BORDER-LEFT: #e75575 1px solid
+}
+.hsbky {
+	BORDER-RIGHT: #e75575 1px solid
+}
+.gywmdh_a {
+	BACKGROUND-IMAGE: url(images/dhbg_a.gif); WIDTH: 138px; TEXT-INDENT: 22px; LINE-HEIGHT: 28px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 28px
+}
+.gywmdh_b {
+	BACKGROUND-IMAGE: url(images/dhbg_b.gif); WIDTH: 138px; TEXT-INDENT: 22px; LINE-HEIGHT: 28px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 28px
+}
+#newsliebiao LI {
+	BACKGROUND-POSITION: 0px 8px; PADDING-LEFT: 10px; BACKGROUND-IMAGE: url(images/icon.gif); BACKGROUND-REPEAT: no-repeat
+}
+#newsliebiao02 LI {
+	BACKGROUND-POSITION: 0px 11px; PADDING-LEFT: 10px; BACKGROUND-IMAGE: url(images/icon02.gif); LINE-HEIGHT: 30px; BACKGROUND-REPEAT: no-repeat
+}
+#lanmuliebiao LI {
+	BACKGROUND-POSITION: 0px 7px; PADDING-LEFT: 10px; BACKGROUND-IMAGE: url(images/img_icon_30.gif); BACKGROUND-REPEAT: no-repeat
+}
+#lanmuliebiao {
+	MARGIN: 0px 0px 0px 21px
+}
+.r {
+	TEXT-ALIGN: right
+}
+.l {
+	TEXT-ALIGN: left
+}
+.c {
+	TEXT-ALIGN: center
+}
+.anniu {
+	BORDER-RIGHT: #c7c7c7 1px solid; BORDER-TOP: #c7c7c7 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND-IMAGE: url(images/img01_26.gif); BORDER-LEFT: #c7c7c7 1px solid; WIDTH: 68px; CURSOR: pointer; COLOR: #cc0001; LINE-HEIGHT: 24px; BORDER-BOTTOM: #c7c7c7 1px solid; BACKGROUND-REPEAT: no-repeat; HEIGHT: 25px; TEXT-ALIGN: center
+}
+.anniu02 {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 14px; BACKGROUND-IMAGE: url(images/04.gif); BORDER-BOTTOM-WIDTH: 0px; WIDTH: 125px; COLOR: #ffffff; LINE-HEIGHT: 33px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 33px; TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px
+}
+.img {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid
+}
+.cc {
+	PADDING-RIGHT: 35px; PADDING-LEFT: 35px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#head {
+	BACKGROUND: url(images/img01_01.gif) repeat-x; HEIGHT: 100px; TEXT-ALIGN: center
+}
+#head_b {
+	BACKGROUND: #cc0001; HEIGHT: 30px
+}
+#head_c {
+	MARGIN-TOP: 3px; BACKGROUND: url(images/img02_03.jpg) no-repeat; MARGIN-LEFT: auto; WIDTH: 960px; MARGIN-RIGHT: auto; HEIGHT: 100px; TEXT-ALIGN: right
+}
+#head_c IMG {
+	MARGIN-TOP: 55px; MARGIN-RIGHT: 15px
+}
+.nav_item {
+	Z-INDEX: 4; FLOAT: right; MARGIN: auto; POSITION: relative; HEIGHT: 29px; TEXT-ALIGN: center
+}
+.nav_item_list {
+	LIST-STYLE-TYPE: none
+}
+.nav_item_list LI {
+	FONT-WEIGHT: bold; BACKGROUND: url(images/img01_11.gif) no-repeat; FLOAT: left; MARGIN-LEFT: 3px; WIDTH: 91px; LINE-HEIGHT: 29px; HEIGHT: 29px; TEXT-ALIGN: center
+}
+.nav_item_list LI A {
+	DISPLAY: block; FONT-SIZE: 14px; OVERFLOW: hidden; WIDTH: 91px; HEIGHT: 29px
+}
+.nav_item_list .active A {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(images/img01_09.gif) no-repeat 0px 0px; COLOR: #ffffff; LINE-HEIGHT: 29px; TEXT-DECORATION: none
+}
+.nav_item_list .active A:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(images/img01_09.gif) no-repeat 0px 0px; COLOR: #ffffff; LINE-HEIGHT: 29px; TEXT-DECORATION: none
+}
+.nav_item_list LI A:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(images/img01_09.gif) no-repeat 0px 0px; COLOR: #ffffff; LINE-HEIGHT: 29px; TEXT-DECORATION: none
+}
+.tel {
+	PADDING-LEFT: 20px; BACKGROUND: url(images/img01_06.gif) no-repeat 0px -1px
+}
+.tit_250 {
+	BACKGROUND: url(images/img01_33.gif) no-repeat; HEIGHT: 33px
+}
+.tit_700 {
+	BACKGROUND: url(images/img01_49.gif) no-repeat; HEIGHT: 33px
+}
+.tit_960 {
+	BACKGROUND: url(images/img01_49_960.gif) no-repeat; HEIGHT: 33px
+}
+.zybk {
+	BORDER-RIGHT: #e5e5e5 1px solid; PADDING-RIGHT: 15px; BORDER-TOP: #e5e5e5 0px solid; PADDING-LEFT: 15px; BACKGROUND: #fff; PADDING-BOTTOM: 15px; BORDER-LEFT: #e5e5e5 1px solid; PADDING-TOP: 15px; BORDER-BOTTOM: #e5e5e5 0px solid
+}
+.fl {
+	FLOAT: left
+}
+.fr {
+	FLOAT: right
+}
