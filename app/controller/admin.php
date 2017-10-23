@@ -111,7 +111,7 @@ class Controller_Admin
     }
 
     public function actionsetting()
-    {
+    {   die('暂不开放，请返回查看其他！');
         $statetype = $_GET['statetype'];
         $actiontype = $_GET['actiontype'];
         if ($actiontype == "testemail") {
