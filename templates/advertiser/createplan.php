@@ -74,46 +74,7 @@ include TPL_DIR . "/header.php";?>
                           <br />
                           <span class="gray">计划应用于哪一种计费形式。</span></td>
                     </tr>
-                    <tr>
-                      <td>需要审核</td>
-                      <td><input name="audit" type="radio" value="n" <?php if ($plan['audit']=='n' || !$plan) echo "checked";?> />
-                        不需要
-                        <input type="radio" name="audit" value="y" <?php if ($plan['audit']=='y') echo "checked";?> />
-                        需要<br />
-                        <span class="gray">需要审核的计划只有广告商或是联盟管理员在网站主申请通过后，方可投放。</span></td>
-                    </tr>
-                    <tr id="datadatev"  <?php if (!in_array($plan['plantype'],array('cpa','cps')) || !$plan) echo "style=\"display:none\"";?>>
-                      <td>数据返回</td>
-                      <td><input type="radio" name="datatime" value="0" onclick="$i('datadates').style.display = 'none';$i('serveripids').style.display = '';"   <?php if ($plan['datatime']=='0') echo "checked";?>/>
-                        实时
-                        <input name="datatime" type="radio" value="1"  onclick="$i('datadates').style.display = '';$i('serveripids').style.display = 'none';"  <?php if ($plan['datatime']>'0' || !$plan) echo "checked";?>/>
-                        延时<span id="datadates" <?php if ($plan['datatime']=='0') echo "style=\"display:none\"";?>>
-                          <input name="datadate" type="text" id="datadate" style="width:30px;" value="<?php echo $plan['datatime']==''?1:$plan['datatime']?>" />
-                          天</span><br />
-                        <span class="gray">延时为联盟手动确认订单后方可入帐会员帐户，统计报表同时显示结算数。</span></td>
-                    </tr>
-                    <tr id="serveripids"  <?php if ($plan['datatime']=='1' || !$plan) echo "style=\"display:none\"";?>>
-                      <td>接口认证IP</td>
-                      <td><input name="serverip" type="text" id="serverip" style="width:180px;"  value="<?php echo $plan['serverip']?>"/>
-                          <br />
-                          <span class="gray">广告商广告服务器IP地址，多IP请“,”分开。</span></td>
-                    </tr>
-                    <tr>
-                      <td>结算周期</td>
-                      <td><select name="clearing">
-                          <?php if(in_array ('day', explode(',',$GLOBALS['C_ZYIIS']['clearing_cycle']))){ ?>
-                          <option value="day" <?php if($plan['clearing']=='day') echo "selected"?>>日结计划项目</option>
-                          <?php } ?>
-                          <?php if(in_array ('week', explode(',',$GLOBALS['C_ZYIIS']['clearing_cycle']))){ ?>
-                          <option value="week" <?php if($plan['clearing']=='week' || !$plan) echo "selected"?>>周结计划项目</option>
-                          <?php } ?>
-                          <?php if(in_array ('month', explode(',',$GLOBALS['C_ZYIIS']['clearing_cycle']))){ ?>
-                          <option value="month" <?php if($plan['clearing']=='month') echo "selected"?>>月结计划项目</option>
-                          <?php } ?>
-                        </select>
-                          <br />
-                          <span class="gray">联盟给网站主结算的一个周期。</span></td>
-                    </tr>
+
                     <tr>
                       <td>&nbsp;</td>
                       <td>&nbsp;</td>
@@ -332,78 +293,7 @@ document.write('</select>');
                           </table>
                       </div></td>
                     </tr>
-                    <tr>
-                      <td align="center">&nbsp;</td>
-                      <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td height="30" align="center">时间 <a href="?action=help&amp;width=250&amp;type=createplan&amp;typeval=acltimetype" class="jTip" id="acltimetypehelp"  name="时间定位"><img src="/javascript/jquery/images/question.gif" border="0" align="absmiddle" /></a></td>
-                      <td>您希望广告在几时展示？</td>
-                    </tr>
-                    <tr>
-                      <td height="30" align="center"></td>
-                      <td><input id="acl[2][isacl]" onclick="showtype('3','n');$i('time_c').style.display = 'none'" type="radio"   value="all" name="acl[2][isacl]"  class="acltime" <?php if(!$acltime) echo " checked"?>/>
-                        全天投放<br />
-                        <input id="acl[2][isacl]" onclick="showtype('3','y');$i('time_c').style.display = ''" type="radio" value="acls" name="acl[2][isacl]" class="acltime" <?php if($acltime) echo " checked"?>/>
-                        在指定的时间投放
-                        <div class="tips" id="time_c"  <?php if(!$acltime) echo 'style="display:none;margin-top:3px"'?>>在指定的时间投放，系统将会为您在规定的时间显示广告。</div></td>
-                    </tr>
-                    <tr>
-                      <td align="center"></td>
-                      <td><input type='hidden' name='acl[2][type]' value='time' />
-                          <table width='100%' cellpadding='0' cellspacing='0' border='0'  id='s3' class="tp" <?php if(!$acltime) echo 'style="display:none;margin-top:10px"'?>>
-                            <?php
-							$n = 0;
-							for($i=0;$i<6;$i++){?>
-                            <tr>
-                              <?php for($j=0;$j<4;$j++){?>
-                              <td><input type='checkbox' name='acl[2][data][]' value='<?php echo $n?>' <?php
-								if(is_array($timedata)){
-									if (in_array ($n, $timedata)) echo " checked";
-								}else {
-									echo " checked";
-								}
-								?>   class="acltimeval"/>
-                                &nbsp;<?php echo $n?>:00-<?php echo $n?>:59&nbsp;&nbsp;</td>
-                              <?php $n++ ;}?>
-                            </tr>
-                            <?php }?>
-                        </table></td>
-                    </tr>
-                    <tr>
-                      <td height="20" align="center"></td>
-                      <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td height="30" align="center">一周 <a href="?action=help&amp;width=250&amp;type=createplan&amp;typeval=aclweekdaytype" class="jTip" id="aclweekdaytypehelp"  name="星期定位"><img src="/javascript/jquery/images/question.gif" border="0" align="absmiddle" /></a></td>
-                      <td>您希望一周星期几展示广告？</td>
-                    </tr>
-                    <tr>
-                      <td height="30" align="center"></td>
-                      <td><input id="acl[3][isacl]" onclick="showtype('4','n');$i('weekday_c').style.display = 'none'" type="radio"   value="all" name="acl[3][isacl]"  class="aclweekday" <?php if(!$aclweekday) echo " checked"?>/>
-                        全星期投放<br />
-                        <input id="acl[3][isacl]" onclick="showtype('4','y');$i('weekday_c').style.display = ''" type="radio" value="acls" name="acl[3][isacl]" class="aclweekday" <?php if($aclweekday) echo " checked"?>/>
-                        在指定的星期投放
-                        <div class="tips" id="weekday_c"  <?php if(!$aclweekday) echo 'style="display:none;margin-top:3px"'?>>在指定的一周星期几显示广告。</div></td>
-                    </tr>
-                    <tr>
-                      <td height="30" align="center"></td>
-                      <td><input type='hidden' name='acl[3][type]' value='weekday' />
-                          <table width='100%' cellpadding='0' cellspacing='0' border='0'  id='s4' class="tp" <?php if(!$aclweekday) echo 'style="display:none;margin-top:3px"'?>>
-                            <?php
-						   for ($i = 0; $i < 7; $i++){
-						   		if ($i % 4 == 0) echo "<tr>";
-									echo "<td><input type='checkbox'  name='acl[3][data][]' value='$i' class='aclweekdayval'" ?>
-                            <?php if(is_array($weekdaydata)){
-												if (in_array ($i, $weekdaydata)) echo " checked";
-												}else { echo " checked";}
-									echo ">&nbsp;周".isweekday($i)."&nbsp;&nbsp;</td>";
-									if (($i + 1) % 4 == 0) echo "</tr>";
-								}
-						   if (($i + 1) % 4 != 0) echo "</tr>";
-						?>
-                        </table></td>
-                    </tr>
+
 
 <!--开始-->
                         <tr>

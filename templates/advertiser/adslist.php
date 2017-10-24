@@ -18,7 +18,9 @@ include TPL_DIR . "/header.php";?>
 	<div class="l2"></div>
 </div>
 <?php }  ?>
-<h2>广告管理 <span class="tsp"  style="padding-left:20px;"><img  src='/templates/<?php echo Z_TPL?>/images/add.gif' align='absmiddle' /> <a href="?action=createads">新建广告&raquo;</a></span></h2>
+<h2>广告管理 <span class="tsp"  style="padding-left:20px;">
+<!--        <img  src='/templates/--><?php //echo Z_TPL?><!--/images/add.gif' align='absmiddle' /> <a href="?action=createads">新建广告&raquo;</a>-->
+    </span></h2>
 
 <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:20px"   class="f_12px">
   <tr>
@@ -93,7 +95,7 @@ include TPL_DIR . "/header.php";?>
   <?php } //end foreach
 if(!$ads) { ?>
   <tr class="tbListNull">
-    <td colspan="8"><a href="?action=createads">没有广告。新建一个</a></td>
+<!--    <td colspan="8"><a href="?action=createads">没有广告。新建一个</a></td>-->
   </tr>
   <?php } //ednt if?>
 </table>

@@ -19,7 +19,8 @@ include TPL_DIR . "/header.php";?>
 	<div class="l2"></div>
 </div>
 <?php }  ?>
-<h2>计划管理 <span class="tsp"  style="padding-left:20px;"><img  src='/templates/<?php echo Z_TPL?>/images/add.gif' align='absmiddle' /> <a href="?action=createplan">新建计划&raquo;</a></span></h2>
+<h2>计划管理 <span class="tsp"  style="padding-left:20px;">
+<!--        <img  src='/templates/--><?php //echo Z_TPL?><!--/images/add.gif' align='absmiddle' /> <a href="?action=createplan">新建计划&raquo;</a></span></h2>-->
 
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap tb0" style="margin-top:30px">
   <tr>
@@ -55,7 +56,9 @@ include TPL_DIR . "/header.php";?>
     <td align="center"><?php if($p['checkplan']!='true') echo '有';else echo "无";?></td>
     <td align="center"><?php if ($p['restrictions']!='1') echo '有设置';else echo "不限制";?></td>
     <td align="center"><?php if ($p['audit']=='n')echo '不需要';else echo "需要";?></td>
-    <td><?php echo $adsnum?> <a href="?action=createads&planid=<?php echo $p['planid']?>&plantype=<?php echo $p['plantype']?>">新建</a></td>
+    <td><?php echo $adsnum?>
+<!--        <a href="?action=createads&planid=--><?php //echo $p['planid']?><!--&plantype=--><?php //echo $p['plantype']?><!--">新建</a>-->
+    </td>
     <td><a href="?action=editplan&planid=<?php echo $p['planid']?>">编辑</a></td>
     <td><?php  if($p['status'] == '0') {?>
       <font color="red">待审</font>
@@ -78,9 +81,9 @@ include TPL_DIR . "/header.php";?>
   </tr>
   <?php } //end foreach
 if(!$plan) { ?>
-  <tr class="tbListNull">
-    <td colspan="13"><a href="?action=createplan">没有计划项目。新建一个</a></td>
-  </tr>
+<!--  <tr class="tbListNull">-->
+<!--    <td colspan="13"><a href="?action=createplan">没有计划项目。新建一个</a></td>-->
+<!--  </tr>-->
   <?php } //ednt if?>
 </table>
 </div>
