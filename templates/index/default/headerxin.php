@@ -50,9 +50,9 @@
               <li>
             <h2><a href="?action=advertiser"  >广告商</a></h2>
           </li>
-              <li>
-            <h2><a href="?action=affiliate"  >网站主</a></h2>
-          </li>
+<!--              <li>-->
+<!--            <h2><a href="?action=affiliate"  >网站主</a></h2>-->
+<!--          </li>-->
               <li>
             <h2><a href="?action=help"  >常见问题</a></h2>
           </li>

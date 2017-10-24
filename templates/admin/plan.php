@@ -155,7 +155,7 @@ if ( $searchtype == "1" )
 }
 echo ">计划名称</option>\r\n                    </select>\r\n                    <input type=\"submit\" name=\"Submit22\" value=\"搜索\" class=\"submit-x\"/>\r\n                  </form></td>\r\n\t\t\t\t  \r\n              </tr>\r\n              <tr>\r\n                <td><form id=\"form\" name=\"form\" method=\"post\" action=\"do.php?action=";
 echo $action;
-echo "&actiontype=postchoose\">\r\n                    <input name=\"choosetype\"  id=\"choosetype\"  type=\"hidden\" value=\"\" />\r\n                    \r\n                    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"5\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"50\">Id</td>\r\n                        <td width=\"120\">计划名称</td>\r\n                        <td width=\"55\">类型</td>\r\n                        <td width=\"75\">广告商</td>\r\n                        <td width=\"60\">单价</td>\r\n                        <td width=\"60\">限额</td>\r\n                        <td width=\"60\">结算</td>\r\n                        <td width=\"60\">扣量</td>\r\n\r\n                        <td width=\"60\">补量</td>\r\n                        <td width=\"70\">已结算</td>\r\n                        <td width=\"60\" align=\"center\">定向</td>\r\n                        <td width=\"80\">会员限制</td>\r\n                        <td width=\"80\">需要审核</td>\r\n                        <td width=\"60\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"6\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                        ";
+echo "&actiontype=postchoose\">\r\n                    <input name=\"choosetype\"  id=\"choosetype\"  type=\"hidden\" value=\"\" />\r\n                    \r\n                    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"5\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"50\">Id</td>\r\n                        <td width=\"120\">计划名称</td>\r\n                        <td width=\"55\">类型</td>\r\n                        <td width=\"75\">广告商</td>\r\n                        <td width=\"60\">单价</td>\r\n                        <td width=\"60\">限额</td>\r\n                        <td width=\"60\">结算</td>\r\n                        <td width=\"60\">扣量</td>\r\n\r\n                        <td width=\"60\">补量</td>\r\n                        <td width=\"70\">已结算</td>\r\n                        <td width=\"60\" align=\"center\">定向</td>\r\n                        <td width=\"80\">会员限制</td>\r\n                        <td width=\"60\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"6\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                        ";
 foreach ( ( array )$plan as $p )
 {
 		$user = $usermodel->getusersuidrow( $p['uid'] );
@@ -247,15 +247,7 @@ foreach ( ( array )$plan as $p )
 		{
 				echo "不限制";
 		}
-		echo "</td>\r\n                        <td>";
-		if ( $p['audit'] == "n" )
-		{
-				echo "不需要";
-		}
-		else
-		{
-				echo "需要";
-		}
+
 		echo "</td>\r\n                        <td> \r\n\t\t\t\t\t\t  ";
 		if ( $user['status'] != "2" )
 		{

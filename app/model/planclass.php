@@ -267,7 +267,13 @@ class Model_PlanClass
 				{
 						$datatime = 0;
 				}
-				if ( empty( $planname ) || empty( $budget ) || empty( $clearing ) || empty( $priceadv ) || empty( $plantype ) )
+//				echo $planname;echo '<br>';
+//			    echo $budget;echo '<br>';
+//			    echo $claering;echo '<br>';
+//			    echo $priceadv;echo '<br>';
+//			    echo $audit;echo '<br>';
+//				die('1');
+				if ( empty( $planname ) || empty( $budget )  || empty( $priceadv ) || empty( $plantype ) )
 				{
 						message( "not_value" );
 				}
@@ -305,15 +311,12 @@ class Model_PlanClass
 						"plantype" => $plantype,
 						"datatime" => $datatime,
 						"serverip" => $serverip,
-						"clearing" => $clearing,
 						"planinfo" => $planinfo,
-						"audit" => $audit,
+
 						"restrictions" => $restrictions ? $restrictions : 1,
 						"resuid" => $resuid,
 						"sitelimit" => $sitelimit ? $sitelimit : 1,
 						"limitsiteid" => $limitsiteid,
-						"deduction" => 0 < $deduction ? $deduction : 0,
-						"resuid" => $resuid,
 						"top" => 0 < $top ? $top : 0,
 						"in_site" => $in_site,
 						"priceinfo" => $priceinfo,

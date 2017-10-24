@@ -1,5 +1,5 @@
 <?php if(!defined('IN_ZYADS')) exit(); 
-include TPL_DIR . "/headerxin1.php";?>
+include TPL_DIR . "/headerxin.php";?>
 <title>»áÔ±µÇÂ¼_<?php echo $v["tit"] ?> <?php echo $GLOBALS['C_ZYIIS']['sitename']?></title>
 <link rel="stylesheet" href="/templates/index/default/css/xin/css.css" >
 <script src="/templates/index/default/css/xin/jquery-1.7.min.js"  type="text/javascript"></script>

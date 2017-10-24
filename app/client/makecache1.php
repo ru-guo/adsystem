@@ -62,7 +62,7 @@ function makeads( $dbo, $filename, $z )
 		{
 				$column = "a.adsid,a.imageurl,a.alt,a.url,a.adstypeid,a.priority,a.htmlcode,a.width,a.height";
 		}
-		$sql = "\r\n\t\tSELECT ".$column." ,p.checkplan,p.expire,p.planid,p.audit,p.clearing,p.plantype,p.uid,p.resuid,p.restrictions,p.budget \r\n\t    FROM zyads_ads AS a,zyads_plan AS p\r\n\t\tWHERE  p.status = 1 AND a.priority > 0  AND a.status = 3 \r\n\t\tAND p.plantype = '".$z['plantype']."' AND a.adstypeid= '".$z['adstypeid'].( "'\r\n\t\tAND a.planid=p.planid ".$xw." AND  (p.expire>" ).date( "Y-m-d", TIMES )." || p.expire=0000-00-00)";
+		$sql = "\r\n\t\tSELECT ".$column." ,p.checkplan,p.expire,p.planid,p.plantype,p.uid,p.resuid,p.restrictions,p.budget \r\n\t    FROM zyads_ads AS a,zyads_plan AS p\r\n\t\tWHERE  p.status = 1 AND a.priority > 0  AND a.status = 3 \r\n\t\tAND p.plantype = '".$z['plantype']."' AND a.adstypeid= '".$z['adstypeid'].( "'\r\n\t\tAND a.planid=p.planid ".$xw." AND  (p.expire>" ).date( "Y-m-d", TIMES )." || p.expire=0000-00-00)";
 		$query = $dbo->query( $sql );
 		while ( $row = $dbo->fetch_array( $query ) )
 		{

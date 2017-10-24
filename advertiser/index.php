@@ -10,6 +10,9 @@
 +---------------------------------------------------------------------------+
 $Id: index.php 23 2010-08-18 07:25:27Z Administrator $
 */
+ini_set('display_errors',1);            //错误信息
+ini_set('display_startup_errors',1);    //php启动错误信息
+error_reporting(E_ERROR);
 if($_SERVER['HTTP_USER_AGENT'] == '') die('NC');
 require '../config.php';
 InstallLicense();

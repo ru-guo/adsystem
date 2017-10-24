@@ -26,7 +26,7 @@ class Model_AdsClass
 				if ( $arries['adstypeid'] == 24 )
 				{
 						$plantype = $arries['plantype'];
-						$sql = "SELECT  a.*,p.planname,p.plantype,p.restrictions,p.resuid,p.sitelimit,p.limitsiteid,p.planid,p.audit FROM zyads_ads AS a,zyads_plan as p,zyads_users as u\r\n\t\t\t\t\tWHERE a.zlink = 1 AND (a.status=3 or a.status=2) AND a.headline='' AND a.htmlcode=''  AND a.planid=p.planid  AND p.status=1 AND p.plantype='".$plantype."' AND p.uid=u.uid AND u.status=2";
+						$sql = "SELECT  a.*,p.planname,p.plantype,p.restrictions,p.resuid,p.sitelimit,p.limitsiteid,p.planid FROM zyads_ads AS a,zyads_plan as p,zyads_users as u\r\n\t\t\t\t\tWHERE a.zlink = 1 AND (a.status=3 or a.status=2) AND a.headline='' AND a.htmlcode=''  AND a.planid=p.planid  AND p.status=1 AND p.plantype='".$plantype."' AND p.uid=u.uid AND u.status=2";
 				}
 				else
 				{

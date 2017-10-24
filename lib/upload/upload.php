@@ -10,9 +10,8 @@
 +---------------------------------------------------------------------------+
 $Id: config.php 30 2009-08-10 07:14:27Z jian@zyiis.com $
 */
-ini_set('display_errors',1);            //错误信息
-ini_set('display_startup_errors',1);    //php启动错误信息
-error_reporting(E_ERROR);
+// ini_set('display_errors', 'On');
+// error_reporting(E_ALL &~E_NOTICE);
 class upload {
   
   public $max_size = 0;

@@ -185,7 +185,7 @@ echo "\"  size=\"30\" maxlength=\"1024\"/>\r\n                          <br />\r
 echo $a['dispurl'];
 echo "\" size=\"30\" maxlength=\"1024\"/>\r\n                          <br />\r\n                          <span class=\"gray\">广告中显示的网站地址。</span></td>\r\n                      </tr>\r\n                      <tr id=\"_htmlcode_\" style=\"display:none\">\r\n                        <td valign=\"top\">自定义代码<font color=\"#FF0000\">*</font></td>\r\n                        <td><textarea name=\"htmlcode\" cols=\"60\" rows=\"10\" id=\"htmlcode\"  style=\"width:600px;height:300px\">";
 echo $a['htmlcode'];
-echo "</textarea>\r\n                          <br />\r\n                          <span class=\"gray\">标准的HTML代码格式。</span></td>\r\n\t\t\t\t\t\t  </tr>\r\n                       <tr id=\"_zlink_\"  style=\"display:none\">\r\n                        <td valign=\"top\">自定义链接</td>\r\n                        <td>\r\n                          <input type=\"radio\" name=\"zlink\" value=\"1\" ";
+echo "</textarea>\r\n                          <br />\r\n                          <span class=\"gray\">标准的HTML代码格式。</span></td>\r\n\t\t\t\t\t\t  </tr>\r\n                       <tr id=\"_zlink_\"  style=\"display:none\">\r\n                        <td valign=\"top\" style='display: none'>自定义链接</td>\r\n                        <td style='display: none'>\r\n                          <input type=\"radio\" name=\"zlink\" value=\"1\" ";
 if ( $a['zlink'] == 1 )
 {
 		echo " checked";

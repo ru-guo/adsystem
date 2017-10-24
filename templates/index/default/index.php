@@ -45,7 +45,7 @@ $(function(){
   			  <!-------------------------------------------------------->
      
 		<div class="oneByOne_item">                                 	
-			<img src="/templates/index/default/images/home7_slide_4.png" class="wp1_3 slide3_bot" alt="" />			            
+<!--			<img src="/templates/index/default/images/home7_slide_4.png" class="wp1_3 slide3_bot" alt="" />			            -->
 			<span class="txt1 blue">丰富的广告类型</span>			
 			<span class="txt2 blue">精准的营销效果</span>												
 			<span class="txt3 short">We have abundant type of advertising, will certainly be able to meet any of your needs.</span>												

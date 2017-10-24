@@ -61,11 +61,11 @@ include TPL_DIR . "/headerxin.php";?>
       <div class="infoRight">
     <h1 class="tit_info_h2">联系我们</h1>
     <div class="contactInfo">
-    <p> <?php echo $GLOBALS['C_ZYIIS']['sitename']?>（<?php echo $GLOBALS['C_ZYIIS']['siteurl']?>）简介:属<?php echo $GLOBALS['C_ZYIIS']['sitename']?>科技有限公司旗下网站,公司注册资金300万人民币,专业为站长和广告商精心打造的广告合作平台，专业提供CPA效果广告，CPC点击广告，CPV富媒体展示广告等业务 </p>
+    <p> <?php echo $GLOBALS['C_ZYIIS']['sitename']?>（<?php echo $GLOBALS['C_ZYIIS']['siteurl']?>）简介:属无锡信诚科技有限公司旗下网站,公司注册资金300万人民币,专业为站长和广告商精心打造的广告合作平台，专业提供CPA效果广告，CPC点击广告，CPV富媒体展示广告等业务 </p>
 		  <p>广告投放：1395550247</p>
 	      <p>电子邮箱：1395550247@qq.com </p>
-	      <p>工作时间：8：30  -  18：00  周日休息 </p>
-	      <p>公司地址：江西省吉安市吉州区井冈山大道120号天都国际公馆16楼1610室 </p>
+	      <p>工作时间：10：00  -  18：00  周六日休息 </p>
+	      <p>公司地址：北京市 </p>
         </div>
     <div class="contact block">
           <h3 class="tit_info_h3">广告投放</h3>

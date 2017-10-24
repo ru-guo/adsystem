@@ -3,33 +3,32 @@
 $cache_contents   = array (
   0 => 
   array (
-    10 => 
+    46 => 
     array (
-      'adsid' => '10',
-      'imageurl' => '/a/2017-09-06/150468029816210937.png',
+      'adsid' => '46',
+      'imageurl' => '/a/2017-10-24/150883775078925782.jpg',
       'alt' => '',
-      'url' => 'http://www.heiniubao.com',
+      'url' => 'http://www.baidu.com',
       'adstypeid' => '7',
       'priority' => '1',
       'htmlcode' => '',
       'width' => '0',
       'height' => '0',
-      'checkplan' => 'aC(\',±±¾©\',\'!=\')',
+      'checkplan' => 'true',
       'expire' => '0000-00-00',
-      'planid' => '16',
-      'audit' => 'n',
-      'clearing' => 'week',
+      'planid' => '34',
       'plantype' => 'cpc',
-      'uid' => '1016',
+      'uid' => '1029',
       'resuid' => '',
       'restrictions' => '1',
+      'budget' => '1000',
     ),
   ),
   1 => 1,
-  2 => 10,
+  2 => 46,
 );
 
 $cache_name       = 'cpc_7_0_0';
-$cache_time       = 1504680348;
+$cache_time       = 1508837749;
 $cache_complete   = true;
 
