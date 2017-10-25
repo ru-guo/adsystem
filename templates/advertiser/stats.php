@@ -69,7 +69,7 @@ document.write(t);
       <th width="180">广告项目</th>
       <th width="80">类型</th>
       <th width="120">浏览数</th>
-<!--      <th width="120">点击数</th>-->
+      <th width="120">点击数</th>
       <th width="100">结算数</th>
     
       <th width="100">效果数</th>
@@ -85,7 +85,7 @@ document.write(t);
       <td align="center"><?php echo   $plan['plantype']?></td>
       <td align="center"><?php echo $s['views']?></td>
 
-<!--        <td align="center">--><?php //echo $s['clicks']?><!--</td>-->
+        <td align="center"><?php echo $s['clicks']?></td>
 
         <td align="center"><?php echo $num = $s['num']+$s['deduction'];?></td>
   
@@ -96,6 +96,7 @@ document.write(t);
     
     <?php 
 	$sumviews = $sumviews+$s['views'];
+	$sumclicks = $sumclicks+$s['clicks'];
 	$sumnum = $sumnum+$num;
 	$sumadvpay = $sumadvpay+$s['sumadvpay'];
 	$sumorders  += $s['orders'];
@@ -105,6 +106,7 @@ document.write(t);
       <td align="center">总计：</td>
       <td align="center">&nbsp;</td>
       <td align="center"><?php echo $sumviews?></td>
+      <td align="center"><?php echo $sumclicks?></td>
       <td align="center"><?php echo $sumnum?></td>
       <td align="center"><?php echo $sumorders?></td>
       <td align="center"><?php echo $sumadvpay?></td>

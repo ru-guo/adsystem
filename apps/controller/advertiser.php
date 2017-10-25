@@ -512,9 +512,11 @@ class Controller_Advertiser
         $page->totalCount = 30;
         $addurl = "&actiontype=" . $actiontype . ("&planid=" . $planid . "&timerange={$timerange}");
         $page->url = "?action=stats" . $addurl;
+        echo $statssql;
         $stats = $page->parse_sqls($statssql, $statsmodel->dbo);
         $allplanname = $planmodel->getplanrowsbyuid();
         $viewpage = $page->navbar();
+        var_dump($stats);
         require(TPL_DIR . "/stats.php");
     }
 
