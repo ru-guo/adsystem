@@ -356,42 +356,6 @@ if (in_array($_GET['action'], array(
     echo "\"> <a   href=\"do.php?action=statsads&timerange=";
     echo DAYS . "/" . DAYS;
     echo "\"><span>广告报表</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "statszone") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=statszone&timerange=";
-    echo DAYS . "/" . DAYS;
-    echo "\"><span>广告位报表</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "adsip") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"/integral/do.php?action=adsip&timerange=";
-    echo DAYS . "&t=2";
-    echo "\"><span>IP报表</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "scancheat") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=scan\"><span>作弊扫描</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "orders") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=orders&timerange=";
-    echo DAYS . "/" . DAYS;
-    echo "\"><span>订单管理</span></a> </li>\r\n\t\t\t\t\t <li class=\"";
-    if ($action == "import") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=import\"><span>导入数据</span></a> </li>\r\n                    <li class=\"";
     if ($action == "trend") {
         echo "active";
     } else {
