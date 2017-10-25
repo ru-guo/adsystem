@@ -4,7 +4,6 @@
     <list default="true" id="be3dabbf-bdde-4f40-be96-039c9122c46e" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/controller/advertiser.php" afterPath="$PROJECT_DIR$/apps/controller/advertiser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/advertiser/stats.php" afterPath="$PROJECT_DIR$/templates/advertiser/stats.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,21 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="advertiser.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="advertiser.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/controller/advertiser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="813">
-              <caret line="518" column="25" lean-forward="false" selection-start-line="518" selection-start-column="25" selection-end-line="518" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stats.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/advertiser/stats.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="101" column="29" lean-forward="false" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="29" />
+            <state relative-caret-position="309">
+              <caret line="514" column="8" lean-forward="false" selection-start-line="514" selection-start-column="8" selection-end-line="514" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -100,8 +89,8 @@
         <option value="$PROJECT_DIR$/templates/admin/stats.php" />
         <option value="$PROJECT_DIR$/templates/admin/statsads.php" />
         <option value="$PROJECT_DIR$/app/controller/admin.php" />
-        <option value="$PROJECT_DIR$/apps/controller/advertiser.php" />
         <option value="$PROJECT_DIR$/templates/advertiser/stats.php" />
+        <option value="$PROJECT_DIR$/apps/controller/advertiser.php" />
       </list>
     </option>
   </component>
@@ -206,15 +195,16 @@
       <workItem from="1508730786696" duration="21000" />
       <workItem from="1508743129816" duration="10128000" />
       <workItem from="1508809132360" duration="22825000" />
-      <workItem from="1508896064336" duration="7042000" />
+      <workItem from="1508896064336" duration="7117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42802000" />
+    <option name="totallyTimeSpent" value="42877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15618336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -223,7 +213,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21218716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21218716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1152,18 +1142,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/controller/advertiser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="518" column="25" lean-forward="false" selection-start-line="518" selection-start-column="25" selection-end-line="518" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/advertiser/stats.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
           <caret line="101" column="29" lean-forward="false" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/controller/advertiser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="514" column="8" lean-forward="false" selection-start-line="514" selection-start-column="8" selection-end-line="514" selection-end-column="8" />
           <folding />
         </state>
       </provider>
