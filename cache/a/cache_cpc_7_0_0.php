@@ -83,12 +83,32 @@ $cache_contents   = array (
       'restrictions' => '1',
       'budget' => '1000',
     ),
+    53 => 
+    array (
+      'adsid' => '53',
+      'imageurl' => '/a/2017-10-26/150899090614143066.jpg',
+      'alt' => '',
+      'url' => 'http://www.test.com',
+      'adstypeid' => '7',
+      'priority' => '1',
+      'htmlcode' => '',
+      'width' => '0',
+      'height' => '0',
+      'checkplan' => 'true',
+      'expire' => '0000-00-00',
+      'planid' => '33',
+      'plantype' => 'cpc',
+      'uid' => '1029',
+      'resuid' => '',
+      'restrictions' => '1',
+      'budget' => '1000',
+    ),
   ),
-  1 => 4,
-  2 => 199,
+  1 => 5,
+  2 => 252,
 );
 
 $cache_name       = 'cpc_7_0_0';
-$cache_time       = 1508990194;
+$cache_time       = 1508990905;
 $cache_complete   = true;
 

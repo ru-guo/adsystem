@@ -375,7 +375,7 @@ class Model_AdsClass
 				//ÉÏ´«Í¼Æ¬
 			    $zyadsattch = $this->zyadsattch('imageurl');
 			    $urlfile = $zyadsattch;
-				if ( $files == "up" && $_FILES['imageurl']['error'] != 4 )
+				if ( $_FILES['imageurl1'] && $_FILES['imageurl1']['error'] != 4 )
 				{
 						$zyadsattch = $this->zyadsattch('imageurl1' );
 						$urlfile1 = $zyadsattch;
