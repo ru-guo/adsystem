@@ -392,7 +392,7 @@ class Model_AdsClass
 						"adstype" => $adstype,
 						"alt" => $alt,
 						"url" => $v,
-						"adinfo" => isset( $adinfo ) ? "" : $adinfo,
+						"adinfo" => isset( $adinfo ) ? $adinfo: "",
 						"status" => 0 < $metadata ? 3 : 0,
 						"zlink" => $zlink ? 1 : 0,
 						"planid" => $planid,
@@ -475,6 +475,7 @@ class Model_AdsClass
 //				{
 //						$imageurl = $_POST['urlfile'];
 //				}
+
 				foreach ( ( array )$htmlcontrol as $h )
 				{
 						if ( $type != "admin" && $h == "width" && $h == "height" && !( $olddata['imageurl'] != "" ) || $imageurl && !( $h == "imageurl" ) || $oldrow[$h] != $$h )
@@ -684,6 +685,7 @@ class Model_AdsClass
 				$adsid = ( integer )$_POST['adsid'];
 				$priority = h( $_POST['priority'] );
 				$urlfile = $_POST['imageurl'];
+
 				if ( $urlfile != "" )
 				{
 						$condition = ", imageurl='".$urlfile."'";
@@ -720,7 +722,7 @@ class Model_AdsClass
 				if ( is_array( $arradsid ) )
 				{
 						if ( $mode == "del" )
-						{
+						{die('2');
 								foreach ( $arradsid as $adsid )
 								{
 										$adsid = ( integer )$adsid;
@@ -743,9 +745,13 @@ class Model_AdsClass
 												$updata = unserialize( base64_decode( $ddx['updata'] ) );
 												$olddata = unserialize( base64_decode( $ddx['olddata'] ) );
 												$dateal = @array_diff( $updata, $olddata );
+												var_dump($dateal);
+											    $condition = '';
 												foreach ( ( array )$dateal as $key => $value )
 												{
+													if ($key!='imageurl'){
 														$condition .= "{$key} = '".$value."',";
+													}
 												}
 												$sql = "UPDATE zyads_ads SET ".$condition." status = 3  WHERE adsid=".( integer )$adsid;
 												$query = $this->dbo->query( $sql );
@@ -761,7 +767,7 @@ class Model_AdsClass
 								}
 						}
 						if ( $mode == "lock" )
-						{
+						{die('4');
 								foreach ( $arradsid as $adsid )
 								{
 										$sql = "Update zyads_ads SET status=4 Where adsid=".( integer )$adsid;

@@ -35,6 +35,11 @@ dL_Img_host="http://www.zylm-5.6.com";
 document.write("<script src="http://www.zylm-5.6.com/js/dl.js"></script>");
 ',
   ),
+  13 => 
+  array (
+    'adstypeid' => '13',
+    'htmltemplate' => '{text}',
+  ),
   24 => 
   array (
     'adstypeid' => '24',
@@ -43,6 +48,6 @@ document.write("<script src="http://www.zylm-5.6.com/js/dl.js"></script>");
 );
 
 $cache_name       = 'atp';
-$cache_time       = 1508987020;
+$cache_time       = 1509003290;
 $cache_complete   = true;
 

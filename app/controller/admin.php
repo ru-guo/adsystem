@@ -951,6 +951,7 @@ class Controller_Admin
             $files = substr($a['imageurl'], 0, 4);
         }
         if ($actiontype == "postupads") {
+
             $adsmodel->zyadsbyupadslog("admin");
             redirect("do.php?action=ads&statetype=success");
         }

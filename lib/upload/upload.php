@@ -89,6 +89,7 @@ class upload {
     }
     $this->new_file_name = $this->new_file_name . "." . $this->file_ext;
     if (! @copy ( $this->file_temp, $this->upload_path . $this->new_file_name )) {
+
       if (! @move_uploaded_file ( $this->file_temp, $this->upload_path . $this->new_file_name )) {
         $this->errmsg ( "upload_destination_error" );
       }
