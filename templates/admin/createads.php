@@ -124,26 +124,12 @@ foreach ( ( array )$adstype as $at )
 		echo $at['name'];
 		echo "</option>\r\n                            ";
 }
-echo "                          </select>\r\n                          <br />\r\n                          <span class=\"gray\">广告应用于哪一种类型展现。</span></td>\r\n                      </tr>\r\n                      <tr id=\"_imageurl_\" style=\"display:none\">\r\n                      <td valign=\"top\">图片/Flash<font color=\"#FF0000\">*</font></td>\r\n                      <td >\r\n                        <input type=\"radio\" name=\"files\" value=\"up\" ";
-if ( $action == "createads" || $files != "http" )
-{
-		echo " checked";
-}
-echo " onclick=\"\$('#_up').show();\$('#_url').hide()\"/>上传&nbsp;&nbsp;&nbsp;<input type=\"radio\" name=\"files\" value=\"url\" ";
-if ( $files == "http" )
-{
-		echo " checked";
-}
-echo " onclick=\"\$('#_up').hide();\$('#_url').show()\"/>远程<br /><br />\r\n\t\t\t\t\t\t<span id=\"_up\" style=\"display:";
-if ( $action == "createads" || $files != "http" )
-{
-		echo "''";
-}
-else
-{
-		echo "'none'";
-}
-echo "\">\r\n                        &nbsp;&nbsp;&nbsp;<input name=\"imageurl\" type=\"file\" id=\"imageurl\" size=\"40\"  style=\"width:336px;height:22px\"/> \r\n                        <br />\r\n                        <span class=\"gray\">&nbsp;&nbsp;&nbsp;只能上传.jpg .gif .swf .png .bmp格式文件,文件小大需小于500KB。</span>\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t<span id=\"_url\" style=\"display:";
+echo "                          </select>\r\n                          <br />\r\n                          <span class=\"gray\">广告应用于哪一种类型展现。</span></td>\r\n                      </tr>\r\n ";
+echo "<tr>	
+      <td>上传图片(大图)</td><input name='files'  value='up' type='hidden'/>
+      <td><input type='file' name='imageurl' id='urlfile'>	<font color='red'>（图片请认真填写无法修改哦）</font></td>
+</tr>\r\n\t\t\t\t\t\t<br><br>";
+	echo "<tr id=\"_imageurl_\" style=\"display:none\">\r\n                      <td valign=\"top\">图片(小图)<font color=\"#FF0000\">*</font></td>\r\n                      <td >\r\n                       \r\n <input name='files'  value='up' type='hidden'/>                      <input name=\"imageurl1\" type=\"file\" id=\"imageurl\" size=\"40\"  style=\"width:336px;height:22px\"/> \r\n                        <br />\r\n                        <span class=\"gray\">&nbsp;&nbsp;&nbsp;只能上传.jpg .gif .swf .png .bmp格式文件,文件小大需小于500KB。</span>\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t<span id=\"_url\" style=\"display:";
 if ( $files == "http" )
 {
 		echo "''";
@@ -152,12 +138,7 @@ else
 {
 		echo "'none'";
 }
-echo "\">\r\n                        &nbsp;&nbsp;&nbsp;\r\n                        <input name=\"urlfile\" type=\"text\" id=\"urlfile\" size=\"40\"  style=\"width:336px;height:22px\" value=\"";
-if ( $files == "http" )
-{
-		echo $a['imageurl'];
-}
-echo "\"/> <br />\r\n                        <span class=\"gray\">&nbsp;&nbsp;&nbsp;远程绝对地址。</span>\t\t\t\t\t\t</span>\t\t\t\t\t\t</td>\r\n                      </tr>\r\n                     <tr id=\"_specs_\" style=\"display:none\">\r\n                        <td valign=\"top\">常用尺寸</td>\r\n                        <td><select name=\"specs\" id=\"specs\"  ";
+echo "\">\r\n                        &nbsp;&nbsp;&nbsp;\r\n                        </span>\t\t\t\t\t\t</span>\t\t\t\t\t\t</td>\r\n                      </tr>\r\n                     <tr id=\"_specs_\" style=\"display:none\">\r\n                        <td valign=\"top\">常用尺寸</td>\r\n                        <td><select name=\"specs\" id=\"specs\"  ";
 if ( $action == "editplan" )
 {
 		echo "disabled='disabled'";
@@ -210,7 +191,7 @@ foreach ( ( array )$htmlcontrol as $h )
 		{
 				echo "\t \t\tvar f = get_radio_value(\$n(\"files\"));\r\n\t\t\tvar c = '";
 				echo $action;
-				echo "';\r\n\t\t\tvar reg=/^.*?\\.(jpg|bmp|png|jpeg|gif|swf|JPG|BMP|PNG|JPEG|GIF|SWF)\$/;\r\n\t\t\tif(f=='up'){\r\n\t\t\t\tvar fileToUpload = \$(\"#imageurl\").val();\r\n\t\t\t\tif(isNULL(fileToUpload) &&  c=='createads'){\r\n\t\t\t\t\talert(\"请选择要上传的文件\"); \r\n\t\t\t\t\t\$(\"#imageurl\").focus();\r\n\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t\t \r\n\t\t\t\t\r\n\t\t\t}else {\r\n\t\t\t\tif(isNULL(\$(\"#urlfile\").val())){\r\n\t\t\t\t\talert(\"请填写远程文件\");\r\n\t\t\t\t\t\$(\"#urlfile\").focus();\r\n\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t\telse if(!reg.test(\$(\"#urlfile\").val()))\r\n\t\t\t\t{\r\n\t\t\t\t\talert(\"远程文件格式文件不对请使用“http”开头\");  \r\n\t\t\t\t\t\$(\"#urlfile\").focus();\r\n\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t \r\n\t ";
+				echo "';\r\n\t\t\tvar reg=/^.*?\\.(jpg|bmp|png|jpeg|gif|swf|JPG|BMP|PNG|JPEG|GIF|SWF)\$/;\r\n\t\t\tif(f=='up'){\r\n\t\t\t\tvar fileToUpload = \$(\"#imageurl\").val();\r\n\t\t\t\tif(isNULL(fileToUpload) &&  c=='createads'){\r\n\t\t\t\t\talert(\"请选择要上传的文件\"); \r\n\t\t\t\t\t\$(\"#imageurl\").focus();\r\n\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t\t \r\n\t\t\t\t\r\n\t\t\t}else {\r\n\t\t\t\tif(false){\r\n\t\t\t\t\talert(\"请上传图片\");\r\n\t\t\t\t\t\$(\"#urlfile\").focus();\r\n\t\t\t\t\treturn false;\r\n\t\t\t\t}\r\n\t\t\t\telse if(false)\r\n\t\t\t\t{\r\n\t\t\t\t\talert(\"远程文件格式文件不对请使用“http”开头\");  \r\n\t\t\t\t\t\$(\"#urlfile\").focus();\r\n\t\t\t\t\t\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t \r\n\t ";
 		}
 		else
 		{

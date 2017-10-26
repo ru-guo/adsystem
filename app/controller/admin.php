@@ -926,6 +926,10 @@ class Controller_Admin
         $adstypeid = $_REQUEST['adstypeid'];
         $planid = $_REQUEST['planid'];
         if ($actiontype == "postcreateads") {
+//            var_dump($_POST);
+//            echo '<br>';
+//            var_dump($_FILES);
+//			echo '<br>';
             $adsmodel = Z::getsingleton("model_adsclass");
             $post = $adsmodel->getuploadadsid("admin");
             redirect("do.php?action=ads&statetype=success");

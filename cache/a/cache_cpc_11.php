@@ -3,13 +3,13 @@
 $cache_contents   = array (
   0 => 
   array (
-    50 => 
+    48 => 
     array (
-      'adsid' => '50',
-      'imageurl' => '/a/2017-10-26/150898826938642578.jpg',
+      'adsid' => '48',
+      'imageurl' => '/a/2017-10-26/150898769160478516.jpg',
       'alt' => '',
       'url' => 'http://www.test.com',
-      'adstypeid' => '8',
+      'adstypeid' => '11',
       'priority' => '1',
       'htmlcode' => '',
       'width' => '0',
@@ -25,10 +25,10 @@ $cache_contents   = array (
     ),
   ),
   1 => 1,
-  2 => 50,
+  2 => 48,
 );
 
-$cache_name       = 'cpc_8_0_0';
-$cache_time       = 1508988268;
+$cache_name       = 'cpc_11';
+$cache_time       = 1508987690;
 $cache_complete   = true;
 

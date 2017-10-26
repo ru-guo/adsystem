@@ -586,11 +586,11 @@ class Model_UserClass extends Model_Ckuser
 				return $this->dbo->get_one( $sql );
 		}
 
-		public function tzoneuidrow( $nfuid )
-		{
-				$sql = "SELECT zoneid FROM zyads_zone Where uid=".( integer )$nfuid;
-				return $this->dbo->get_all( $sql );
-		}
+//		public function tzoneuidrow( $nfuid )
+//		{
+//				$sql = "SELECT zoneid FROM zyads_zone Where uid=".( integer )$nfuid;
+//				return $this->dbo->get_all( $sql );
+//		}
 
 		public function zyiisget( )
 		{
@@ -620,8 +620,8 @@ class Model_UserClass extends Model_Ckuser
 								foreach ( $uidarr as $uid )
 								{
 										$query = $this->dbo->query( "Delete From zyads_users Where uid =".( integer )$uid ).( "  ".$addsql );
-										$query = $this->dbo->query( "Delete From zyads_site Where uid =".( integer )$uid ).( "  ".$addsql );
-										$query = $this->dbo->query( "Delete From zyads_zone Where uid =".( integer )$uid ).( "  ".$addsql );
+						  //$query = $this->dbo->query( "Delete From zyads_site Where uid =".( integer )$uid ).( "  ".$addsql );
+
 										$this->delzoneidcache( $uid );
 								}
 						}
@@ -723,7 +723,7 @@ class Model_UserClass extends Model_Ckuser
 				$sql = "Update zyads_users SET cpcdeduction='".$cpcdeduction.( "',\r\n    \t\t\t\tcpmdeduction='".$cpmdeduction."',\r\n    \t\t\t\tcpadeduction='{$cpadeduction}',\r\n    \t\t\t\tcpsdeduction='{$cpsdeduction}',\r\n    \t\t\t\tcpvdeduction='{$cpvdeduction}',\r\n    \t\t\t\tquestion = '" ).$_POST['question']."',\r\n\t\t\t\t\tanswer  = '".$_POST['answer']."',\r\n\t\t\t\t\tcontact  = '".$_POST['contact']."',\r\n\t\t\t\t\ttel     = '".$_POST['tel']."',\r\n\t\t\t\t\tmobile  = '".$_POST['mobile']."',\r\n\t\t\t\t\tqq = '".$_POST['qq']."',\r\n\t\t\t\t\temail = '".$_POST['email']."',\r\n\t\t\t\t\tcompany = '".$_POST['company']."',\r\n\t\t\t\t\tcompanyinfo = '".$_POST['company_info'].( "',\r\n    \t\t\t\tbank='".$bank.( "',\r\n    \t\t\t\tbankname='{$bankname}',\r\n    \t\t\t\tbankacc='{$bankacc}',\r\n    \t\t\t\taccountname='{$accountname}',\r\n    \t\t\t\tpvstep='{$pvstep}',\r\n    \t\t\t\tstatus='{$statustype}',\r\n    \t\t\t\tuserinfo='{$userinfo}',\r\n    \t\t\t\tcpczlink='{$cpczlink}',\r\n    \t\t\t\tcpmzlink='{$cpmzlink}',\r\n    \t\t\t\tcpazlink='{$cpazlink}',\r\n    \t\t\t\tcpszlink='{$cpszlink}',\r\n    \t\t\t\tinsite='{$insite}',\r\n    \t\t\t\tserviceid='{$serviceid}',\r\n    \t\t\t\trecommend='{$recommend}' \r\n    \t\t\t\t{$password} Where uid={$nfuid}" ) );
 				//echo $sql;die();
 				$query = $this->dbo->query( $sql );
-				$this->delzoneidcache( $nfuid );
+				//$this->delzoneidcache( $nfuid );
 		}
 
 		public function tuserstatusinfo( )
@@ -843,21 +843,7 @@ class Model_UserClass extends Model_Ckuser
 
 		public function delzoneidcache( $uid, $sync = TRUE )
 		{
-				require_once( APP_DIR."/client/makecache1.php" );
-				$sitemodel = Z::getsingleton( "model_siteclass" );
-				$zarr = $sitemodel->tzoneuidrow( $uid );
-				foreach ( ( array )$zarr as $z )
-				{
-						delzoneidcache( $z['zoneid'] );
-				}
-				if ( $sync && $GLOBALS['C_ZYIIS']['sync_setting'] )
-				{
-						$server = explode( ",", $GLOBALS['C_ZYIIS']['sync_setting'] );
-						foreach ( $server as $key => $val )
-						{
-								file_get_contents( "http://".$val.( "/api/synccache.php?type=users&id=".$uid ) );
-						}
-				}
+
 		}
 
 		public function siteurlaccount( )

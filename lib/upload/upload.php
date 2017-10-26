@@ -116,6 +116,7 @@ class upload {
   public function extension($xstring, $ext) {
     $string = $imgext = "";
     $string = @fopen ( $xstring, "rb" );
+
     if ($string) {
       $string = @fread ( $string, 1024 );
       @fclose ( $string );

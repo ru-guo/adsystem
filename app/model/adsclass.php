@@ -315,7 +315,7 @@ class Model_AdsClass
 				return $b;
 		}
 
-		public function zyadsattch( )
+		public function zyadsattch($myfile)
 		{
 				$host = str_replace( "http://", "", $GLOBALS['C_ZYIIS']['imgurl'] );
 				$path = "/a/".date( "Y-m-d" )."/";
@@ -323,9 +323,10 @@ class Model_AdsClass
 				$config['allowed_types'] = "gif|jpg|png|swf|bmp";
 				$config['max_size'] = "500";
 				$config['file_name'] = time( ).random( 8 );
-				require( LIB_DIR."/upload/upload.php" );
+				require_once( LIB_DIR."/upload/upload.php" );
+
 				$uploader =& new upload( $config );
-				$uploader->up( "imageurl" );
+				$uploader->up( $myfile );
 				$up = $uploader->data( );
 				return $path.$up['file_name'];
 		}
@@ -371,10 +372,13 @@ class Model_AdsClass
 						$htmlcode = preg_replace( "/<a(.*?)href\\s*=\\s*(\\\\?['\"])\\s*http(.*?)\\2(.*?) *>/e", "'<a\$1href=\$2{clickurl}'.urlencode('http\$3').'\$2\$4 target=\"_blank\">'", $htmlcode );
 						$htmlcode = stripslashes( $htmlcode );
 				}
+				//上传图片
+			    $zyadsattch = $this->zyadsattch('imageurl');
+			    $urlfile = $zyadsattch;
 				if ( $files == "up" && $_FILES['imageurl']['error'] != 4 )
 				{
-						$zyadsattch = $this->zyadsattch( );
-						$urlfile = $zyadsattch;
+						$zyadsattch = $this->zyadsattch('imageurl1' );
+						$urlfile1 = $zyadsattch;
 				}
 				if ( $files == "url" )
 				{
@@ -384,6 +388,7 @@ class Model_AdsClass
 						"width" => $width,
 						"height" => $height,
 						"imageurl" => $urlfile,
+						"imageurl1" => $urlfile1,
 						"adstype" => $adstype,
 						"alt" => $alt,
 						"url" => $v,
@@ -457,15 +462,19 @@ class Model_AdsClass
 				$width = ( integer )$_POST['width'];
 				$height = ( integer )$_POST['height'];
 				$disscreen = $_POST['disscreen'];
-				if ( $files == "up" && $_FILES['imageurl']['error'] != 4 )
-				{
-						$file_name = $this->zyadsattch( );
-						$imageurl = $file_name;
-				}
-				if ( $files == "url" )
-				{
-						$imageurl = $_POST['urlfile'];
-				}
+
+//上传
+//				$zyadsattch = $this->zyadsattch('imageurl');
+//				$urlfile = $zyadsattch;
+//				if ( $files == "up" && $_FILES['imageurl']['error'] != 4 )
+//				{
+//					$zyadsattch = $this->zyadsattch('imageurl1' );
+//					$urlfile1 = $zyadsattch;
+//				}
+//				if ( $files == "url" )
+//				{
+//						$imageurl = $_POST['urlfile'];
+//				}
 				foreach ( ( array )$htmlcontrol as $h )
 				{
 						if ( $type != "admin" && $h == "width" && $h == "height" && !( $olddata['imageurl'] != "" ) || $imageurl && !( $h == "imageurl" ) || $oldrow[$h] != $$h )
