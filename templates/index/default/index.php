@@ -287,14 +287,14 @@ $tip1.prepend("[置顶]");
           <div class="boxRightWeb">
         <h2 class="tit_h2">渠道商客服</h2>
         <ul>
-              <li><span class="nickName">客服:</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1395550247&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
-              <li><span class="nickName">客服:</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1395550247&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
-              <li><span class="nickName">客服:</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1395550247&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
-              <li><span class="nickName">客服:</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1395550247&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
+              <li><span class="nickName">客服:</span><a target="_blank" href="#"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
+              <li><span class="nickName">客服:</span><a target="_blank" href="#"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
+              <li><span class="nickName">客服:</span><a target="_blank" href="#"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
+              <li><span class="nickName">客服:</span><a target="_blank" href="#"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
             </ul>
         <h2 class="tit_h2">广告主客服</h2>
         <ul>
-              <li><span class="nickName">客服:</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1395550247&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
+              <li><span class="nickName">客服:</span><a target="_blank" href="#"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
               <li><span class="nickName">客服:</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1395550247&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1395550247:51" alt="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>客服"/></a></li>
             </ul>
       </div>
@@ -311,7 +311,7 @@ $tip1.prepend("[置顶]");
       <div class="borderbox flow fl" id="line">
     <div class="adv">
           <h3>合作媒体</h3>
-          <ul>
+          <ul style="display: none">
         <li><img src="templates/index/default/images/1-1.png" ></li>
         <li><img src="templates/index/default/images/1-1.png" ></li>
         <li><img src="templates/index/default/images/1-1.png" ></li>
@@ -325,14 +325,14 @@ $tip1.prepend("[置顶]");
 <div class="layout block">
       <h1 class="tit_h1"></h1>
       <div class="borderbox flow fl">
-    <div class="link"><span>友情链接：</span>
-<a target="_blank" href="http://www.heiniubao.com/">黑牛保险</a>
-<a target="_blank" href="http://www.heiniubao.com/activity/dd_redirect1">黑牛福利社</a>
-<a target="_blank" href="#">广告联盟</a> 
-<a target="_blank" href="#">手机广告联盟</a>
-    </div>
-  </div>
- </div>
+        <div class="link"><span>友情链接：</span>
+            <a target="_blank" href="http://www.heiniubao.com/">黑牛保险</a>
+            <a target="_blank" href="http://www.heiniubao.com/activity/dd_redirect1">黑牛福利社</a>
+            <a target="_blank" href="#">广告联盟</a>
+            <a target="_blank" href="#">手机广告联盟</a>
+        </div>
+      </div>
+</div>
 
 <!--Flowchart Over-->
 

@@ -41,7 +41,7 @@
 
 <div class="header-wrap">
       <div class="layout header-inner">
-    <div class="header-inner-left"> <a class="logo" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>" href="/" > <img src="/images/logo_head1.png"  width='200' height = '60' alt="<?php echo $GLOBALS['C_ZYIIS']['sitename'] ?>"  title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>"></a>
+    <div class="header-inner-left"> <a class="logo" title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>" href="/" > <img src="/images/logo_head1.png"  width='170'  alt="<?php echo $GLOBALS['C_ZYIIS']['sitename'] ?>"  title="<?php echo $GLOBALS['C_ZYIIS']['sitename']?>"></a>
           <div class="nav">
         <ul>
               <li>

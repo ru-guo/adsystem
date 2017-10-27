@@ -17,13 +17,13 @@ echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\r\n<html>
 echo Z_TPL;
 echo "/images/style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<title>联盟管理后台</title>\r\n</head>\r\n<body>\r\n<div id=\"header-div\">\r\n  <div id=\"logo-div\"> <a href=\"do.php\"><img src=\"/templates/";
 echo Z_TPL;
-echo "/images/admin_logo.jpg\" border=\"0\"></a> </div>\r\n  <div id=\"menu-div\">\r\n    <ul>\r\n      <li  id=\"menu-active\"><a href=\"do.php?action=setting\" ";
+echo "/images/admin_logo.jpg\" height=\"62\"  border=\"0\"></a> </div>\r\n  <div id=\"menu-div\">\r\n    <ul>\r\n      <li  id=\"menu-active\" style='display: none'><a href=\"do.php?action=setting\" ";
 if ($action == "setting") {
     echo " class=\"action\"";
 }
 echo "> <img src=\"/templates/";
 echo Z_TPL;
-echo "/images/icon-settings.jpg\" border=\"0\"> <span class=\"text\">基本设置</span></a></li>\r\n      <li><a href=\"do.php?action=advertiser\"  ";
+echo "/images/icon-settings.jpg\" border=\"0\"> <span class=\"text\">基本设置</span></a></li>\r\n \r\n\r\n\r\n\r\n     <li><a href=\"do.php?action=advertiser\"  ";
 if (in_array($action, array(
     "affiliate",
     "advertiser",

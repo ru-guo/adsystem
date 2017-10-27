@@ -29,7 +29,7 @@ if ($type == "copyright") {
 } else {
 	echo "link";
 }
-echo "\"> <a   href=\"do.php?action=index&type=copyright\"><span>版权所有</span></a> </li>\t\t \r\n\t\t\t\t\t";
+echo " \"> <a   href=\"do.php?action=index&type=copyright\" style=\"display:none;\"><span>版权所有</span></a> </li>\t\t \r\n\t\t\t\t\t";
 if (PHP_OS == "Linux") {
 	echo "\t\t\t\t\t<li class=\"";
 	if ($type == "server") {
