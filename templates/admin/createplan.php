@@ -110,52 +110,18 @@ else
 {
 		echo "元";
 }
-echo "</span><br />\r\n                          <span class=\"gray\">每/IP广告商愿意支付的最高费用。</span></td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td height=\"30\" valign=\"top\">网站主单价</td>\r\n                        <td><input type=\"radio\" name=\"gradeprice\" value=\"0\" onclick=\"sPrice(0)\"  ";
-if ( $plan['gradeprice'] == "0" || !$plan )
-{
-		echo "checked";
-}
-echo "/>\r\n不分网站等级\r\n  <input type=\"radio\" name=\"gradeprice\" value=\"1\" onclick=\"sPrice(1)\" ";
-if ( $plan['gradeprice'] == "1" )
-{
-		echo "checked";
-}
-echo "/>\r\n按网站等级\r\n  <table width=\"90%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\r\n\r\n                           <div  id=\"s_price\" ";
-if ( $plan['gradeprice'] == "1" )
-{
-		echo "style='display:none'";
-}
-echo "> \r\n                              &nbsp; ￥\r\n                              <input name=\"price\" type=\"text\" id=\"price\" size=\"8\"  value=\"1";
+echo "</span><br />\r\n                          <span class=\"gray\">每/IP广告商愿意支付的最高费用。</span></td>\r\n                      </tr>\r\n <tr>\r\n                        <td width=\"100\" height=\"40\" valign=\"top\">实际广告商单价(实际arpu值)</td>\r\n                        <td>￥\r\n                          <input name=\"price\" type=\"text\" id=\"price\" size=\"8\"  value=\"";
 echo $plan['price'] ? abs( $plan['price'] ) : "";
-echo "\"/>\r\n                              <font color=\"#FF0000\"> <span id='minprices'></span> </font> \r\n                             \r\n                            </div>\r\n                          <tr  id=\"s0_price\"  ";
-if ( $plan['gradeprice'] == "0" || !$plan )
+echo "\"/>\r\n                          <span id='plan_p'>";
+if ( $plan['plantype'] == "cps" )
 {
-		echo "style='display:none'";
+		echo "%";
 }
-echo ">\r\n                            <td width=\"8%\" align=\"center\" height=\"25\">0星级</td>\r\n                            <td width=\"92%\">￥\r\n                              <input name=\"s0price\" type=\"text\" id=\"s0price\"  value=\"";
-echo $plan['s0price'] ? abs( $plan['s0price'] ) : "";
-echo "\" size=\"8\"/></td>\r\n                          </tr>\r\n                           <tr  id=\"s1_price\"  ";
-if ( $plan['gradeprice'] == "0" || !$plan )
+else
 {
-		echo "style='display:none'";
+		echo "元";
 }
-echo ">\r\n                            <td align=\"center\" height=\"25\">1星级</td>\r\n                            <td>￥\r\n                              <input name=\"s1price\" type=\"text\" id=\"s1price\" size=\"8\"  value=\"";
-echo $plan['s1price'] ? abs( $plan['s1price'] ) : "";
-echo "\"/></td>\r\n                          </tr>\r\n                          <tr  id=\"s2_price\"  ";
-if ( $plan['gradeprice'] == "0" || !$plan )
-{
-		echo "style='display:none'";
-}
-echo ">\r\n                            <td align=\"center\" height=\"25\">2星级</td>\r\n                            <td>￥\r\n                              <input name=\"s2price\" type=\"text\" id=\"s2price\" size=\"8\"  value=\"";
-echo $plan['s2price'] ? abs( $plan['s2price'] ) : "";
-echo "\"/></td>\r\n                          </tr>\r\n                          <tr  id=\"s3_price\"  ";
-if ( $plan['gradeprice'] == "0" || !$plan )
-{
-		echo "style='display:none'";
-}
-echo ">\r\n                            <td align=\"center\" height=\"25\">3星级</td>\r\n                            <td>￥\r\n                              <input name=\"s3price\" type=\"text\" id=\"s3price\" size=\"8\"  value=\"";
-echo $plan['s3price'] ? abs( $plan['s3price'] ) : "";
-echo "\"/></td>\r\n                            </tr>\r\n                        </table>\r\n                         \r\n                        <span class=\"gray\">联盟愿意支付给网站主的最高费用。</span></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"60\" valign=\"top\"><span class=\"t14b\">每日限额</span></td>\r\n                        <td>￥\r\n                          <input name=\"budget\" type=\"text\" id=\"budget\"  size=\"8\" value=\"";
+echo "</span><br />\r\n                          <span class=\"gray\">每/IP广告商实际支付的最高费用。</span></td>\r\n                      </tr>\r\n                                           <tr>\r\n                        <td height=\"60\" valign=\"top\"><span class=\"t14b\">每日限额</span></td>\r\n                        <td>￥\r\n                          <input name=\"budget\" type=\"text\" id=\"budget\"  size=\"8\" value=\"";
 echo $plan['budget'];
 echo "\"/>\r\n                          元<br />\r\n                          <span class=\"gray\">每日预算控制您的费用。总体而言，在达到每日预算限额时，您的广告就会在当天停止展示</span></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\" valign=\"top\">价格说明</td>\r\n                        <td><input name=\"priceinfo\" type=\"text\" id=\"priceinfo\"  value=\"";
 echo $plan['priceinfo'];
