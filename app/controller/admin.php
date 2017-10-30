@@ -598,7 +598,7 @@ class Controller_Admin
 
     public function actioncreateplan()
     {
-
+        //var_dump($_POST);die();
         $action = $_REQUEST['action'];
         $actiontype = $_REQUEST['actiontype'];
         $plancla = Z::getsingleton("model_planclass");
@@ -650,6 +650,7 @@ class Controller_Admin
         $sitetypemodel = Z::getsingleton("model_sitetypeclass");
         $adstypemodel = Z::getsingleton("model_adstypeclass");
         if ($actiontype == "postupplan") {
+//			var_dump($_POST['acl']);die();
             $planmodel->aclsplan("admin");
             $redurl = $_SERVER['HTTP_REFERER'];
             $redurl .= strstr($redurl, "?") ? "" : "?";
@@ -687,7 +688,7 @@ class Controller_Admin
         }
         $sitetype = $sitetypemodel->tsitetypeparents();
         $parentid = $sitetypemodel->getsitetypeparentzone();
-
+//        var_dump($plan['expire']);die();
         require(TPL_DIR . "/createplan.php");
     }
 
@@ -2434,6 +2435,49 @@ class Controller_Admin
             "statetype" => $statetype
         );
         Z::zrequire(TPL_DIR . "/db.php", $array);
+    }
+
+    //增加渠道对应的广告计划
+    public function actionchannel(){
+        $actiontype = $_REQUEST['actiontype'];
+        $channel = Z::getsingleton("model_channelclass");
+		if($actiontype=="addchannel"){
+			redirect("do.php?action=addchannel");
+		}
+		if($actiontype=="upchannel"){
+			redirect("do.php?action=upchannel");
+		}
+
+        if($actiontype=="add"){
+            if(!$channel->addchannel()){
+
+                redirect("do.php?action=channel&statetype=fail");
+            };
+			redirect("do.php?action=channel&statetype=success");
+        }
+
+		if($actiontype=="updata"){
+			if(!$channel->upchannel()){
+
+				redirect("do.php?action=channel&statetype=fail");
+			};
+			redirect("do.php?action=channel&statetype=success");
+		}
+		if($actiontype=="del"){
+			if(!$channel->delchannel()){
+
+				redirect("do.php?action=channel&statetype=fail");
+			};
+			redirect("do.php?action=channel&statetype=success");
+		}
+		$channeldata = $channel->show();
+		$array = array(
+
+			"actiontype" => $actiontype,
+			"channeldata" => $channeldata
+		);
+		Z::zrequire(TPL_DIR . "/db.php", $array);
+
     }
 
     public function actionscancheat()
