@@ -134,7 +134,7 @@ if ( $sortingtype == "budget" )
 {
 		echo "selected";
 }
-echo ">每日限额</option>\r\n                    </select>\r\n                    <input type=\"submit\" name=\"Submit2\" value=\"排序\" class=\"submit-x\">\r\n                  </form> \r\n                  <form action=\"?action=";
+echo ">点击上限</option>\r\n                    </select>\r\n                    <input type=\"submit\" name=\"Submit2\" value=\"排序\" class=\"submit-x\">\r\n                  </form> \r\n                  <form action=\"?action=";
 echo $action;
 echo "&actiontype=search\" method=\"post\">\r\n                    <input name=\"searchval\" type=\"text\" class=\"reg\" id=\"searchval\" value=\"";
 echo $searchval;
@@ -155,7 +155,7 @@ if ( $searchtype == "1" )
 }
 echo ">计划名称</option>\r\n                    </select>\r\n                    <input type=\"submit\" name=\"Submit22\" value=\"搜索\" class=\"submit-x\"/>\r\n                  </form></td>\r\n\t\t\t\t  \r\n              </tr>\r\n              <tr>\r\n                <td><form id=\"form\" name=\"form\" method=\"post\" action=\"do.php?action=";
 echo $action;
-echo "&actiontype=postchoose\">\r\n                    <input name=\"choosetype\"  id=\"choosetype\"  type=\"hidden\" value=\"\" />\r\n                    \r\n                    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"5\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"50\">Id</td>\r\n                        <td width=\"120\">计划名称</td>\r\n                        <td width=\"55\">类型</td>\r\n                        <td width=\"75\">广告商</td>\r\n                        <td width=\"60\">单价</td>\r\n                        <td width=\"60\">限额</td>\r\n                        <td width=\"60\">结算</td>\r\n                        <td width=\"60\">扣量</td>\r\n\r\n                        <td width=\"60\">补量</td>\r\n                        <td width=\"70\">已结算</td>\r\n                        <td width=\"60\" align=\"center\">定向</td>\r\n                        <td width=\"80\">会员限制</td>\r\n                        <td width=\"60\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"6\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                        ";
+echo "&actiontype=postchoose\">\r\n                    <input name=\"choosetype\"  id=\"choosetype\"  type=\"hidden\" value=\"\" />\r\n                    \r\n                    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"5\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"50\">Id</td>\r\n                        <td width=\"120\">计划名称</td>\r\n                        <td width=\"55\">类型</td>\r\n                        <td width=\"75\">广告商</td>\r\n                        <td width=\"60\">单价</td>\r\n                        <td width=\"60\">点击上限</td>\r\n                                             <td width=\"70\">报表查看</td>\r\n                        <td width=\"60\" align=\"center\">定向</td>\r\n                        <td width=\"80\">会员限制</td>\r\n                        <td width=\"60\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"6\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                        ";
 foreach ( ( array )$plan as $p )
 {
 		$user = $usermodel->getusersuidrow( $p['uid'] );
@@ -186,7 +186,7 @@ foreach ( ( array )$plan as $p )
 		echo "</a>\r\n        ";
 		if ( $user['money'] < 200 )
 		{
-				echo "<br><font color=\"#FF0000\">￥".round( $user['money'], 1 )."</font>";
+				echo "<br><font color=\"#FF0000\">".round( $user['money'], 1 )."</font>";
 		}
 		echo "\t\t</td>\r\n                        <td>\r\n\t\t\t\t\t\t";
 		if ( $p['gradeprice'] )
@@ -206,27 +206,10 @@ foreach ( ( array )$plan as $p )
 		{
 				echo "% ";
 		}
-		echo "</font>\t\t\t\t\t\t</td>\r\n                        <td>￥";
+		echo "</font>\t\t\t\t\t\t</td>\r\n                        <td>";
 		echo abs( $p['budget'] );
-		echo "</td>\r\n                        <td>";
-		if ( $p['clearing'] == "day" )
-		{
-				echo "日结";
-		}
-		if ( $p['clearing'] == "week" )
-		{
-				echo "周结";
-		}
-		if ( $p['clearing'] == "month" )
-		{
-				echo "月结";
-		}
-		echo "\t\t\t\t\t\t</td>\r\n                        <td>";
-		echo abs( $p['deduction'] );
-		echo "%</td>\r\n                        \t\t\t\t\t\t\r\n                        <td>";
-		echo abs( $p['dosage'] );
-		echo "%</td>\r\n                       <td> ";
-		echo ( integer )$vn['n'];
+		echo "</td>\r\n                                   <td> ";
+		
 		echo "<br><a href=\"do.php?action=stats&timerange=a&planid=";
 		echo $p['planid'];
 		echo "\">报表</a></td>\r\n                        <td align=\"center\">";
@@ -323,19 +306,8 @@ foreach ( ( array )$plan as $p )
 		echo $p['planid'];
 		echo "\" title=\"查看这个计划下所有广告\">查看广告";
 		echo "<font color=\"gray\">(".$planmodel->gxgetplanadsnum( $p['planid'] ).")</font>";
-		echo "</a> | ";
-		if ( !in_array( $p['plantype'], array( "cps", "cpa" ) ) )
-		{
-				echo "<a href=\"#TB_inline?&height=250&width=630&inlineId=Tod2cHtml\" onclick=\"Doeff(";
-				echo $p['planid'];
-				echo ")\" title=\"铺助代码\"   class=\"thickbox\">获取二次点击或跟踪代码</a>";
-		}
-		else
-		{
-				echo "<a href=\"#TB_inline?&height=100&width=630&inlineId=ToCpsaHtml\" onclick=\"ToCpsa('";
-				echo $p['plantype'];
-				echo "')\" title=\"获取CPS CPA的跟踪代码\"   class=\"thickbox\">获取接口代码</a>";
-		}
+		echo "</a>  ";
+		
 		if ( $p['audit'] == "y" )
 		{
 				if ( $p['stopaudit'] == "1" )
@@ -355,7 +327,7 @@ foreach ( ( array )$plan as $p )
 		echo $p['expire'] != "0000-00-00" ? "过期：".$p['expire'] : "&nbsp;";
 		echo "</font></td>\r\n                        <td  class=\"td_b_5\">&nbsp;</td>\r\n                      </tr>\r\n                      ";
 }
-echo "                      <tr class=\"td_b_7\">\r\n                        <td height=\"33\"  class=\"td_b_6\" >&nbsp;</td>\r\n                        <td  ><input type=\"checkbox\" name=\"chkallde\" onclick=\"checkall(this.form, 'uid','chkallde')\" /></td>\r\n                        <td>Id</td>\r\n                        <td>计划名称</td>\r\n                        <td>类型</td>\r\n                        <td>广告商</td>\r\n                        <td>单价</td>\r\n                        <td>限额</td>\r\n                        <td>结算</td>\r\n                        <td>扣量</td>\r\n                        <td>已结算</td>\r\n                        <td align=\"center\">定向</td>\r\n                        <td>会员限制</td>\r\n                        <td>需要审核</td>\r\n                        <td>状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <td width=\"6\"  class=\"td_b_8\">&nbsp;</td>\r\n                      </tr>\r\n                    </table>\r\n            \r\n                  </form></td>\r\n              </tr>\r\n              <tr>\r\n                <td height=\"50\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n                    <tr>\r\n                      <td width=\"200\"><select name=\"select\" class=\"select\" onchange=\"\$i('choosetype').value=this.value\">\r\n                    <option>批量操作</option>\r\n                    <option value=\"unlock\">激活</option>\r\n                    <option value=\"lock\">停止</option>\r\n                    <option value=\"del\">删除</option>\r\n                  </select>\r\n                        <input type=\"button\" name=\"Submit3\" value=\"提交\" class=\"submit-x\" onclick=\"choose();\"/></td>\r\n                      <td align=\"right\">";
+echo "                      <tr class=\"td_b_7\">\r\n                        <td height=\"33\"  class=\"td_b_6\" >&nbsp;</td>\r\n                        <td  ><input type=\"checkbox\" name=\"chkallde\" onclick=\"checkall(this.form, 'uid','chkallde')\" /></td>\r\n                        <td>Id</td>\r\n                        <td>计划名称</td>\r\n                        <td>类型</td>\r\n                        <td>广告商</td>\r\n                        <td>单价</td>\r\n                        <td>点击上限</td>\r\n                        <td>报表查看</td>\r\n                        <td align=\"center\">定向</td>\r\n                        <td>会员限制</td>\r\n                                              <td>状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <td width=\"6\"  class=\"td_b_8\">&nbsp;</td>\r\n                      </tr>\r\n                    </table>\r\n            \r\n                  </form></td>\r\n              </tr>\r\n              <tr>\r\n                <td height=\"50\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n                    <tr>\r\n                      <td width=\"200\"><select name=\"select\" class=\"select\" onchange=\"\$i('choosetype').value=this.value\">\r\n                    <option>批量操作</option>\r\n                    <option value=\"unlock\">激活</option>\r\n                    <option value=\"lock\">停止</option>\r\n                    <option value=\"del\">删除</option>\r\n                  </select>\r\n                        <input type=\"button\" name=\"Submit3\" value=\"提交\" class=\"submit-x\" onclick=\"choose();\"/></td>\r\n                      <td align=\"right\">";
 echo $viewpage;
 echo "</td>\r\n                    </tr>\r\n                  </table></td>\r\n              </tr>\r\n            </table></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n\r\n<div id=\"Tod2cHtml\" style=\"display:none\">\r\n    <table width=\"600\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\r\n      <tr>\r\n        <td height=\"30\">二次点击代码</td>\r\n      </tr>\r\n      <tr>\r\n        <td> \r\n          <textarea id=\"ck2\" name=\"ck2\" cols=\"75\" rows=\"2\"></textarea>        </td>\r\n      </tr>\r\n      <tr>\r\n        <td height=\"30\">效果跟踪代码</td>\r\n      </tr>\r\n      <tr>\r\n        <td><textarea name=\"eff\" id=\"eff\" cols=\"75\" rows=\"2\"></textarea></td>\r\n      </tr>\r\n      <tr>\r\n        <td>&nbsp;</td>\r\n      </tr>\r\n      <tr>\r\n        <td>二次点击：检测网民在点击或是弹出，到达广告页后是否有点击网页动作,简称二次点击。</td>\r\n      </tr>\r\n\t  <tr>\r\n        <td>&nbsp; </td>\r\n      </tr>\r\n\t  <tr>\r\n        <td>效果跟踪：比如跟踪广告到达页像弹出1000次是否有真实到达到广告页1000次，如弹出后统计注册量。</td>\r\n      </tr>\r\n\t  <tr>\r\n        <td>&nbsp; </td>\r\n      </tr>\r\n\t  <tr>\r\n        <td><font color=\"#FF0000\">如需要的话将以上代码发给广告商，嵌入到广告页中进行跟踪。</font></td>\r\n      </tr>\r\n\t  \r\n    </table>\r\n\r\n</div>\r\n\r\n<div id=\"ToCpsaHtml\" style=\"display:none\">\r\n    <table width=\"600\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\r\n      <tr>\r\n        <td height=\"30\">接口代码</td>\r\n      </tr>\r\n      <tr>\r\n        <td> \r\n          <textarea id=\"cpsain\" name=\"cpsain\" cols=\"75\" rows=\"3\"></textarea>\r\n        </td>\r\n      </tr>\r\n    </table>\r\n</div>\r\n<script language=\"JavaScript\" type=\"text/javascript\">\r\nfunction Doeff(planid){\r\n\tvar url;\r\n\turl = '<'+'script src=\"";
 echo $GLOBALS['C_ZYIIS']['jumpurl'];
