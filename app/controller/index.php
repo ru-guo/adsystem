@@ -270,7 +270,7 @@ class Controller_Index
 
 	public function actionmessage()
 	{
-		$t = h($_GET['t']);
+		$t = $_GET['t'];
 		require(TPL_DIR . "/message.php");
 	}
 
