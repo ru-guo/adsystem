@@ -4,9 +4,9 @@
     <list default="true" id="be3dabbf-bdde-4f40-be96-039c9122c46e" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/admin.php" afterPath="$PROJECT_DIR$/app/controller/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/planclass.php" afterPath="$PROJECT_DIR$/app/model/planclass.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/createplan.php" afterPath="$PROJECT_DIR$/templates/admin/createplan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/header.php" afterPath="$PROJECT_DIR$/templates/admin/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/statsclass.php" afterPath="$PROJECT_DIR$/app/model/statsclass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/dberrorlog.20171101.php" afterPath="$PROJECT_DIR$/log/dberrorlog.20171101.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/dberrortime.20171101.log" afterPath="$PROJECT_DIR$/log/dberrortime.20171101.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,12 +16,76 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controller/admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="1802" column="57" lean-forward="false" selection-start-line="1802" selection-start-column="57" selection-end-line="1802" selection-end-column="57" />
+              <folding>
+                <marker date="1509524881653" expanded="true" signature="41369:41399" ph="..." />
+                <marker date="1509524881653" expanded="true" signature="96023:96063" ph="SELECT zonei... zyads_zone" />
+                <marker date="1509524881653" expanded="true" signature="97270:97728" ph="SELECT id,zo... " />
+                <marker date="1509524881653" expanded="true" signature="97751:97857" ph="SELECT COUNT... siteid" />
+                <marker date="1509524881653" expanded="true" signature="97778:97854" ph="SELECT sitei... zyads_cheat" />
+                <marker date="1509524881653" expanded="true" signature="100747:100859" ph="SELECT sitei... zyads_site" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statsclass.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/model/statsclass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+              <folding>
+                <marker date="1509524847840" expanded="true" signature="1583:1659" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="1845:1884" ph="Delete From " />
+                <marker date="1509524847840" expanded="true" signature="2539:2627" ph="Delete From " />
+                <marker date="1509524847840" expanded="true" signature="5476:5624" ph="SELECT count... zyads_users" />
+                <marker date="1509524847840" expanded="true" signature="6067:6156" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="6924:7016" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="7788:7881" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="8130:8218" ph="SELECT sum(s... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="8348:8609" ph="SELECT sum(n... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="8728:8847" ph="SELECT sum( zyads_users" />
+                <marker date="1509524847840" expanded="true" signature="8980:9106" ph="SELECT sum( zyads_users" />
+                <marker date="1509524847840" expanded="true" signature="9312:9382" ph="SELECT * FRO... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="9400:9482" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="9858:9962" ph="SELECT * FRO... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="9992:10076" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="10339:10598" ph="SELECT sum(v... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="10618:10700" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="10798:10962" ph="SELECT s.* F... zyads_planstats" />
+                <marker date="1509524847840" expanded="true" signature="11143:11249" ph="SELECT * FRO... zyads_planstats" />
+                <marker date="1509524847840" expanded="true" signature="11269:11359" ph="SELECT count... zyads_planstats" />
+                <marker date="1509524847840" expanded="true" signature="12032:12229" ph="SELECT sum(n... " />
+                <marker date="1509524847840" expanded="true" signature="12249:12358" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="12466:12638" ph="SELECT sum(n... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="12660:12767" ph="SELECT count... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="13541:13890" ph="SELECT sum(n... zyads_users" />
+                <marker date="1509524847840" expanded="true" signature="13919:14090" ph="SELECT count... zyads_users" />
+                <marker date="1509524847840" expanded="true" signature="14348:14397" ph="SELECT sum(v... zyads_planstats" />
+                <marker date="1509524847840" expanded="true" signature="14569:14729" ph="SELECT s.sit... zyads_users" />
+                <marker date="1509524847840" expanded="true" signature="17780:17892" ph="SELECT count... " />
+                <marker date="1509524847840" expanded="true" signature="19402:19669" ph="SELECT * FRO... zyads_orders" />
+                <marker date="1509524847840" expanded="true" signature="19782:19917" ph="SELECT * FRO... zyads_orders" />
+                <marker date="1509524847840" expanded="true" signature="21949:22028" ph="SELECT sum(v... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="22235:22322" ph="SELECT sum(v... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="22502:22573" ph="SELECT sum(s... zyads_stats" />
+                <marker date="1509524847840" expanded="true" signature="22689:22865" ph="SELECT sum(s... zyads_planstats" />
+                <marker date="1509524847840" expanded="true" signature="23242:23316" ph="SELECT count... zyads_adsip" />
+                <marker date="1509524847840" expanded="true" signature="23578:23618" ph="Delete From " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>图片</find>
-      <find>createads</find>
       <find>getadrow</find>
       <find>upload_no_ext6</find>
       <find>actioneditads</find>
@@ -50,6 +114,8 @@
       <find>setplancheckplan</find>
       <find>申请审核</find>
       <find>top</find>
+      <find>adsplanstatussqlsnums</find>
+      <find>actionstats</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -89,8 +155,9 @@
         <option value="$PROJECT_DIR$/app/controller/index.php" />
         <option value="$PROJECT_DIR$/templates/admin/header.php" />
         <option value="$PROJECT_DIR$/templates/admin/createplan.php" />
-        <option value="$PROJECT_DIR$/app/controller/admin.php" />
         <option value="$PROJECT_DIR$/app/model/planclass.php" />
+        <option value="$PROJECT_DIR$/app/model/statsclass.php" />
+        <option value="$PROJECT_DIR$/app/controller/admin.php" />
       </list>
     </option>
   </component>
@@ -130,6 +197,23 @@
             <path>
               <item name="adsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="adsystem" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="adsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adsystem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="adsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adsystem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="adsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adsystem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -176,17 +260,18 @@
       <workItem from="1509328598665" duration="17279000" />
       <workItem from="1509414691222" duration="3870000" />
       <workItem from="1509503118246" duration="4523000" />
-      <workItem from="1509509023518" duration="9000" />
+      <workItem from="1509509023518" duration="1799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95787000" />
+    <option name="totallyTimeSpent" value="97577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09914712" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09914712" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -219,7 +304,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controller/2.php" />
     <entry file="file://$PROJECT_DIR$/app/controller/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1577">
@@ -496,21 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="610" column="56" lean-forward="true" selection-start-line="610" selection-start-column="40" selection-end-line="610" selection-end-column="56" />
-          <folding>
-            <marker date="1509506405899" expanded="true" signature="41369:41399" ph="..." />
-            <marker date="1509506405899" expanded="true" signature="96022:96062" ph="SELECT zonei... zyads_zone" />
-            <marker date="1509506405899" expanded="true" signature="97269:97727" ph="SELECT id,zo... " />
-            <marker date="1509506405899" expanded="true" signature="97750:97856" ph="SELECT COUNT... siteid" />
-            <marker date="1509506405899" expanded="true" signature="97777:97853" ph="SELECT sitei... zyads_cheat" />
-            <marker date="1509506405899" expanded="true" signature="100746:100858" ph="SELECT sitei... zyads_site" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/planclass.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -564,6 +633,67 @@
             <marker date="1509506598659" expanded="true" signature="31838:31884" ph="Update zyads... " />
             <marker date="1509506598659" expanded="true" signature="32231:32276" ph="Update zyads... " />
             <marker date="1509506598659" expanded="true" signature="33267:33605" ph="Update zyads... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="1802" column="57" lean-forward="false" selection-start-line="1802" selection-start-column="57" selection-end-line="1802" selection-end-column="57" />
+          <folding>
+            <marker date="1509524881653" expanded="true" signature="41369:41399" ph="..." />
+            <marker date="1509524881653" expanded="true" signature="96023:96063" ph="SELECT zonei... zyads_zone" />
+            <marker date="1509524881653" expanded="true" signature="97270:97728" ph="SELECT id,zo... " />
+            <marker date="1509524881653" expanded="true" signature="97751:97857" ph="SELECT COUNT... siteid" />
+            <marker date="1509524881653" expanded="true" signature="97778:97854" ph="SELECT sitei... zyads_cheat" />
+            <marker date="1509524881653" expanded="true" signature="100747:100859" ph="SELECT sitei... zyads_site" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/statsclass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding>
+            <marker date="1509524847840" expanded="true" signature="1583:1659" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="1845:1884" ph="Delete From " />
+            <marker date="1509524847840" expanded="true" signature="2539:2627" ph="Delete From " />
+            <marker date="1509524847840" expanded="true" signature="5476:5624" ph="SELECT count... zyads_users" />
+            <marker date="1509524847840" expanded="true" signature="6067:6156" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="6924:7016" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="7788:7881" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="8130:8218" ph="SELECT sum(s... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="8348:8609" ph="SELECT sum(n... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="8728:8847" ph="SELECT sum( zyads_users" />
+            <marker date="1509524847840" expanded="true" signature="8980:9106" ph="SELECT sum( zyads_users" />
+            <marker date="1509524847840" expanded="true" signature="9312:9382" ph="SELECT * FRO... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="9400:9482" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="9858:9962" ph="SELECT * FRO... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="9992:10076" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="10339:10598" ph="SELECT sum(v... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="10618:10700" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="10798:10962" ph="SELECT s.* F... zyads_planstats" />
+            <marker date="1509524847840" expanded="true" signature="11143:11249" ph="SELECT * FRO... zyads_planstats" />
+            <marker date="1509524847840" expanded="true" signature="11269:11359" ph="SELECT count... zyads_planstats" />
+            <marker date="1509524847840" expanded="true" signature="12032:12229" ph="SELECT sum(n... " />
+            <marker date="1509524847840" expanded="true" signature="12249:12358" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="12466:12638" ph="SELECT sum(n... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="12660:12767" ph="SELECT count... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="13541:13890" ph="SELECT sum(n... zyads_users" />
+            <marker date="1509524847840" expanded="true" signature="13919:14090" ph="SELECT count... zyads_users" />
+            <marker date="1509524847840" expanded="true" signature="14348:14397" ph="SELECT sum(v... zyads_planstats" />
+            <marker date="1509524847840" expanded="true" signature="14569:14729" ph="SELECT s.sit... zyads_users" />
+            <marker date="1509524847840" expanded="true" signature="17780:17892" ph="SELECT count... " />
+            <marker date="1509524847840" expanded="true" signature="19402:19669" ph="SELECT * FRO... zyads_orders" />
+            <marker date="1509524847840" expanded="true" signature="19782:19917" ph="SELECT * FRO... zyads_orders" />
+            <marker date="1509524847840" expanded="true" signature="21949:22028" ph="SELECT sum(v... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="22235:22322" ph="SELECT sum(v... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="22502:22573" ph="SELECT sum(s... zyads_stats" />
+            <marker date="1509524847840" expanded="true" signature="22689:22865" ph="SELECT sum(s... zyads_planstats" />
+            <marker date="1509524847840" expanded="true" signature="23242:23316" ph="SELECT count... zyads_adsip" />
+            <marker date="1509524847840" expanded="true" signature="23578:23618" ph="Delete From " />
           </folding>
         </state>
       </provider>

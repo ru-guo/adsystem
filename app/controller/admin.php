@@ -1808,6 +1808,7 @@ class Controller_Admin
         $page->url = $url;
         $stats = $page->parse_sqls($statssql, $statsmodel->dbo);
         $viewpage = $page->navbar();
+
         require(TPL_DIR . "/stats.php");
     }
 

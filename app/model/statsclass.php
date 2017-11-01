@@ -32,7 +32,7 @@ class Model_StatsClass
 				}
 				if ( !$sortingtype )
 				{
-						$sortingtype = "id";
+						$sortingtype = "planid";
 				}
 				if ( !$sortingm )
 				{
@@ -52,8 +52,8 @@ class Model_StatsClass
 						$array = $this->dbo->get_all( $sql );
 						return $array;
 				}
-				$sql = "SELECT * ".$where3.( " FROM zyads_planstats WHERE 1 ".$filesize."  {$where1} {$where2}  ORDER BY {$sortingtype} {$sortingm}" );
-				$ssql = "SELECT count(*) as n FROM zyads_planstats WHERE  1  ".$filesize.( " ".$where1." {$where2}  " );
+				$sql = "SELECT * ".$where3.( " FROM zyads_stats WHERE 1 ".$filesize."  {$where1} {$where2}  ORDER BY {$sortingtype} {$sortingm}" );
+				$ssql = "SELECT count(*) as n FROM zyads_stats WHERE  1  ".$filesize.( " ".$where1." {$where2}  " );
 				return $sql."|".$ssql;
 		}
 
