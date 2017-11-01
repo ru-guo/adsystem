@@ -312,7 +312,7 @@ class Model_PlanClass
 			"resuid" => $resuid,
 			"sitelimit" => $sitelimit ? $sitelimit : 1,
 			"limitsiteid" => $limitsiteid,
-			"top" => 0 < $top ? $top : 0,
+			"top" => $top,
 			"in_site" => $in_site,
 			"priceinfo" => $priceinfo,
 			"status" => 0 < $metadata ? $metadata : 0,
@@ -386,6 +386,8 @@ class Model_PlanClass
 			$expire_date = $_POST['expire_year']."-".$_POST['expire_month']."-".$_POST['expire_day'];
 		}
 		$acl = $_POST['acl'];
+		$top = $_POST['top'];
+
 		$clearing = $_POST['clearing'];
 		$datatime = $_POST['datatime'];
 		$serverip = $_POST['serverip'];
@@ -451,7 +453,7 @@ class Model_PlanClass
 				$swhere = ",price=".$price;
 			}
 		}
-		$sql = "Update zyads_plan SET planname='".$planname.( "',priceadv=".$priceadv." {$swhere} ,gradeprice={$gradeprice},budget={$budget} ,clearing='{$clearing}'\r\n    \t\t\t,logo='{$logo}',audit='{$audit}',expire='{$expire_date}',planinfo='{$planinfo}',\r\n\t\t\t\trestrictions='{$restrictions}',resuid='{$resuid}',sitelimit='{$sitelimit}',limitsiteid='{$limitsiteid}',deduction = '{$deduction}',top = '{$top}',in_site = '{$in_site}',priceinfo = '{$priceinfo}',datatime={$datatime},serverip='{$serverip}' {$condition}\r\n    \t\t\tWhere planid={$planid}" );
+		$sql = "Update zyads_plan SET planname='".$planname.( "',priceadv=".$priceadv." {$swhere} ,gradeprice={$gradeprice},budget={$budget} ,clearing='{$clearing}'\r\n    \t\t\t,logo='{$logo}',audit='{$audit}',expire='{$expire_date}',planinfo='{$planinfo}',\r\n\t\t\t\trestrictions='{$restrictions}',resuid='{$resuid}',sitelimit='{$sitelimit}',limitsiteid='{$limitsiteid}',deduction = '{$deduction}',top = '{$top}',in_site = '{$in_site}',priceinfo = '{$priceinfo}',datatime={$datatime},top={$top},serverip='{$serverip}' {$condition}\r\n    \t\t\tWhere planid={$planid}" );
 		$query = $this->dbo->query( $sql );
 		$acl =  $_POST['acl'] ;
 		$j = 0;

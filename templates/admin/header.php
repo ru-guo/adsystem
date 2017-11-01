@@ -256,7 +256,7 @@ if (in_array($_GET['action'], array(
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=planaudit\"><span>…Í«Î…Û∫À</span></a> </li>\r\n                    ";
+    echo "\" style =\" display:none\"> <a   href=\"do.php?action=planaudit\"><span>…Í«Î…Û∫À</span></a> </li>\r\n                    ";
     foreach (( array ) $plantypearr as $pt) {
         echo "                    <li class=\"";
         if ($action == $pt['plantype'] . "plan") {

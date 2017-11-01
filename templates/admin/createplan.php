@@ -99,7 +99,28 @@ foreach ( ( array )$plantype as $pt )
 		echo $pt['name'];
 		echo "</option>\r\n                            ";
 }
-echo "                          </select>\r\n                          <br />\r\n                          <span class=\"gray\">计划应用于哪一种计费形式。</span></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                    </table></td>\r\n                </tr>\r\n                <tr>\r\n                  <td class=\"cpt\">出价与预算</td>\r\n                </tr>\r\n                <tr>\r\n                  <td height=\"50\"><table width=\"80%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n                      <tr>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td width=\"100\" height=\"40\" valign=\"top\">广告商单价(arpu值)</td>\r\n                        <td>￥\r\n                          <input name=\"priceadv\" type=\"text\" id=\"priceadv\" size=\"8\"  value=\"";
+echo "                          </select>\r\n                          <br />\r\n                          <span class=\"gray\">计划应用于哪一种计费形式。</span></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td>广告类型</td>\r\n                        <td><select name=\"top\" id=\"plantype\"  ";
+// if ( $action == "editplan" )
+// {
+// 		echo "disabled='disabled'";
+// }
+echo " >\r\n                            ";
+foreach ( ( array )$sitetype as $st )
+{
+		echo "                            <option value=\"";
+		echo $st['sid'];
+		echo "\" ";
+		if ( $plan['top'] == $st['sid'] )
+		{
+				echo "selected";
+		}
+		echo ">";
+		// echo strtoupper( $st['sitename'] );
+		// echo " &nbsp;&nbsp;";
+		echo $st['sitename'];
+		echo "</option>\r\n                            ";
+}
+echo "                          </select>\r\n                          <br />\r\n                          <span class=\"gray\">计划中的广告属于那种广告类型。</span></td>\r\n                      </tr>\r\n<tr>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                    </table></td>\r\n                </tr>\r\n                <tr>\r\n                  <td class=\"cpt\">出价与预算</td>\r\n                </tr>\r\n                <tr>\r\n                  <td height=\"50\"><table width=\"80%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n                      <tr>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td width=\"100\" height=\"40\" valign=\"top\">广告商单价(arpu值)</td>\r\n                        <td>￥\r\n                          <input name=\"priceadv\" type=\"text\" id=\"priceadv\" size=\"8\"  value=\"";
 echo $plan['priceadv'] ? abs( $plan['priceadv'] ) : "";
 echo "\"/>\r\n                          <span id='plan_p'>";
 if ( $plan['plantype'] == "cps" )
@@ -255,21 +276,7 @@ if ( $plan['in_site'] == "2" )
 {
 		echo "checked";
 }
-echo "/> \r\n不启用</td>\r\n                      </tr>-->\r\n                    </table></td>\r\n                </tr>\r\n                <tr style='display: none'>\r\n                  <td class=\"cpt\">项目其它</td>\r\n                </tr>\r\n                <tr style='display: none'>\r\n                  <td><table width=\"80%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n                      <tr style='display: none'>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\">推荐</td>\r\n                        <td><input type=\"radio\" name=\"top\" value=\"0\" ";
-if ( $plan['top'] == "0" || !$plan )
-{
-		echo "checked";
-}
-echo "/>\r\n                        不推荐\r\n                          <input type=\"radio\" name=\"top\" value=\"1\"  ";
-if ( $plan['top'] == "1" )
-{
-		echo "checked";
-}
-echo "/>\r\n推荐</td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td height=\"30\" valign=\"top\">Logo</td>\r\n                        <td><input name=\"logo\" type=\"text\" id=\"logo\"  value=\"";
-echo $plan['logo'];
-echo "\" size=\"40\"/>\r\n                          <br />\r\n                          <span class=\"gray\">请使用绝对地址比如：http://www.zyiis.com/abc/logo.jpg,大小控制在120x60。</span></td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td width=\"100\" height=\"30\">项目介绍</td>\r\n                        <td><textarea name=\"planinfo\" id=\"planinfo\" style=\"width:320px;height:100px\">";
-echo $plan['planinfo'];
-echo "</textarea></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td align=\"center\"></td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                    </table></td>\r\n                </tr>\r\n                <tr>\r\n                  <td>&nbsp;</td>\r\n                </tr>\r\n                <tr>\r\n                  <td class=\"cpt\">地理位置与网站类型、时间、星期定向</td>\r\n                </tr>\r\n               \r\n                <tr >\r\n                  <td height=\"50\"><table width=\"86%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n                      <tr>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td width=\"120\" height=\"30\" align=\"center\">位置 <a href=\"?action=faq&width=250&type=createplan&typeval=aclcity\" class=\"jTip\" id=\"aclcityhelp\"  name=\"地理位置定位\"><img src=\"/javascript/jquery/images/question.gif\" border=\"0\" align=\"absmiddle\" /></a></td>\r\n                        <td>您希望广告在哪些地理位置展示？</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\" align=\"center\"></td>\r\n                        <td><input id=\"acl[1][isacl]\" class='aclcity' onclick=\"showtype('2','n');\$i('aclcity_c').style.display = 'none'\" type=\"radio\"   value=\"all\" name=\"acl[1][isacl]\" ";
+echo "/> \r\n不启用</td>\r\n                      </tr>-->\r\n                    </table></td>\r\n                </tr>\r\n                <tr>\r\n                        <td align=\"center\"></td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                    </table></td>\r\n                </tr>\r\n                <tr>\r\n                  <td>&nbsp;</td>\r\n                </tr>\r\n                <tr>\r\n                  <td class=\"cpt\">地理位置与网站类型、时间、星期定向</td>\r\n                </tr>\r\n               \r\n                <tr >\r\n                  <td height=\"50\"><table width=\"86%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n                      <tr>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td width=\"120\" height=\"30\" align=\"center\">位置 <a href=\"?action=faq&width=250&type=createplan&typeval=aclcity\" class=\"jTip\" id=\"aclcityhelp\"  name=\"地理位置定位\"><img src=\"/javascript/jquery/images/question.gif\" border=\"0\" align=\"absmiddle\" /></a></td>\r\n                        <td>您希望广告在哪些地理位置展示？</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\" align=\"center\"></td>\r\n                        <td><input id=\"acl[1][isacl]\" class='aclcity' onclick=\"showtype('2','n');\$i('aclcity_c').style.display = 'none'\" type=\"radio\"   value=\"all\" name=\"acl[1][isacl]\" ";
 if ( !$aclcity )
 {
 		echo " checked";
@@ -314,7 +321,7 @@ foreach ( ( array )$cityarr as $cityarr )
 		echo $cityarr;
 		echo "</option>\r\n                                        ";
 }
-echo "                                      </select>\r\n                                      </span> </span></td>\r\n                                  </tr>\r\n                                </table></td>\r\n                            </tr>\r\n                          </table></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"20\" align=\"center\"></td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\" align=\"center\">类型 <a href=\"?action=faq&width=250&type=createplan&typeval=aclwebtype\" class=\"jTip\" id=\"aclwebtypehelp\"  name=\"网站类型定位\"><img src=\"/javascript/jquery/images/question.gif\" border=\"0\" align=\"absmiddle\" /></a></td>\r\n                        <td>您希望广告在哪些网站类型展示？</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\" align=\"center\"></td>\r\n                        <td><input id=\"acl[0][isacl]\" onclick=\"showtype('1','n');\$i('webtype_c').style.display = 'none'\" type=\"radio\"   value=\"all\" name=\"acl[0][isacl]\" class='aclwebtype' ";
+echo "                                      </select>\r\n                                      </span> </span></td>\r\n                                  </tr>\r\n                                </table></td>\r\n                            </tr>\r\n                          </table></td>\r\n                      </tr>\r\n                                           <tr style='display:none'>\r\n                        <td height=\"30\" align=\"center\">类型 <a href=\"?action=faq&width=250&type=createplan&typeval=aclwebtype\" class=\"jTip\" id=\"aclwebtypehelp\"  name=\"网站类型定位\"><img src=\"/javascript/jquery/images/question.gif\" border=\"0\" align=\"absmiddle\" /></a></td>\r\n                        <td>您希望广告在哪些网站类型展示？</td>\r\n                      </tr>\r\n                      <tr style='display:none'>\r\n                        <td height=\"30\" align=\"center\"></td>\r\n                        <td><input id=\"acl[0][isacl]\" onclick=\"showtype('1','n');\$i('webtype_c').style.display = 'none'\" type=\"radio\"   value=\"all\" name=\"acl[0][isacl]\" class='aclwebtype' ";
 if ( !$webtype )
 {
 		echo " checked";
@@ -361,7 +368,7 @@ foreach ( $sitetype as $s )
 		}
 		++$i;
 }
-echo "                              </tr>\r\n                            </table>                           </td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td align=\"center\">&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td height=\"30\" align=\"center\">时间 <a href=\"?action=faq&width=250&type=createplan&typeval=acltimetype\" class=\"jTip\" id=\"acltimetypehelp\"  name=\"时间定位\"><img src=\"/javascript/jquery/images/question.gif\" border=\"0\" align=\"absmiddle\" /></a></td>\r\n                        <td>您希望广告在几时展示？</td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td height=\"30\" align=\"center\"></td>\r\n                        <td><input id=\"acl[2][isacl]\" onclick=\"showtype('3','n');\$i('time_c').style.display = 'none'\" type=\"radio\"   value=\"all\" name=\"acl[2][isacl]\"  class=\"acltime\" ";
+echo "                              </tr>\r\n                            </table>                           </td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td height=\"30\" align=\"center\">时间 <a href=\"?action=faq&width=250&type=createplan&typeval=acltimetype\" class=\"jTip\" id=\"acltimetypehelp\"  name=\"时间定位\"><img src=\"/javascript/jquery/images/question.gif\" border=\"0\" align=\"absmiddle\" /></a></td>\r\n                        <td>您希望广告在几时展示？</td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td height=\"30\" align=\"center\"></td>\r\n                        <td><input id=\"acl[2][isacl]\" onclick=\"showtype('3','n');\$i('time_c').style.display = 'none'\" type=\"radio\"   value=\"all\" name=\"acl[2][isacl]\"  class=\"acltime\" ";
 if ( !$acltime )
 {
 		echo " checked";
@@ -499,7 +506,7 @@ if ( !$aclpt )
 }
 	echo ">
 <td><input type='radio'  name='acl[4][data][]' value='苹果' class='aclptval'";
-if($ptdata[0]=='苹果'){echo 'checked';}
+
 echo "checked>苹果</td>
 <td><input type='radio'  name='acl[4][data][]' value='安卓' class='aclptval'";
 if($ptdata[0]=='安卓'){echo 'checked';}

@@ -650,7 +650,7 @@ class Controller_Admin
         $sitetypemodel = Z::getsingleton("model_sitetypeclass");
         $adstypemodel = Z::getsingleton("model_adstypeclass");
         if ($actiontype == "postupplan") {
-//			var_dump($_POST['acl']);die();
+//			var_dump($_POST);die();
             $planmodel->aclsplan("admin");
             $redurl = $_SERVER['HTTP_REFERER'];
             $redurl .= strstr($redurl, "?") ? "" : "?";
@@ -689,6 +689,7 @@ class Controller_Admin
         $sitetype = $sitetypemodel->tsitetypeparents();
         $parentid = $sitetypemodel->getsitetypeparentzone();
 //        var_dump($plan['expire']);die();
+//        var_dump($sitetype);die();
         require(TPL_DIR . "/createplan.php");
     }
 
