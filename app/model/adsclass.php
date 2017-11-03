@@ -722,7 +722,7 @@ class Model_AdsClass
 				if ( is_array( $arradsid ) )
 				{
 						if ( $mode == "del" )
-						{die('2');
+						{
 								foreach ( $arradsid as $adsid )
 								{
 										$adsid = ( integer )$adsid;
