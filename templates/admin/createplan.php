@@ -254,14 +254,14 @@ if ( $plan['sitelimit'] == "3" )
 {
 		echo "checked";
 }
-echo "/>\r\n                          屏蔽以下网站<br />\r\n                          <span class=\"gray\">被屏蔽的网站无法投放当前计划项目下的所有广告，广告列表下也是不可见的。</span></td>\r\n                      </tr>\r\n                      <tr id=\"limitsiteids\"   ";
+echo "/>\r\n                          屏蔽以下网站<br />\r\n                          <span class=\"gray\">被屏蔽的网站无法投放当前计划项目下的所有广告。</span></td>\r\n                      </tr>\r\n                      <tr id=\"limitsiteids\"   ";
 if ( $plan['sitelimit'] == "1" || !$plan )
 {
 		echo "style='display:none'";
 }
-echo ">\r\n                        <td height=\"30\" valign=\"top\">限制的网站ID</td>\r\n                        <td><textarea name=\"limitsiteid\" id=\"limitsiteid\" style=\"width:380px\">";
+echo ">\r\n                        <td height=\"30\" valign=\"top\">限制的网站名称</td>\r\n                        <td><textarea name=\"limitsiteid\" id=\"limitsiteid\" style=\"width:380px\">";
 echo $plan['limitsiteid'];
-echo "</textarea>\r\n                          <br />\r\n                          <span class=\"gray\">多ID限制格式“,”逗号隔开，如：1000,1100,请勿回车换行。</span></td>\r\n                      </tr>\r\n\t\t\t\t\t  \r\n                      <!--<tr >\r\n                        <td height=\"30\" valign=\"top\">域名限制</td>\r\n                        <td><input type=\"radio\" name=\"in_site\" value=\"0\"  ";
+echo "</textarea>\r\n                          <br />\r\n                          <span class=\"gray\">多渠道限制格式“,”逗号隔开，如：didi,baidu,请勿回车换行。</span></td>\r\n                      </tr>\r\n\t\t\t\t\t  \r\n                      <!--<tr >\r\n                        <td height=\"30\" valign=\"top\">域名限制</td>\r\n                        <td><input type=\"radio\" name=\"in_site\" value=\"0\"  ";
 if ( $plan['in_site'] == "0" || !$plan )
 {
 		echo "checked";
