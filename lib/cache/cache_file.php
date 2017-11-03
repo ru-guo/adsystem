@@ -34,7 +34,7 @@ function setcache( $name, $array, $dirs )
 		$filename = getfilename( $name, $dirs );
 		if ( !is_writable( dirname( $filename ) ) )
 		{
-				exit( $dirs." Not write" );
+//				exit( $dirs." Not write" );
 		}
 		$content = "<?php\n\n";
 		$content .= "\$cache_contents   = ".var_export( $array, TRUE ).";\n\n";
