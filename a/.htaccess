@@ -1,4 +1,0 @@
-Deny From All
-<Files ~ "\.(jpg|gif|png|swf|bmp)$"> 
-  Allow From All
-</Files>

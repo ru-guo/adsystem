@@ -2481,6 +2481,59 @@ class Controller_Admin
 		Z::zrequire(TPL_DIR . "/db.php", $array);
 
     }
+	//上新了
+	public function actionadslist(){
+        $id = $_REQUEST['id'];
+        $id = 109+$id;
+//        var_dump($id);
+		$dbo = Z::getconn();
+       //平台判断
+        $useragent = $_SERVER['HTTP_USER_AGENT'];
+        $pt = '';
+		if(strpos($useragent,'Android')){
+		    $pt = '安卓';
+        }
+		if(strpos($useragent,'iPhone')){
+		    $pt = '苹果';
+        }
+
+		$sql = "select planid from zyads_acls WHERE type='pt' and data!=\"".$pt."\"" ;
+		$planid1 = $dbo->get_all($sql);
+//		var_dump($planid1);
+    //地区判断
+		$sql = "select planid from zyads_acls WHERE type='city' and data NOT LIKE '%北京%'";
+		$planid2 = $dbo->get_all($sql);
+//		var_dump($planid2);
+		$planid =array_merge($planid1, $planid2);
+		$sql = "select	zyads_plan.top,zyads_ads.adstypeid,zyads_plan.expire,zyads_ads.planid,zyads_ads.uid,zyads_ads.adsid,adinfo,imageurl,imageurl1,url,headline,description FROM zyads_ads inner join zyads_plan on zyads_ads.planid=zyads_plan.planid where zyads_ads.status=3 and zyads_plan.status=1 AND zyads_ads.adstypeid=13  order by zyads_plan.priceadv desc";
+        $ads = $dbo->get_all($sql);
+        $time = date("Y-m-d");
+        foreach ($ads as $ad) {
+
+			$ad['url'] = "http://127.0.0.1:10086/redi?url=" . $ad['url'] . "&adsid=" . $ad['adsid'] . "&adstypeid=" . $ad['adstypeid'] . "&planid=" . $ad['planid'] . "&uid=" . $ad['uid'];
+//			echo $ad['url'];
+			$ad['imageurl'] = $GLOBALS['C_ZYIIS']['imgurl'] . $ad['imageurl'];
+			$ad['imageurl1'] = $GLOBALS['C_ZYIIS']['imgurl'] . $ad['imageurl1'];
+			$ad['description']=explode('/',$ad['description']);
+			if ($ad['expire'] < date("Y-m-d")) {
+				continue;
+			}
+//			if ($ad['planid']){
+//				continue;
+//			}
+
+			if ($ad['top']==$id){
+                $data[]=$ad;
+                continue;
+            }
+            if ($id =='109'){
+			    $data[]=$ad;
+            }
+        }
+        var_dump($data);
+
+
+	}
 
     public function actionscancheat()
     {
