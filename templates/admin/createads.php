@@ -127,9 +127,17 @@ foreach ( ( array )$adstype as $at )
 echo "                          </select>\r\n                          <br />\r\n                          <span class=\"gray\">广告应用于哪一种类型展现。</span></td>\r\n                      </tr>\r\n ";
 echo "<tr>	
       <td>上传图片(大图)</td><input name='files'  value='up' type='hidden'/>
-      <td><input type='file' name='imageurl' id='urlfile'>	<font color='red'>（图片请认真填写无法修改哦）</font></td>
+      <td><input type='file' name='imageurl' id='urlfile'>";
+if (isset($a)){
+	echo "<img height=\"100\" src='".$a['imageurl']."''>";
+}
+echo  "  <font color='red'></font></td>
 </tr>\r\n\t\t\t\t\t\t<br><br>";
-	echo "<tr id=\"_imageurl_\" style=\"display:none\">\r\n                      <td valign=\"top\">图片(小图)<font color=\"#FF0000\">*</font></td>\r\n                      <td >\r\n                       \r\n <input name='files'  value='up' type='hidden'/>                      <input name=\"imageurl1\" type=\"file\" id=\"imageurl\" size=\"40\"  style=\"width:336px;height:22px\"/> \r\n                        <br />\r\n                        <span class=\"gray\">&nbsp;&nbsp;&nbsp;只能上传.jpg .gif .swf .png .bmp格式文件,文件小大需小于500KB。</span>\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t<span id=\"_url\" style=\"display:";
+	echo "<tr id=\"_imageurl_\" style=\"display:none\">\r\n                      <td valign=\"top\">图片(小图)<font color=\"#FF0000\">*</font></td>\r\n                      <td >\r\n                       \r\n <input name='files'  value='up' type='hidden'/>                      <input name=\"imageurl1\" type=\"file\" id=\"imageurl\" size=\"40\"  >";
+if (isset($a)){
+	echo "<img height=\"80\" src='".$a['imageurl1']."''>";
+}
+echo "<br />\r\n                        <span class=\"gray\">&nbsp;&nbsp;&nbsp;只能上传.jpg .gif .swf .png .bmp格式文件,文件小大需小于500KB。</span>\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t<span id=\"_url\" style=\"display:";
 if ( $files == "http" )
 {
 		echo "''";

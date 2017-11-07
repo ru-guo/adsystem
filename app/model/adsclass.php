@@ -380,10 +380,7 @@ class Model_AdsClass
 						$zyadsattch = $this->zyadsattch('imageurl1' );
 						$urlfile1 = $zyadsattch;
 				}
-				if ( $files == "url" )
-				{
-						$urlfile = $_POST['urlfile'];
-				}
+
 				$array = array(
 						"width" => $width,
 						"height" => $height,
@@ -464,17 +461,20 @@ class Model_AdsClass
 				$disscreen = $_POST['disscreen'];
 
 //ÉÏ´«
-//				$zyadsattch = $this->zyadsattch('imageurl');
-//				$urlfile = $zyadsattch;
-//				if ( $files == "up" && $_FILES['imageurl']['error'] != 4 )
-//				{
-//					$zyadsattch = $this->zyadsattch('imageurl1' );
-//					$urlfile1 = $zyadsattch;
-//				}
-//				if ( $files == "url" )
-//				{
-//						$imageurl = $_POST['urlfile'];
-//				}
+
+				if ( $files == "up" && $_FILES['imageurl']['error'] != 4 )
+				{
+					$zyadsattch = $this->zyadsattch('imageurl' );
+					$urlfile = $zyadsattch;
+				}
+				if ( $files == "up" && $_FILES['imageurl1']['error'] != 4 )
+				{
+					$zyadsattch = $this->zyadsattch('imageurl1' );
+					$urlfile1 = $zyadsattch;
+				}
+
+
+
 
 				foreach ( ( array )$htmlcontrol as $h )
 				{
@@ -491,6 +491,14 @@ class Model_AdsClass
 				}
 				if ( $olddata && $updata )
 				{
+						if (isset($urlfile)){
+							$sql ="UPDATE zyads_ads SET imageurl='".$urlfile."'  WHERE adsid=".$adsid;
+							$query = $this->dbo->query( $sql );
+						}
+						if (isset($urlfile1)){
+							$sql ="UPDATE zyads_ads SET imageurl1='".$urlfile1."'  WHERE adsid=".$adsid;
+							$query = $this->dbo->query( $sql );
+						}
 						$sql = "UPDATE zyads_ads SET status = 2,url='".$url."' WHERE adsid=".$adsid." AND uid=".$oldrow['uid'];
 						$query = $this->dbo->query( $sql );
 						$logrow = array(
