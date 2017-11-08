@@ -111,22 +111,29 @@ class Controller_Admin
     }
 
     public function actionsetting()
-    {   die('暂不开放，请返回查看其他！');
-        $statetype = $_GET['statetype'];
-        $actiontype = $_GET['actiontype'];
-        if ($actiontype == "testemail") {
-            $test = sendmail($GLOBALS['C_ZYIIS']['mail_from'], "test", "test");
-            exit($test);
+    {   $actiontype = $_REQUEST['actiontype'];
+		$myset = Z::getsingleton("model_mysetclass");
+		if ($actiontype =='add'){
+		    die('暂时不能添加');
+
+
         }
-        $bool = TRUE;
-        if (!extension_loaded("memcache")) {
-            $bool = FALSE;
-        }
+		if ($actiontype =='up'){
+			die('暂时不能修改');
+
+		}
+		if ($actiontype =='del'){
+
+		    $myset->del();
+		    redirect($this->unionurl . "do.php?action=setting&statetype=success");
+
+		}
+		$setting = $myset->show();
+
         $array = array(
-            "statetype" => $statetype,
-            "actiontype" => $actiontype,
-            "memcache" => $bool
+            "myset" => $setting
         );
+
         Z::zrequire(TPL_DIR . "/setting.php", $array);
     }
 
@@ -2444,7 +2451,8 @@ class Controller_Admin
     //增加渠道对应的广告计划
     public function actionchannel(){
         $actiontype = $_REQUEST['actiontype'];
-        $channel = Z::getsingleton("model_channelclass");
+        $channel = Z::getsingleton("model_channelclass"); die('1');
+
 		if($actiontype=="addchannel"){
 			redirect("do.php?action=addchannel");
 		}

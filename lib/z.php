@@ -134,12 +134,17 @@ abstract class Z{
 
 		public static function getsingleton( $classname )
 		{
+
+
 				if ( isset( $objects[$classname] ) )
 				{
 						return self::$objects[$classname];
 				}
 				self::loadclass( $classname );
+//				var_dump(self::regobj( new $classname( ), $classname ));
+//				die('1');
 				return self::regobj( new $classname( ), $classname );
+
 		}
 
 		public static function regobj( $object, $class = NULL, $_obfuscate_U6NASJIkzwZlg = FALSE )

@@ -7,7 +7,7 @@
 /*                   */
 /*********************/
 
-class model_Channelclass
+class Model_MysetClass
 {
 	public $dbo = NULL;
 

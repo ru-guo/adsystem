@@ -17,7 +17,7 @@ echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\r\n<html>
 echo Z_TPL;
 echo "/images/style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<title>管理后台</title>\r\n</head>\r\n<body>\r\n<div id=\"header-div\">\r\n  <div id=\"logo-div\"> <a href=\"do.php\"><img src=\"/templates/";
 echo Z_TPL;
-echo "/images/admin_logo.jpg\" height=\"62\"  border=\"0\"></a> </div>\r\n  <div id=\"menu-div\">\r\n    <ul>\r\n      <li  id=\"menu-active\" style='display: none'><a href=\"do.php?action=setting\" ";
+echo "/images/admin_logo.jpg\" height=\"62\"  border=\"0\"></a> </div>\r\n  <div id=\"menu-div\">\r\n    <ul>\r\n      <li  id=\"menu-active\" ><a href=\"do.php?action=setting\" ";
 if ($action == "setting") {
     echo " class=\"action\"";
 }
@@ -142,55 +142,7 @@ if (in_array($_GET['action'], array(
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=setting\"><span>基本设置</span></a> </li>\r\n                    <li class=\"";
-    if ($actiontype == "server") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=setting&actiontype=server\"><span>服务器设置</span></a> </li>\r\n                    <li class=\"";
-    if ($actiontype == "reg") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=setting&actiontype=reg\"><span> 注册用户设置</span></a> </li>\r\n                    <li class=\"";
-    if ($actiontype == "clearing") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=setting&actiontype=clearing\"><span>财务结算设置</span></a> </li>\r\n                    <li class=\"";
-    if ($actiontype == "deduction") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=setting&actiontype=deduction\"><span>默认扣量设置</span></a> </li>\r\n                    <li class=\"";
-    if ($actiontype == "smtp") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=setting&actiontype=smtp\"><span>邮件设置</span></a> </li>\r\n                    <li class=\"";
-    if ($actiontype == "onlinepay") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=setting&actiontype=onlinepay\"><span>在线支付</span></a> </li>\r\n                    <li class=\"";
-    if ($actiontype == "other") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=setting&actiontype=integral\"><span>积分设置</span></a> </li>\r\n\t\t\t\t\t  \r\n\t\t\t\t\t  \r\n                    <li class=\"";
-    if ($actiontype == "other") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=setting&actiontype=other\"><span>其它设置</span></a> </li>\r\n                  </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
+    echo "\"> <a   href=\"do.php?action=setting\"><span>基本设置</span></a> </li>\r\n                                     </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
 }
 if (in_array($_GET['action'], array(
     "affiliate",
