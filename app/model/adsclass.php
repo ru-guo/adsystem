@@ -350,6 +350,7 @@ class Model_AdsClass
 						$zlink = $_REQUEST['zlink'];
 				}
 				$files = $_POST['files'];
+				$clickslimit = $_POST['clickslimit'];
 				$adstypeid = ( integer )$_POST['adstypeid'];
 				$planid = ( integer )$_POST['planid'];
 				$adinfo = $_POST['adinfo'];
@@ -399,7 +400,8 @@ class Model_AdsClass
 						"description" => $description,
 						"dispurl" => $dispurl,
 						"htmlcode" => $htmlcode,
-						"addtime" => DATETIMES
+						"addtime" => DATETIMES,
+						"clickslimit" =>$clickslimit
 				);
 				$query = $this->dbo->create( $array, "zyads_ads" );
 				$adsid = $this->dbo->insert_id( );
@@ -438,6 +440,7 @@ class Model_AdsClass
 				}
 				$adsid = ( integer )$_POST['adsid'];
 				$files = $_POST['files'];
+				$clickslimit = $_POST['clickslimit'];
 				$adstypeid = ( integer )$_POST['adstypeid'];
 				$planid = ( integer )$_POST['planid'];
 				$adinfo = $_POST['adinfo'];
@@ -473,7 +476,8 @@ class Model_AdsClass
 					$urlfile1 = $zyadsattch;
 				}
 
-
+				$sql = "UPDATE zyads_ads SET clickslimit = '".$clickslimit."' WHERE adsid=".$adsid." AND uid=".$oldrow['uid'];
+				$query = $this->dbo->query( $sql );
 
 
 				foreach ( ( array )$htmlcontrol as $h )
@@ -499,7 +503,7 @@ class Model_AdsClass
 							$sql ="UPDATE zyads_ads SET imageurl1='".$urlfile1."'  WHERE adsid=".$adsid;
 							$query = $this->dbo->query( $sql );
 						}
-						$sql = "UPDATE zyads_ads SET status = 2,url='".$url."' WHERE adsid=".$adsid." AND uid=".$oldrow['uid'];
+						$sql = "UPDATE zyads_ads SET status = 2,url='".$url."',clickslimit = '".$clickslimit."' WHERE adsid=".$adsid." AND uid=".$oldrow['uid'];
 						$query = $this->dbo->query( $sql );
 						$logrow = array(
 								"adsid" => $adsid,
