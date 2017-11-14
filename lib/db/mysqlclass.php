@@ -134,7 +134,7 @@ class Db_MysqlClass
 				}
 				if ( !( $query = mysql_query( $sql, $dbconn ) ) )
 				{
-					echo $sql;
+						echo $sql;
 						$this->errorlog( "MySQL Query Sql Error", $dbconn, $sql );
 						exit( "MySQL Query Sql Error  " );
 				}

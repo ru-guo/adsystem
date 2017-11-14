@@ -928,6 +928,7 @@ class Controller_Admin
 
     public function actioncreateads()
     {
+
         $planmodel = Z::getsingleton("model_planclass");
         $adstypemodel = Z::getsingleton("model_adstypeclass");
         $actiontype = $_REQUEST['actiontype'];
@@ -2451,32 +2452,52 @@ class Controller_Admin
     //增加渠道对应的广告计划
     public function actionchannel(){
         $actiontype = $_REQUEST['actiontype'];
-        $channel = Z::getsingleton("model_channelclass"); die('1');
+        $channel = Z::getsingleton("model_channelclass");
+
 
 		if($actiontype=="addchannel"){
-			redirect("do.php?action=addchannel");
+			$plandata = $channel->getplan();
+			$array = array(
+				"plandata" => $plandata
+			);
+
+			Z::zrequire(TPL_DIR . "/createchannel.php",$array);
+			exit();
 		}
-		if($actiontype=="upchannel"){
-			redirect("do.php?action=upchannel");
+		if($actiontype=="up"){
+			$plandata = $channel->getplan();
+			$data = $channel->getone();
+			$adsid = explode(",", $data['adsid']);
+			$array = array(
+				"actiontype" => $actiontype,
+				"plandata" => $plandata,
+                "data" => $data,
+                "adsid" =>$adsid
+			);
+			Z::zrequire(TPL_DIR . "/createchannel.php",$array);
+			exit();
 		}
 
         if($actiontype=="add"){
-            if(!$channel->addchannel()){
+
+            if(!$channel->add()){
 
                 redirect("do.php?action=channel&statetype=fail");
+				exit();
             };
 			redirect("do.php?action=channel&statetype=success");
+			exit();
         }
 
 		if($actiontype=="updata"){
-			if(!$channel->upchannel()){
+			if(!$channel->update()){
 
 				redirect("do.php?action=channel&statetype=fail");
 			};
 			redirect("do.php?action=channel&statetype=success");
 		}
 		if($actiontype=="del"){
-			if(!$channel->delchannel()){
+			if(!$channel->del()){
 
 				redirect("do.php?action=channel&statetype=fail");
 			};
@@ -2484,11 +2505,11 @@ class Controller_Admin
 		}
 		$channeldata = $channel->show();
 		$array = array(
-
 			"actiontype" => $actiontype,
-			"channeldata" => $channeldata
+			"channel" => $channeldata
 		);
-		Z::zrequire(TPL_DIR . "/db.php", $array);
+
+		Z::zrequire(TPL_DIR . "/channel.php", $array);
 
     }
 	//上新了

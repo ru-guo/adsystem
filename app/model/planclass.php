@@ -24,6 +24,8 @@ class Model_PlanClass
 		$this->dbo = Z::getconn( );
 	}
 
+
+
 	public function zyadsplanc( $d = "" )
 	{
 		$plantype = $_REQUEST['plantype'];
