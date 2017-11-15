@@ -91,7 +91,7 @@ if ( $searchtype == "3" )
 }
 echo ">广告商ID</option>\r\n                    </select>\r\n                    <input type=\"submit\" name=\"Submit22\" value=\"搜索\" class=\"submit-x\"/>\r\n                  </form></td>\r\n\t\t\t\t  \r\n              </tr>\r\n              <tr>\r\n                <td><form id=\"form\" name=\"form\" method=\"post\" action=\"do.php?action=";
 echo $action;
-echo "&actiontype=postchoose\">\r\n                    <input name=\"choosetype\"  id=\"choosetype\"  type=\"hidden\" value=\"\" />\r\n                    \r\n                    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"5\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"60\">广告Id</td>\r\n                        <td width=\"110\">计划名称</td>\r\n                        <td width=\"80\">广告商</td>\r\n                        <td width=\"70\">类型</td>\r\n                        <td width=\"60\">权重</td>\r\n                        <td width=\"100\">当日浏览量</td>\r\n                        <td width=\"90\">当日结算数</td>\r\n                        <td width=\"90\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"6\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                        ";
+echo "&actiontype=postchoose\">\r\n                    <input name=\"choosetype\"  id=\"choosetype\"  type=\"hidden\" value=\"\" />\r\n                    \r\n                    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"5\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"60\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"60\">广告Id</td>\r\n                        <td width=\"200\">计划名称</td>\r\n                        <td width=\"200\">广告商</td>\r\n                        <td width=\"200\">类型</td>\r\n                        <td width=\"160\">权重</td>\r\n                        <td width=\"100\">当日浏览量</td>\r\n                        <td width=\"90\">当日点击量</td>\r\n                        <td width=\"90\">状态</td>\r\n                        </tr>\r\n                        ";
 foreach ( ( array )$ads as $a )
 {
 		$at = $adstypemodel->getadstypeid( $a['adstypeid'] );
@@ -153,7 +153,7 @@ foreach ( ( array )$ads as $a )
 		{
 				echo "<font color=\"red\">已被锁定</font>";
 		}
-		echo "</td>\r\n                        <td>创建于</td>\r\n                        <td width=\"6\" class=\"td_b_5\">&nbsp;</td>\r\n                      </tr>\r\n                      \r\n                      \r\n                       <tr class=\"td_b_m\" onmouseover=\"\$('#e_";
+		echo "</td>\r\n                        <td width=\"6\" class=\"td_b_5\">&nbsp;</td>\r\n                      </tr>\r\n                      \r\n                      \r\n                       <tr class=\"td_b_m\" onmouseover=\"\$('#e_";
 		echo $a['adsid'];
 		echo "').show()\" onmouseout=\"\$('#e_";
 		echo $a['adsid'];
@@ -195,9 +195,7 @@ foreach ( ( array )$ads as $a )
 //				echo $a['adsid'];
 //				echo "”植入到广告位 \"   class=\"thickbox\" >植入到广告位</a>";
 //		}
-		echo "\t\t\t\t\t\t </span>&nbsp;</td>\r\n                         <td colspan=\"2\" align=\"right\">";
-		echo $a['addtime'];
-		echo "</td>\r\n                         <td  class=\"td_b_5\">&nbsp;</td>\r\n                       </tr>\r\n\t\t\t\t\t   \r\n\t\t\t\t\t    ";
+		echo "\t\t\t\t\t\t </span>&nbsp;</td>\r\n                         <td  class=\"td_b_5\">&nbsp;</td>\r\n                       </tr>\r\n\t\t\t\t\t   \r\n\t\t\t\t\t    ";
 }
 echo "                      <tr class=\"td_b_7\">\r\n                        <td height=\"33\"  class=\"td_b_6\" >&nbsp;</td>\r\n                        <td  ><input type=\"checkbox\" name=\"chkallde\" onclick=\"checkall(this.form, 'uid','chkallde')\" /></td>\r\n                        <td>Id</td>\r\n                        <td>计划名称</td>\r\n                        <td>广告商</td>\r\n                        <td>类型</td>\r\n                        <td>权重</td>\r\n                        <td>当日浏览量</td>\r\n                        <td>当日结算数</td>\r\n                        <td>状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <td width=\"6\"  class=\"td_b_8\">&nbsp;</td>\r\n                      </tr>\r\n                    </table>\r\n            \r\n                  </form></td>\r\n              </tr>\r\n              <tr>\r\n                <td height=\"50\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n                    <tr>\r\n                      <td width=\"200\"><select name=\"select\" class=\"select\" onchange=\"\$i('choosetype').value=this.value\">\r\n                    <option>批量操作</option>\r\n                    <option value=\"unlock\">激活</option>\r\n                    <option value=\"lock\">停止</option>\r\n                    <option value=\"del\">删除</option>\r\n                  </select>\r\n                        <input type=\"button\" name=\"Submit3\" value=\"提交\" class=\"submit-x\" onclick=\"choose();\"/></td>\r\n                      <td align=\"right\">";
 echo $viewpage;
