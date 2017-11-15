@@ -246,6 +246,7 @@ class Model_PlanClass
 		}
 		$budget = $_POST['budget'];
 		$expire_date = $_POST['expire_date'];
+		$effective_data = $_POST['effective_date'];
 		$acl = $_POST['acl'];
 		$clearing = $_POST['clearing'];
 		$datatime = $_POST['datatime'];
@@ -276,6 +277,7 @@ class Model_PlanClass
 		}
 		if ( $expire_date != "0000-00-00" )
 		{
+			$effective_date = $_POST['effective_year']."-".$_POST['effective_month']."-".$_POST['effective_day'];
 			$expire_date = $_POST['expire_year']."-".$_POST['expire_month']."-".$_POST['expire_day'];
 		}
 		$j = 0;
@@ -303,6 +305,7 @@ class Model_PlanClass
 			"s2price" => 0 < $s2price ? $s2price : 0,
 			"s3price" => 0 < $s3price ? $s3price : 0,
 			"budget" => $budget,
+			"effective" => $effective_date,
 			"expire" => $expire_date,
 			"checkplan" => "true",
 			"plantype" => $plantype,
@@ -385,6 +388,7 @@ class Model_PlanClass
 		$expire_date = $_POST['expire_date'];
 		if ( $expire_date != "0000-00-00" )
 		{
+			$effective_date = $_POST['effective_year']."-".$_POST['effective_month']."-".$_POST['effective_day'];
 			$expire_date = $_POST['expire_year']."-".$_POST['expire_month']."-".$_POST['expire_day'];
 		}
 		$acl = $_POST['acl'];
@@ -455,7 +459,7 @@ class Model_PlanClass
 				$swhere = ",price=".$price;
 			}
 		}
-		$sql = "Update zyads_plan SET planname='".$planname.( "',priceadv=".$priceadv." {$swhere} ,gradeprice={$gradeprice},budget={$budget} ,clearing='{$clearing}'\r\n    \t\t\t,logo='{$logo}',audit='{$audit}',expire='{$expire_date}',planinfo='{$planinfo}',\r\n\t\t\t\trestrictions='{$restrictions}',resuid='{$resuid}',sitelimit='{$sitelimit}',limitsiteid='{$limitsiteid}',deduction = '{$deduction}',top = '{$top}',in_site = '{$in_site}',priceinfo = '{$priceinfo}',datatime={$datatime},top={$top},serverip='{$serverip}' {$condition}\r\n    \t\t\tWhere planid={$planid}" );
+		$sql = "Update zyads_plan SET planname='".$planname.( "',priceadv=".$priceadv." {$swhere} ,gradeprice={$gradeprice},budget={$budget} ,clearing='{$clearing}'\r\n    \t\t\t,logo='{$logo}',audit='{$audit}',expire='{$expire_date}',effective='{$effective_date}',planinfo='{$planinfo}',\r\n\t\t\t\trestrictions='{$restrictions}',resuid='{$resuid}',sitelimit='{$sitelimit}',limitsiteid='{$limitsiteid}',deduction = '{$deduction}',top = '{$top}',in_site = '{$in_site}',priceinfo = '{$priceinfo}',datatime={$datatime},top={$top},serverip='{$serverip}' {$condition}\r\n    \t\t\tWhere planid={$planid}" );
 		$query = $this->dbo->query( $sql );
 		$acl =  $_POST['acl'] ;
 		$j = 0;

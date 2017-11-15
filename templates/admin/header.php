@@ -17,11 +17,11 @@ echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\r\n<html>
 echo Z_TPL;
 echo "/images/style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<title>管理后台</title>\r\n</head>\r\n<body>\r\n<div id=\"header-div\">\r\n  <div id=\"logo-div\"> <a href=\"do.php\"><img src=\"/templates/";
 echo Z_TPL;
-echo "/images/admin_logo.jpg\" height=\"62\"  border=\"0\"></a> </div>\r\n  <div id=\"menu-div\">\r\n    <ul>\r\n      <li  id=\"menu-active\" ><a href=\"do.php?action=setting\" ";
+echo "/images/admin_logo.jpg\" height=\"62\"  border=\"0\"></a> </div>\r\n  <div id=\"menu-div\">\r\n    <ul>\r\n      <li  id=\"menu-active\" style='display:none'><a href=\"do.php?action=setting\" ";
 if ($action == "setting") {
     echo " class=\"action\"";
 }
-echo "> <img src=\"/templates/";
+echo " > <img src=\"/templates/";
 echo Z_TPL;
 echo "/images/icon-settings.jpg\" border=\"0\"> <span class=\"text\">基本设置</span></a></li>\r\n \r\n\r\n\r\n\r\n     <li><a href=\"do.php?action=advertiser\"  ";
 if (in_array($action, array(
@@ -41,10 +41,6 @@ if (in_array($action, array(
     "createplan",
     "editplan",
     "cpcplan",
-    "cpmplan",
-    "cpaplan",
-    "cpsplan",
-    "cpvplan",
     "planaudit"
 ))) {
     echo " class=\"action\"";
@@ -91,7 +87,7 @@ if (in_array($action, array(
 }
 echo "> <img src=\"/templates/";
 echo Z_TPL;
-echo "/images/icon-index.jpg\" border=\"0\"> <span class=\"text\">网站管理</span></a></li>\r\n      <li><a href=\"do.php?action=pm\" ";
+echo "/images/icon-index.jpg\" border=\"0\"> <span class=\"text\">网站管理</span></a></li>\r\n      <li><a href=\"do.php?action=administrator\" ";
 if (in_array($action, array(
     "pm",
     "news",
@@ -108,10 +104,7 @@ echo "> <img src=\"/templates/";
 echo Z_TPL;
 echo "/images/icon-others.jpg\" border=\"0\"> <span class=\"text\">其它管理</span></a></li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<div id=\"menu-end-div\">\r\n  <div id=\"menu-end-info\">Hello <strong>";
 echo $_SESSION['adminusername'];
-echo "</strong> \r\n    上次登录: ";
-echo $_SESSION['l_ip'];
-echo convertip($_SESSION['l_ip']);
-echo " | <a  href=\"do.php?action=index\"><font color=\"#FFFFFF\">后台首页</font></a> | <a href=\"/\" target=\"_blank\"><font color=\"#FFFFFF\">联盟首页</font></a> | <!--a  href=\"index2.php\"><font color=\"#FFFFFF\">统计报表</font></a--><a class=\"s0\" href=\"/index.php?action=logout\"><font color=\"#FFFFFF\">退出</font></a></div>\r\n  <div id=\"fast-tools\" onselectstart =\"return false\" > <span >快速通道</span> </div>\r\n  <div id=\"fast-pay\" style='display: none'> <a href=\"do.php?action=pay\" style=\"color:#FFFFFF\"><span>财务管理</span></a> </div>\r\n  <div id=\"tools-content\">\r\n    <ul>\r\n      <li><a href=\"do.php?action=news&actiontype=add&TB_iframe=true&height=250&width=600\"  title=\"发布公告\" class=\"thickbox\"> <img src=\"/templates/";
+echo "</strong> \r\n    | \r\n    <a class=\"s0\" href=\"/index.php?action=logout\"><font color=\"#FFFFFF\">退出</font></a></div>\r\n  <div id=\"fast-tools\" onselectstart =\"return false\" style=\"display:none;\"> <span >快速通道</span> </div>\r\n  <div id=\"fast-pay\" style='display: none'> <a href=\"do.php?action=pay\" style=\"color:#FFFFFF\"><span>财务管理</span></a> </div>\r\n  <div id=\"tools-content\">\r\n    <ul>\r\n      <li><a href=\"do.php?action=news&actiontype=add&TB_iframe=true&height=250&width=600\"  title=\"发布公告\" class=\"thickbox\"> <img src=\"/templates/";
 echo Z_TPL;
 echo "/images/news.jpg\" border=\"0\"><span>发布新的公告<span></a></li>\r\n      <li><a href=\"/integral/do.php?action=adsip&timerange=";
 echo DAYS;
@@ -160,7 +153,7 @@ if (in_array($_GET['action'], array(
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=affiliate\"><span>渠道提供商</span></a> </li>\r\n                    <li class=\"";
+    echo "\" style=\"display:none\"> <a   href=\"do.php?action=affiliate\"><span>渠道提供商</span></a> </li>\r\n                    <li class=\"";
     if ($action == "advertiser") {
         echo "active";
     } else {
@@ -172,19 +165,19 @@ if (in_array($_GET['action'], array(
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=service\"><span>联盟客服</span></a> </li>\r\n\t\t \t\t\t<li class=\"";
+    echo "\" style=\"display:none\"> <a   href=\"do.php?action=service\"><span>联盟客服</span></a> </li>\r\n\t\t \t\t\t<li class=\"";
     if ($action == "commercial") {
         echo "active";
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=commercial\"><span>联盟商务</span></a> </li>\r\n\t\t\t\t\t<li class=\"";
+    echo "\" style=\"display:none;\"> <a   href=\"do.php?action=commercial\"><span>联盟商务</span></a> </li>\r\n\t\t\t\t\t<li class=\"";
     if ($action == "createuser") {
         echo "active";
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=createuser&TB_iframe=true&height=300&width=500\" title=\"快速建立会员\" class=\"thickbox\"><span>建立会员</span></a> </li>\r\n                  </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
+    echo "\" > <a   href=\"do.php?action=createuser&TB_iframe=true&height=300&width=500\" title=\"快速建立会员\" class=\"thickbox\"><span>建立会员</span></a> </li>\r\n                  </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
 }
 if (in_array($_GET['action'], array(
     "plan",
@@ -205,27 +198,7 @@ if (in_array($_GET['action'], array(
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=plan\"><span>所有计划</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "planaudit") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\" style =\" display:none\"> <a   href=\"do.php?action=planaudit\"><span>申请审核</span></a> </li>\r\n                    ";
-    foreach (( array ) $plantypearr as $pt) {
-        echo "                    <li class=\"";
-        if ($action == $pt['plantype'] . "plan") {
-            echo "active";
-        } else {
-            echo "link";
-        }
-        echo "\"> <a   href=\"do.php?action=";
-        echo $pt['plantype'] . "plan";
-        echo "\"><span>";
-        echo ucfirst($pt['plantype']);
-        echo "计划</span></a> </li>\r\n                    ";
-    }
-    echo "                  </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
+    echo "\"> <a   href=\"do.php?action=plan\"><span>所有计划</span></a> </li>\r\n                    </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
 }
 if (in_array($_GET['action'], array(
     "ads",
@@ -248,32 +221,33 @@ if (in_array($_GET['action'], array(
         echo "link";
     }
     echo "\"> <a   href=\"do.php?action=ads\"><span>所有广告</span></a> </li>\r\n                    ";
-    foreach (( array ) $plantypearr as $pt) {
-        echo "                    <li class=\"";
-        if ($action == $pt['plantype'] . "ads") {
-            echo "active";
-        } else {
-            echo "link";
-        }
-        echo "\"> <a   href=\"do.php?action=";
-        echo $pt['plantype'];
-        echo "ads\"><span>";
-        echo ucfirst($pt['plantype']);
-        echo "广告</span></a> </li>\r\n                    ";
-    }
-    echo "                    <li class=\"";
-    if ($action == "adstype") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=adstype\"><span>广告模板</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "upadslog") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=upadslog\"><span>修改日志</span></a> </li>\r\n\t\t\t\t\t<li class=\"link\"> <a   href=\"do.php?action=editalladurl&TB_iframe=true&height=180&width=400\" title=\"批理修改广告网址\" class=\"thickbox\"><span>批理修改广告网址</span></a> </li>\r\n                  </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
+    // foreach (( array ) $plantypearr as $pt) {
+    //     echo "                    <li class=\"";
+    //     if ($action == $pt['plantype'] . "ads") {
+    //         echo "active";
+    //     } else {
+    //         echo "link";
+    //     }
+    //     echo "\"> <a   href=\"do.php?action=";
+    //     echo $pt['plantype'];
+    //     echo "ads\"><span>";
+    //     echo ucfirst($pt['plantype']);
+    //     echo "广告</span></a> </li>\r\n                    ";
+    // }
+    // echo "                    <li class=\"";
+    // if ($action == "adstype") {
+    //     echo "active";
+    // } else {
+    //     echo "link";
+    // }
+    // echo "\"> <a   href=\"do.php?action=adstype\"><span>广告模板</span></a> </li>\r\n                    <li class=\"";
+    // if ($action == "upadslog") {
+    //     echo "active";
+    // } else {
+    //     echo "link";
+    // }
+    // echo "\"> <a   href=\"do.php?action=upadslog\"><span>修改日志</span></a> </li>\r\n\t\t\t\t\t<li class=\"link\"> <a   href=\"do.php?action=editalladurl&TB_iframe=true&height=180&width=400\" title=\"批理修改广告网址\" class=\"thickbox\"><span>批理修改广告网址</span></a> </li>\r\n                  ";
+    echo "</ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
 }
 if (in_array($_GET['action'], array(
     "stats",
@@ -358,18 +332,18 @@ if (in_array($_GET['action'], array(
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=pm\"><span>短信管理</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "news") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=news\"><span>公告管理</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "administrator") {
-        echo "active";
-    } else {
-        echo "link";
-    }
+    // echo "\"> <a   href=\"do.php?action=pm\"><span>短信管理</span></a> </li>\r\n                    <li class=\"";
+    // if ($action == "news") {
+    //     echo "active";
+    // } else {
+    //     echo "link";
+    // }
+    // echo "\"> <a   href=\"do.php?action=news\"><span>公告管理</span></a> </li>\r\n                    <li class=\"";
+    // if ($action == "administrator") {
+    //     echo "active";
+    // } else {
+    //     echo "link";
+    // }
     echo "\"> <a   href=\"do.php?action=administrator\"><span>管理员管理</span></a> </li>\r\n                    <li class=\"";
     if ($action == "sitetype") {
         echo "active";
@@ -382,31 +356,33 @@ if (in_array($_GET['action'], array(
     } else {
         echo "link";
     }
-    echo "\"> <a   href=\"do.php?action=sitetype\"><span>网站类型</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "help") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=help\"><span>帮助管理</span></a> </li>\r\n                    <li class=\"";
-    if ($action == "loginlog") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=loginlog\"><span>登入日志</span></a> \r\n\t\t\t\t\t<li class=\"";
-    if ($action == "adminlog") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=adminlog\"><span>操作日志</span></a></li>\r\n\t\t\t\t\t<li class=\"";
-    if ($action == "db") {
-        echo "active";
-    } else {
-        echo "link";
-    }
-    echo "\"> <a   href=\"do.php?action=db\"><span>数据库</span></a></li>\r\n                  </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
+    echo "\"> <a   href=\"do.php?action=sitetype\"><span>网站类型</span></a> </li>";
+    // echo "\r\n                    <li class=\"";
+    // if ($action == "help") {
+    //     echo "active";
+    // } else {
+    //     echo "link";
+    // }
+    // echo "\"> <a   href=\"do.php?action=help\"><span>帮助管理</span></a> </li>\r\n                    <li class=\"";
+    // if ($action == "loginlog") {
+    //     echo "active";
+    // } else {
+    //     echo "link";
+    // }
+    // echo "\"> <a   href=\"do.php?action=loginlog\"><span>登入日志</span></a> \r\n\t\t\t\t\t<li class=\"";
+    // if ($action == "adminlog") {
+    //     echo "active";
+    // } else {
+    //     echo "link";
+    // }
+    // echo "\"> <a   href=\"do.php?action=adminlog\"><span>操作日志</span></a></li>\r\n\t\t\t\t\t<li class=\"";
+    // if ($action == "db") {
+    //     echo "active";
+    // } else {
+    //     echo "link";
+    // }
+    // echo "\"> <a   href=\"do.php?action=db\"><span>数据库</span></a></li>";
+    echo "\r\n                  </ul>\r\n                </div>\r\n              </div>\r\n            </div></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n";
 }
 if (in_array($_GET['action'], array(
     "pay",

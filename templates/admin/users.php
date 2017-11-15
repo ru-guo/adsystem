@@ -26,7 +26,7 @@ if ( !$actiontype )
 {
 		echo "class=\"li-active\"";
 }
-echo ">全部</a></li>\r\n                          <li>|</li>\r\n                          <li><a href=\"do.php?action=";
+echo ">全部</a></li>\r\n                          <li>|</li>\r\n                          <li style=\"display:none;\"><a href=\"do.php?action=";
 echo $action;
 echo "&actiontype=unlock\" ";
 if ( $actiontype == "unlock" )
@@ -34,7 +34,7 @@ if ( $actiontype == "unlock" )
 		echo "class=\"li-active\"";
 }
 echo ">已审核</a></li>\r\n                          ";
-if ( $action == "affiliate" || $action == "advertiser" )
+if ( $action == "affiliate" || $action != "advertiser" )
 {
 		echo "                          <li>|</li>\r\n                          <li><a href=\"do.php?action=";
 		echo $action;
@@ -53,7 +53,7 @@ if ( $actiontype == "lock" )
 		echo "class=\"li-active\"";
 }
 echo ">已锁定</a></li>\r\n                        </ul></td>\r\n                      <td width=\"500\" align=\"right\">";
-if ( $_SESSION['adminusertype'] == "1" )
+if ( $_SESSION['adminusertype'] != "1" )
 {
 		echo "                        <ul id=\"li-type\">\r\n                          <li><span style='font-size:14px; color:#FF0000;font-weight: bold;padding-right: 30px;padding-left: 120px;'><font color='blue'>未结算:</font>￥";
 		echo abs( $sumpay );
@@ -62,7 +62,7 @@ if ( $_SESSION['adminusertype'] == "1" )
 		echo "</span> </li>\r\n                        </ul>\r\n                        ";
 }
 echo "</td>\r\n                    </tr>\r\n                  </table></td>\r\n              </tr>\r\n              <tr>\r\n                <td height=\"50\"><select name=\"\" class=\"select\" onchange=\"\$i('choosetype').value=this.value\">\r\n                    <option>批量操作</option>\r\n                    <option value=\"unlock\">激活</option>\r\n                    <option value=\"lock\">锁定</option>\r\n                    <option value=\"del\">删除</option>\r\n                  </select>\r\n                  <input type=\"button\" name=\"Submit\" value=\"提交\" class=\"submit-x\" onclick=\"choose();\"/>\r\n                  &nbsp;\r\n                  &nbsp;\r\n                  ";
-if ( $action == "affiliate" || $action == "advertiser" )
+if ( $action == "affiliate" || $action != "advertiser" )
 {
 		echo "                  <form action=\"?action=";
 		echo $action;
@@ -324,7 +324,7 @@ if ( $action == "affiliate" )
 }
 if ( $action == "advertiser" )
 {
-		echo "                    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"5\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"60\">Uid</td>\r\n                        <td width=\"100\">用户名</td>\r\n                        <td width=\"75\">余额</td>\r\n                        <td width=\"75\">联系人</td>\r\n                        <td width=\"85\">Email</td>\r\n                        <td width=\"100\">电话</td>\r\n                        <td width=\"95\">手机</td>\r\n                        <td width=\"85\">QQ</td>\r\n                        <td width=\"60\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"6\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                      ";
+		echo "                    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"5\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"60\">Uid</td>\r\n                        <td width=\"100\">用户名</td>\r\n                        \r\n                        <td width=\"75\">联系人</td>\r\n                        <td width=\"85\">Email</td>\r\n                        <td width=\"100\">电话</td>\r\n                        <td width=\"95\">手机</td>\r\n                        <td width=\"85\">QQ</td>\r\n                        <td width=\"60\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"6\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                      ";
 		foreach ( ( array )$users as $u )
 		{
 				echo "                      <tr onmouseover=\"\$('#e_";
@@ -340,8 +340,6 @@ if ( $action == "advertiser" )
 				echo "</a></td>\r\n                        <td><strong>";
 				echo $u['username'];
 				echo "</strong></td>\r\n                        <td>";
-				echo round( $u['money'], 2 );
-				echo "</td>\r\n                        <td>";
 				echo $u['contact'];
 				echo "</td>\r\n                        <td>";
 				echo $u['email'];
@@ -372,7 +370,7 @@ if ( $action == "advertiser" )
 				{
 						echo "<font color=\"ff0000\">锁定</font>";
 				}
-				echo "</td>\r\n                        <td>最后登入</td>\r\n                        <td width=\"6\" class=\"td_b_5\">&nbsp;</td>\r\n                      </tr>\r\n                      <tr  class=\"td_b_m\" onmouseover=\"\$('#e_";
+				echo "</td>\r\n                        <td></td>\r\n                        <td width=\"6\" class=\"td_b_5\">&nbsp;</td>\r\n                      </tr>\r\n                      <tr  class=\"td_b_m\" onmouseover=\"\$('#e_";
 				echo $u['uid'];
 				echo "').show()\" onmouseout=\"\$('#e_";
 				echo $u['uid'];
@@ -423,13 +421,11 @@ if ( $action == "advertiser" )
 				echo $u['uid'];
 				echo "\" title=\"查看\" >广告</a> | <a href=\"do.php?action=pm&actiontype=add&username=";
 				echo $u['username'];
-			echo "&TB_iframe=true&height=250&width=600\" title=\"发送消息\" class=\"thickbox\">发送短信</a> | <a href=\"do.php?action=email&username=";
+			echo "&TB_iframe=true&height=250&width=600\" title=\"发送消息\" class=\"thickbox\" style=\"display:none;\">发送短信</a>  <a href=\"do.php?action=email&username=";
 			echo $u['username'];
-				echo "\" title=\"查看\" >发送邮件</a></span>&nbsp;</td>\r\n                        <td colspan=\"2\" align=\"right\">";
-				echo $u['logintime'] == "" ? "未登入" : substr( $u['logintime'], 0, 10 );
-				echo "</td>\r\n                        <td  class=\"td_b_5\">&nbsp;</td>\r\n                      </tr>\r\n                      ";
+				echo "\" title=\"查看\" style=\"display:none;\" >发送邮件</a></span>&nbsp;</td>\r\n                        <td  class=\"td_b_5\">&nbsp;</td>\r\n                      </tr>\r\n                      ";
 		}
-		echo "                      <tr class=\"td_b_7\">\r\n                        <td height=\"33\"  class=\"td_b_6\" >&nbsp;</td>\r\n                        <td  ><input type=\"checkbox\" name=\"chkallde\" onclick=\"checkall(this.form, 'uid','chkallde')\" /></td>\r\n                        <td>Uid</td>\r\n                        <td>用户名</td>\r\n                        <td>余额</td>\r\n                        <td>联系人</td>\r\n                        <td>Email</td>\r\n                        <td>电话</td>\r\n                        <td>手机</td>\r\n                        <td>QQ</td>\r\n                        <td>状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <td width=\"6\"  class=\"td_b_8\">&nbsp;</td>\r\n                      </tr>\r\n                    </table>\r\n                    ";
+		echo "                      <tr class=\"td_b_7\">\r\n                        <td height=\"33\"  class=\"td_b_6\" >&nbsp;</td>\r\n                        <td  ><input type=\"checkbox\" name=\"chkallde\" onclick=\"checkall(this.form, 'uid','chkallde')\" /></td>\r\n                        <td>Uid</td>\r\n                        <td>用户名</td>\r\n                         <td>联系人</td>\r\n                        <td>Email</td>\r\n                        <td>电话</td>\r\n                        <td>手机</td>\r\n                        <td>QQ</td>\r\n                        <td>状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <td width=\"6\"  class=\"td_b_8\">&nbsp;</td>\r\n                      </tr>\r\n                    </table>\r\n                    ";
 }
 if ( $action == "service" || $action == "commercial" )
 {

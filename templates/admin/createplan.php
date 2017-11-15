@@ -72,8 +72,8 @@ foreach ( ( array )$u as $u )
 		}
 		echo ">";
 		echo $u['username'];
-		echo "  £¤";
-		echo round( $u['money'], 2 );
+		// echo "  £¤";
+		// echo round( $u['money'], 2 );
 		echo " </option>\r\n                            ";
 }
 echo "                          </select>\r\n                          &nbsp;<span id=\"umoney\"></span><br />\r\n                          <span class=\"gray\">¼Æ»®ÊôÓÚÄÄÒ»¸ö¹ã¸æÉÌ¡£</span></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td width=\"100\" valign=\"top\">¼Æ»®ÏîÄ¿Ãû³Æ </td>\r\n                        <td><input name=\"planname\" type=\"text\" id=\"planname\" value=\"";
@@ -146,17 +146,78 @@ echo "</span><br />\r\n                          <span class=\"gray\">Ã¿/IP¹ã¸æÉ
 echo $plan['budget'];
 echo "\"/>\r\n                          ´Î<br />\r\n                          <span class=\"gray\">Ã¿ÈÕÔ¤Ëã¿ØÖÆÄúµÄ·ÑÓÃ¡£×ÜÌå¶øÑÔ£¬ÔÚ´ïµ½Ã¿ÈÕÔ¤ËãÏÞ¶îÊ±£¬ÄúµÄ¹ã¸æ¾Í»áÔÚµ±ÌìÍ£Ö¹Õ¹Ê¾</span></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\" valign=\"top\">¼Û¸ñËµÃ÷</td>\r\n                        <td><input name=\"priceinfo\" type=\"text\" id=\"priceinfo\"  value=\"";
 echo $plan['priceinfo'];
-echo "\" size=\"40\" maxlength=\"16\"/>\r\n                          <br />\r\n                          <span class=\"gray\">¹ã¸æ¼Æ·Ñ¼òÒªËµÃ÷¡£</span></td>\r\n                      </tr>\r\n                      \r\n</table></td>\r\n                </tr>\r\n                <tr>\r\n                  <td  >&nbsp;</td>\r\n                </tr>\r\n                <tr>\r\n                  <td class=\"cpt\">½áÊøÈÕÆÚÓëÏÞÖÆ</td>\r\n                </tr>\r\n                <tr>\r\n                  <td height=\"50\"><table width=\"80%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n                      <tr>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td width=\"100\" height=\"30\">½áÊøÈÕÆÚ</td>\r\n                        <td><input type=\"radio\" name=\"expire_date\" checked=\"checked\" value=\"0000-00-00\" onclick=\"expire(&quot;expire&quot;, true)\" ";
+echo "\" size=\"40\" maxlength=\"16\"/>\r\n                          <br />\r\n                          <span class=\"gray\">¹ã¸æ¼Æ·Ñ¼òÒªËµÃ÷¡£</span></td>\r\n                      </tr>\r\n                      \r\n</table></td>\r\n                </tr>\r\n                <tr>\r\n                  <td  >&nbsp;</td>\r\n                </tr>\r\n                <tr>\r\n                  <td class=\"cpt\">ÏÞÖÆÈÕÆÚÓëÏÞÖÆ</td>\r\n                </tr>\r\n                <tr>\r\n                  <td height=\"50\"><table width=\"80%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\r\n                      <tr>\r\n                        <td>&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td width=\"100\" height=\"30\">ÏÞÖÆÈÕÆÚ</td>\r\n                        <td><input type=\"radio\" name=\"expire_date\" checked=\"checked\" value=\"0000-00-00\" onclick=\"expire(&quot;expire&quot;, true)\" ";
 if ( $plan['expire'] == "0000-00-00" || !$plan )
 {
 		echo "checked";
 }
-echo "/>\r\n                          Ã»ÓÐ½áÊøÈÕÆÚ</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\" align=\"center\"></td>\r\n                        <td><input name=\"expire_date\" type=\"radio\"  onclick=\"expire(&quot;expire&quot;, false)\" value=\"no\" ";
+echo "/>\r\n                          Ã»ÓÐÏÞÖÆÈÕÆÚ</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"30\" align=\"center\"></td>\r\n                        <td><input name=\"expire_date\" type=\"radio\"  onclick=\"expire(&quot;expire&quot;, false)\" value=\"no\" ";
 if ( $plan['expire'] != "0000-00-00" && $plan )
 {
 		echo "checked";
 }
-echo "/>\r\n                          <select name=\"expire_year\" id=\"expire_year\" ";
+echo "/>\r\n                          <select name=\"effective_year\" id=\"effective_year\" ";
+if ( $plan['effective'] == "0000-00-00" || !$plan )
+{
+		// echo "disabled='disabled'";
+}
+echo ">\r\n                            ";
+$effective = @explode( "-", $plan['effective'] );
+$i = date( "Y" );
+for ( ;	$i < date( "Y" ) + 21;	++$i	)
+{
+		echo "                            <option value=\"";
+		echo $i;
+		echo "\" ";
+		if (  $effective[0] == $i )
+		{
+				echo "selected";
+		}
+		echo ">";
+		echo $i;
+		echo "Äê</option>\r\n                            ";
+}
+echo "                          </select>\r\n                          <select name=\"effective_month\" id=\"effective_month\" ";
+if ( $plan['effective'] == "0000-00-00" || !$plan )
+{
+		// echo "disabled='disabled'";
+}
+echo ">\r\n                            ";
+$i = 1;
+for ( ;	$i < 13;	++$i	)
+{
+		echo "                            <option value=\"";
+		echo $i;
+		echo "\" ";
+		if ( ($effective[1] == $i ))
+		{
+				echo "selected";
+		}
+		echo ">";
+		echo $i;
+		echo "ÔÂ</option>\r\n                            ";
+}
+echo "                          </select>\r\n                          <select name=\"effective_day\" id=\"effective_day\" ";
+if ( $plan['effective'] == "0000-00-00" || !$plan )
+{
+		// echo "disabled='disabled'";
+}
+echo ">\r\n                            ";
+$i = 1;
+for ( ;	$i < 32;	++$i	)
+{
+		echo "                            <option value=\"";
+		echo $i;
+		echo "\" ";
+		if ( ($effective[2] == $i ))
+		{
+				echo "selected";
+		}
+		echo ">";
+		echo $i;
+		echo "ÈÕ</option>\r\n                            ";
+}
+echo "                          </select>-------<select name=\"expire_year\" id=\"expire_year\" ";
 if ( $plan['expire'] == "0000-00-00" || !$plan )
 {
 		echo "disabled='disabled'";
@@ -169,7 +230,7 @@ for ( ;	$i < date( "Y" ) + 21;	++$i	)
 		echo "                            <option value=\"";
 		echo $i;
 		echo "\" ";
-		if ( !( $i == date( "Y" ) + 1 ) || !$plan || $expire[0] == $i )
+		if ( $expire[0] == $i )
 		{
 				echo "selected";
 		}
@@ -189,7 +250,7 @@ for ( ;	$i < 13;	++$i	)
 		echo "                            <option value=\"";
 		echo $i;
 		echo "\" ";
-		if ( !( $i == date( "n" ) ) || !$plan || $expire[1] == $i )
+		if ( $expire[1] == $i )
 		{
 				echo "selected";
 		}
@@ -209,7 +270,7 @@ for ( ;	$i < 32;	++$i	)
 		echo "                            <option value=\"";
 		echo $i;
 		echo "\" ";
-		if ( !( $i == date( "j", TIMES ) ) || !$plan || $expire[2] == $i )
+		if ($expire[2] == $i )
 		{
 				echo "selected";
 		}
@@ -217,7 +278,7 @@ for ( ;	$i < 32;	++$i	)
 		echo $i;
 		echo "ÈÕ</option>\r\n                            ";
 }
-echo "                          </select>\r\n\t\t\t\t\t\t  \r\n                          <br />\r\n                          <div class=\"tips\" id=\"tip1\" style=\"display:none\">ÄúµÄ¹ã¸æ»áÔÚÕâÒ»ÈÕÆÚÍ£Ö¹Õ¹Ê¾£¬Ö±µ½ÄúÒÔºó¸ü¸ÄÕâÒ»ÉèÖÃ¡£</div>\r\n                          <br /></td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td height=\"30\" valign=\"top\">»áÔ±ÏÞÖÆ</td>\r\n                        <td><input type=\"radio\" name=\"restrictions\" value=\"1\" onclick=\"\$i('resuids').style.display = 'none';\"   ";
+echo "                          </select>\r\n\t\t\t\t\t\t  \r\n                          <br />\r\n                          <div class=\"tips\" id=\"tip1\" style=\"display:none\">ÄúµÄ¹ã¸æ»áÔÚÕâÒ»ÈÕÆÚÄÚÕ¹Ê¾£¬Ö±µ½ÄúÒÔºó¸ü¸ÄÕâÒ»ÉèÖÃ¡£</div>\r\n                          <br /></td>\r\n                      </tr>\r\n                      <tr style='display: none'>\r\n                        <td height=\"30\" valign=\"top\">»áÔ±ÏÞÖÆ</td>\r\n                        <td><input type=\"radio\" name=\"restrictions\" value=\"1\" onclick=\"\$i('resuids').style.display = 'none';\"   ";
 if ( $plan['restrictions'] == "1" || !$plan )
 {
 		echo "checked";

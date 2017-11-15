@@ -29,7 +29,7 @@ echo "\" />\r\n                    <table width=\"97%\" border=\"0\" align=\"cen
 echo $users['uid'];
 echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >会员名称</td>\r\n                        <td >";
 echo $users['username'];
-echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >账户余额</td>\r\n                        <td >￥\r\n                          ";
+echo "</td>\r\n                      </tr>\r\n                      <tr style=\"display:none;\">\r\n                        <td >账户余额</td>\r\n                        <td >￥\r\n                          ";
 if ( $users['type'] == "1" )
 {
 		echo round( $users['daymoney'] + $users['weekmoney'] + $users['monthmoney'], 2 );
@@ -55,7 +55,7 @@ else if ( $users['type'] == "4" )
 {
 		echo "联盟商务";
 }
-echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >会员密码</td>\r\n                        <td ><input name=\"pwdpwd\" type=\"password\" id=\"pwdpwd\" size=\"20\" class=\"text\"/>\r\n                            <span class=\"f12i\">不修改不用填写</span></td>\r\n                      </tr>\r\n\t\t\t\t\t  <tr>\r\n                        <td valign=\"top\" >会员状态</td>\r\n                        <td >";
+echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >会员密码</td>\r\n                        <td ><input name=\"pwdpwd\" type=\"password\" id=\"pwdpwd\" size=\"20\" class=\"text\"/>\r\n                            <span class=\"f12i\">不修改不用填写</span></td>\r\n                      </tr>\r\n\t\t\t\t\t  <tr style=\"display:none;\">\r\n                        <td valign=\"top\" >会员状态</td>\r\n                        <td >";
 if ( $users['status'] == 0 )
 {
 		echo "<font color=\"ff0000\">注册待审</font>";
@@ -115,7 +115,7 @@ if ( $users['type'] == "1" )
 echo "\t\t\t\t\t    ";
 if ( $users['type'] == "2" )
 {
-		echo "                       <tr>\r\n                        <td valign=\"top\" >属于商务</td>\r\n                        <td >\r\n\t\t\t\t\t\t<select name=\"serviceid\" id=\"serviceid\" style=\"width:160px;\">\r\n\t\t\t\t\t\t  <option value=\"\">请选择商务</option>\r\n\t\t\t\t\t\t  ";
+		echo "                       <tr style=\"display:none;\">\r\n                        <td valign=\"top\" >属于商务</td>\r\n                        <td >\r\n\t\t\t\t\t\t<select name=\"serviceid\" id=\"serviceid\" style=\"width:160px;\">\r\n\t\t\t\t\t\t  <option value=\"\">请选择商务</option>\r\n\t\t\t\t\t\t  ";
 		foreach ( $serviceuser as $s )
 		{
 				echo "\t\t\t\t\t\t  <option value=\"";
@@ -177,11 +177,12 @@ echo "\" maxlength=\"100\"  class=\"text\" /></td>\r\n                      </tr
 echo $users['mobile'];
 echo "\" size=\"20\"  class=\"text\" /></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td ><span class=\"tdtit\">联系电话</span></td>\r\n                        <td ><input name=\"tel\" type=\"text\"   id=\"tel\" value=\"";
 echo $users['tel'];
-echo "\" size=\"20\"  class=\"text\" /></td>\r\n                      </tr>\r\n\t\t\t\t\t  \r\n                      <tr>\r\n                        <th colspan=\"2\" align=\"left\" class=\"cpt\">安全信息</th>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >提示问题</td>\r\n                        <td ><input name=\"question\" type=\"text\"    id=\"question\" value=\"";
-echo $users['question'];
-echo "\" size=\"20\" class=\"text\"/></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >回答问题</td>\r\n                        <td ><input name=\"answer\" type=\"text\"    id=\"answer\" value=\"";
-echo $users['answer'];
-echo "\" size=\"20\" class=\"text\"/>\r\n                        <input type=\"submit\" name=\"Submit34\" value=\" 修改 \" /></td>\r\n                      </tr>\r\n                      ";
+echo "\" size=\"20\"  class=\"text\" /></td>\r\n                      </tr>\r\n\t\t\t\t\t  \r\n                      ";
+// echo "<tr>\r\n                        <th colspan=\"2\" align=\"left\" class=\"cpt\">安全信息</th>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >提示问题</td>\r\n                        <td ><input name=\"question\" type=\"text\"    id=\"question\" value=\"";
+// echo $users['question'];
+// echo "\" size=\"20\" class=\"text\"/></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >回答问题</td>\r\n                        <td ><input name=\"answer\" type=\"text\"    id=\"answer\" value=\"";
+// echo $users['answer'];
+// echo "\" size=\"20\" class=\"text\"/>\r\n                        <input type=\"submit\" name=\"Submit34\" value=\" 修改 \" /></td>\r\n                      </tr>\r\n                      ";
 if ( $users['type'] == "1" )
 {
 		echo "                      <tr>\r\n                        <th colspan=\"2\" align=\"left\" class=\"cpt\">扣量设置 <span class=\"f12i\" style=\"padding-left:10px; font-weight:normal\">会员扣量优先于全局扣量</span></th>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >点击类CPC</td>\r\n                        <td ><input name=\"cpcdeduction\" type=\"text\"  id=\"cpcdeduction\" value=\"";
@@ -296,16 +297,17 @@ if ( $users['type'] == "1" )
 		echo $recommenduser;
 		echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        ";
 }
-echo "                        <th colspan=\"2\" align=\"left\" class=\"cpt\" >其它信息</th>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >注册时间</td>\r\n                        <td >";
-echo $users['regtime'];
-echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >注册IP</td>\r\n                        <td >";
-echo $users['regip'];
-echo convertip( $users['regip'] );
-echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >最后登入时间</td>\r\n                        <td >";
-echo $users['logintime'];
-echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >最后登入IP</td>\r\n                        <td >";
-echo $users['loginip'];
-echo convertip( $users['loginip'] );
-echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td height=\"60\" ><input name=\"submit\" type=\"submit\" class=\"form-submit\" value=\"更新设置\" onsubmit=\"checkform(this)\" />                        </td>\r\n                        <td >&nbsp;</td>\r\n                      </tr>\r\n                    </table>\r\n                  </form></td>\r\n              </tr>\r\n            </table></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n \r\n";
+// echo "                       <div style=\"display:none;\"> <th colspan=\"2\" align=\"left\" class=\"cpt\" >其它信息</th>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >注册时间</td>\r\n                        <td >";
+// echo $users['regtime'];
+// echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >注册IP</td>\r\n                        <td >";
+// echo $users['regip'];
+// echo convertip( $users['regip'] );
+// echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >最后登入时间</td>\r\n                        <td >";
+// echo $users['logintime'];
+// echo "</td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td >最后登入IP</td>\r\n                        <td >";
+// echo $users['loginip'];
+// echo convertip( $users['loginip'] );
+// echo "</td>\r\n                      </tr>\r\n              </div>        ";
+echo "<tr>\r\n                        <td height=\"60\" ><input name=\"submit\" type=\"submit\" class=\"form-submit\" value=\"更新设置\" onsubmit=\"checkform(this)\" />                        </td>\r\n                        <td >&nbsp;</td>\r\n                      </tr>\r\n                    </table>\r\n                  </form></td>\r\n              </tr>\r\n            </table></td>\r\n        </tr>\r\n      </table></td>\r\n  </tr>\r\n</table>\r\n \r\n";
 include( TPL_DIR."/footer.php" );
 ?>

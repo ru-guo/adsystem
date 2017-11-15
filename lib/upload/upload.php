@@ -122,7 +122,7 @@ class upload {
       $string = @fread ( $string, 1024 );
       @fclose ( $string );
     } else {
-      $this->errmsg ( "upload_no_ext6" );
+      $this->errmsg ( "upload_no_ext6 Î´ÉÏ´«Í¼Æ¬£¬Çë·µ»Ø" );
     }
     if ($imgext == "" && 2 <= strlen ( $string )) {
       if (substr ( $string, 0, 3 ) == "") {

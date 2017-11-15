@@ -35,77 +35,21 @@ if ( $status == "1" )
 {
 		echo "class=\"li-active\"";
 }
-echo ">活动计划</a></li>\r\n\t\t\t\t\t\t  <li>|</li>\r\n                          <li><a href=\"do.php?action=";
-echo $action;
-echo "&status=0\" ";
-if ( $status == "0" )
-{
-		echo "class=\"li-active\"";
-}
-echo ">待审计划</a></li>\r\n                          <li>|</li>\r\n                          <li><a href=\"do.php?action=";
+echo ">活动计划</a></li>\r\n\t\t\t\t\t\t  <li>|</li>\r\n              <li><a href=\"do.php?action=";
 echo $action;
 echo "&status=2\" ";
 if ( $status == "2" )
 {
 		echo "class=\"li-active\"";
 }
-echo ">停止计划</a> </li>\r\n\t\t\t\t\t\t  <li>|</li>\r\n                          <li><a href=\"do.php?action=";
-echo $action;
-echo "&status=3\" ";
-if ( $status == "3" )
-{
-		echo "class=\"li-active\"";
-}
-echo ">限额超支</a> </li>\r\n\t\t\t\t\t\t  <li>|</li>\r\n                          <li><a href=\"do.php?action=";
-echo $action;
-echo "&status=4\" ";
-if ( $status == "4" )
-{
-		echo "class=\"li-active\"";
-}
-echo ">过期余额不足</a> </li>\r\n                          <li>|</li>\r\n                          <li><a href=\"do.php?action=";
-echo $action;
-echo "&clearing=day\" ";
-if ( $clearing == "day" )
-{
-		echo "class=\"li-active\"";
-}
-echo ">日结计划</a></li>\r\n\t\t\t\t\t\t   <li>|</li>\r\n                          <li><a href=\"do.php?action=";
-echo $action;
-echo "&clearing=week\" ";
-if ( $clearing == "week" )
-{
-		echo "class=\"li-active\"";
-}
-echo ">周结计划</a></li>\r\n\t\t\t\t\t\t   <li>|</li>\r\n                          <li><a href=\"do.php?action=";
-echo $action;
-echo "&clearing=month\" ";
-if ( $clearing == "month" )
-{
-		echo "class=\"li-active\"";
-}
-echo ">月结计划</a></li>\r\n\t\t\t\t\t\t  <li>|</li>\r\n\t\t\t\t\t\t   <li><a href=\"do.php?action=";
+echo ">停止计划</a> </li>\r\n\t\t\t\t\t\t  <li>|</li>\r\n\t\t\t\t\t\t   <li><a href=\"do.php?action=";
 echo $action;
 echo "&checkplan=true\" ";
 if ( $checkplan == "true" )
 {
 		echo "class=\"li-active\"";
 }
-echo ">有定向</a></li>\r\n\t\t\t\t\t\t   <li>|</li>\r\n                          <li><a href=\"do.php?action=";
-echo $action;
-echo "&restrictions=1\" ";
-if ( $restrictions == "1" )
-{
-		echo "class=\"li-active\"";
-}
-echo ">有会员限制</a></li>\r\n\t\t\t\t\t\t   <li>|</li>\r\n                          <li><a href=\"do.php?action=";
-echo $action;
-echo "&audit=y\" ";
-if ( $audit == "y" )
-{
-		echo "class=\"li-active\"";
-}
-echo ">需要审核</a></li>\r\n\t\t\t\t\t\t  \r\n                        </ul></td>\r\n                     \r\n                    </tr>\r\n                  </table></td>\r\n              </tr>\r\n              <tr>\r\n                <td height=\"50\"><select name=\"select\" class=\"select\" onchange=\"\$i('choosetype').value=this.value\">\r\n                    <option>批量操作</option>\r\n                    <option value=\"unlock\">激活</option>\r\n                    <option value=\"lock\">停止</option>\r\n                    <option value=\"del\">删除</option>\r\n                  </select>\r\n                  <input type=\"button\" name=\"Submit\" value=\"提交\" class=\"submit-x\" onclick=\"choose();\"/>\r\n                  &nbsp;\r\n                  &nbsp;\r\n                  <form action=\"?action=";
+echo ">有定向</a></li>\r\n\t\t\t\t\t\t   </ul></td>\r\n                     \r\n                    </tr>\r\n                  </table></td>\r\n              </tr>\r\n              <tr>\r\n                <td height=\"50\"><select name=\"select\" class=\"select\" onchange=\"\$i('choosetype').value=this.value\">\r\n                    <option>批量操作</option>\r\n                    <option value=\"unlock\">激活</option>\r\n                    <option value=\"lock\">停止</option>\r\n                    <option value=\"del\">删除</option>\r\n                  </select>\r\n                  <input type=\"button\" name=\"Submit\" value=\"提交\" class=\"submit-x\" onclick=\"choose();\"/>\r\n                  &nbsp;\r\n                  &nbsp;\r\n                  <form action=\"?action=";
 echo $action;
 echo "\" method=\"post\">\r\n                    <input name=\"actiontype\" type=\"hidden\" value=\"";
 echo $actiontype;

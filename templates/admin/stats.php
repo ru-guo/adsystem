@@ -50,28 +50,28 @@ if ( $timerange == "m" )
 		echo "class=\"li-active\"";
 }
 echo ">本月报表</a> </li>\r\n                          ";
-foreach ( ( array )$plantypearr as $pt )
-{
-		echo "                          <li>|</li>\r\n                          <li > <a   href=\"do.php?action=stats&plantype=";
-		echo $pt['plantype'];
-		echo "\" ";
-		if ( $plantype == $pt['plantype'] )
-		{
-				echo "class=\"li-active\"";
-		}
-		echo "><span>";
-		echo ucfirst( $pt['plantype'] );
-		echo "报表</span></a> </li>\r\n                          ";
-}
+// foreach ( ( array )$plantypearr as $pt )
+// {
+// 		echo "                          <li>|</li>\r\n                          <li > <a   href=\"do.php?action=stats&plantype=";
+// 		echo $pt['plantype'];
+// 		echo "\" ";
+// 		if ( $plantype == $pt['plantype'] )
+// 		{
+// 				echo "class=\"li-active\"";
+// 		}
+// 		echo "><span>";
+// 		echo ucfirst( $pt['plantype'] );
+// 		echo "报表</span></a> </li>\r\n                          ";
+// }
 echo "\t\t\t\t\t\t   \r\n                        </ul></td>\r\n                      <td width=\"500\" align=\"right\"><ul id=\"li-type\">\r\n                        <li>";
-if ( $_SESSION['adminusertype'] == "1" )
-{
-		echo "\t  <span style='font-size:14px; color:#FF0000;font-weight: bold;padding-right: 30px;padding-left: 60px;'><font color='blue'>今日盈利:</font>￥";
-		echo $dayyl;
-		echo " </span> \r\n\t  <span style='font-size:14px; color:#FF0000;font-weight: bold;padding-right: 10px;'><font color='blue'>昨日盈利:</font>￥";
-		echo $ydyl;
-		echo "</span>\r\n\t  ";
-}
+// if ( $_SESSION['adminusertype'] == "1" )
+// {
+// 		echo "\t  <span style='font-size:14px; color:#FF0000;font-weight: bold;padding-right: 30px;padding-left: 60px;'><font color='blue'>今日盈利:</font>￥";
+// 		echo $dayyl;
+// 		echo " </span> \r\n\t  <span style='font-size:14px; color:#FF0000;font-weight: bold;padding-right: 10px;'><font color='blue'>昨日盈利:</font>￥";
+// 		echo $ydyl;
+// 		echo "</span>\r\n\t  ";
+// }
 echo "</li></ul></td>\r\n                    </tr>\r\n                  </table></td>\r\n              </tr>\r\n              <tr>\r\n                <td height=\"50\"><select name=\"choosetype\" class=\"select\" id=\"choosetype\" onchange=\"\$i('choosetype').value=this.value\">\r\n                    <option>批量操作</option>\r\n                    <option value=\"del\">删除</option>\r\n                  </select>\r\n                  <input type=\"button\" name=\"Submit\" value=\"提交\" class=\"submit-x\" onclick=\"choose();\"/>\r\n                  &nbsp;\r\n                  &nbsp;\r\n                  <form action=\"?action=";
 echo $action;
 echo "&actiontype=search\" method=\"post\">\r\n                    <input name=\"planid\" type=\"text\"   id=\"planid\" value=\"";

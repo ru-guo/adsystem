@@ -818,12 +818,13 @@ class Model_UserClass extends Model_Ckuser
 						"regtime" => DATETIMES,
 						"regip" => isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : "127.0.0.1"
 				);
-				$username = $this->eregusername( $_POST['username'] );
-				if ( $username !== TRUE )
-				{
-						alert( "Repeat UserName" );
-						exit( );
-				}
+//				$username = $this->eregusername( $_POST['username'] );
+//				var_dump($username);die('1');
+//				if ( $username !== TRUE )
+//				{
+//						alert( "Repeat UserName" );
+//						exit( );
+//				}
 				$nfuid = $this->tuserinsertid( $array );
 		}
 
