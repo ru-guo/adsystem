@@ -51,7 +51,7 @@ if ($_REQUEST['statetype']=="fail"){
             foreach ($adsid as $value){
 				foreach ($plan as $val){
 				    if($val['planid'] == $value){
-				        echo $val['planname'];
+				        echo $val['planname']." ";
                     }
                 }
             }

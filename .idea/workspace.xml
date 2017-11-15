@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be3dabbf-bdde-4f40-be96-039c9122c46e" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/admin.php" afterPath="$PROJECT_DIR$/app/controller/admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/channel.php" afterPath="$PROJECT_DIR$/templates/admin/channel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/createchannel.php" afterPath="$PROJECT_DIR$/templates/admin/createchannel.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,10 +50,10 @@
       <file leaf-file-name="channel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/admin/channel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="53" column="46" lean-forward="true" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+            <state relative-caret-position="518">
+              <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
               <folding>
-                <marker date="1510732467773" expanded="true" signature="521:531" ph="..." />
+                <marker date="1510732548929" expanded="true" signature="521:531" ph="..." />
               </folding>
             </state>
           </provider>
@@ -295,12 +293,12 @@
       <workItem from="1510106974120" duration="11722000" />
       <workItem from="1510543937332" duration="6403000" />
       <workItem from="1510626493165" duration="23514000" />
-      <workItem from="1510710244368" duration="9606000" />
+      <workItem from="1510710244368" duration="9684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178973000" />
+    <option name="totallyTimeSpent" value="179051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1232,10 +1230,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/channel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="53" column="46" lean-forward="true" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+        <state relative-caret-position="518">
+          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
           <folding>
-            <marker date="1510732467773" expanded="true" signature="521:531" ph="..." />
+            <marker date="1510732548929" expanded="true" signature="521:531" ph="..." />
           </folding>
         </state>
       </provider>
