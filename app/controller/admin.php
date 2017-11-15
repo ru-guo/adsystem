@@ -2456,7 +2456,7 @@ class Controller_Admin
 	{
 		$actiontype = $_REQUEST['actiontype'];
 		$channel = Z::getsingleton("model_channelclass");
-
+		$plandata = $channel->getplan();
 
 		if ($actiontype == "addchannel") {
 			$plandata = $channel->getplan();
@@ -2509,6 +2509,7 @@ class Controller_Admin
 		$channeldata = $channel->show();
 		$array = array(
 			"actiontype" => $actiontype,
+			"plan" => $plandata,
 			"channel" => $channeldata
 		);
 

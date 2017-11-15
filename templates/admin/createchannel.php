@@ -49,20 +49,20 @@ include( TPL_DIR."/header.php" );
 	<input type="submit" value="提交" id="btn">
 </form>
 </div>
-    <script type="text/javascript">
-        window.onload = function(){
-            //获取按钮的对象
-            var btn = document.getElementById("btn");
-            //为按钮绑定单击响应函数
-            btn.onclick = function(){
-                //点击以后使按钮不可用
-                this.disabled=true;
-                //当将提交按钮设置为不可用时，会自动取消它的默认行为
-                //手动提交表单
-                this.parentNode.submit();
-            };
-        };
-    </script>
+<!--    <script type="text/javascript">-->
+<!--        window.onload = function(){-->
+<!--            //获取按钮的对象-->
+<!--            var btn = document.getElementById("btn");-->
+<!--            //为按钮绑定单击响应函数-->
+<!--            btn.onclick = function(){-->
+<!--                //点击以后使按钮不可用-->
+<!--                this.disabled=true;-->
+<!--                //当将提交按钮设置为不可用时，会自动取消它的默认行为-->
+<!--                //手动提交表单-->
+<!--                this.parentNode.submit();-->
+<!--            };-->
+<!--        };-->
+<!--    </script>-->
 <?php
 include( TPL_DIR."/footer.php" );
 ?>

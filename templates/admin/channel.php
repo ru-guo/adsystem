@@ -46,7 +46,17 @@ if ($_REQUEST['statetype']=="fail"){
 	 		<td>".$value['prizenum']."</td>
 	 		<td><a href='".$value['prizeimg']." ' target=\'_black\'>查看</a></td>
 			<td><a href='".$value['complete_img']." ' target=\'_black\'>查看</a></td>
-	 		<td>".$value['adsid']."</td>
+	 		<td>";
+			$adsid = explode(',',$value['adsid']);
+            foreach ($adsid as $value){
+				foreach ($plan as $val){
+				    if($val['planid'] == $value){
+				        echo $val['planname'];
+                    }
+                }
+            }
+
+            echo "</td>
 	 		<td>".$value['uptime']."</td>
 	 		<td>".$value['operator']."</td>
 	 		<td><a href=\"do.php?action=channel&actiontype=up&id=".$value['id']."  \">编辑</a>|<a href=\"do.php?action=channel&actiontype=del&id=".$value['id']."\">删除</a></td>";
