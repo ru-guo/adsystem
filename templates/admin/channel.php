@@ -20,9 +20,10 @@ if ($_REQUEST['statetype']=="fail"){
 }
 ?>
 <br>
+<div style="margin: 10 40;">
 <form action="?action=channel" method="post">渠道名称:<input type="text" name="keyword"> <input type="submit" value="搜索"></form>
 <div style="margin: 10px;">
-	<a href="do.php?action=channel&actiontype=addchannel">添加渠道</a>
+	<a href="do.php?action=channel&actiontype=addchannel">添加渠道</a></div>
 	<table border="2" bordercolor="black" width="90%" cellspacing="0" cellpadding="5" align="center">
 
 		<tr>

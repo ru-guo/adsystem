@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be3dabbf-bdde-4f40-be96-039c9122c46e" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/images/admin_logo.jpg" afterPath="$PROJECT_DIR$/templates/admin/images/admin_logo.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/header.php" afterPath="$PROJECT_DIR$/templates/admin/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/channel.php" afterPath="$PROJECT_DIR$/templates/admin/channel.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,19 +14,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/admin/header.php">
+      <file leaf-file-name="channel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/admin/channel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+            <state relative-caret-position="396">
+              <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
               <folding>
-                <marker date="1510733362324" expanded="true" signature="910:923" ph="..." />
-                <marker date="1510733362324" expanded="true" signature="1135:1147" ph="..." />
-                <marker date="1510733362324" expanded="true" signature="2971:2985" ph="..." />
-                <marker date="1510733362324" expanded="true" signature="3952:3965" ph="..." />
-                <marker date="1510733362324" expanded="true" signature="4028:4041" ph="..." />
-                <marker date="1510733362324" expanded="true" signature="4082:4095" ph="..." />
-                <marker date="1510733362324" expanded="true" signature="16737:16751" ph="..." />
+                <element signature="e#375#397#0#HTML" expanded="true" />
+                <element signature="e#529#550#0#HTML" expanded="true" />
+                <marker date="1510733626764" expanded="true" signature="550:560" ph="..." />
               </folding>
             </state>
           </provider>
@@ -125,8 +120,8 @@
         <option value="$PROJECT_DIR$/lib/upload/upload.php" />
         <option value="$PROJECT_DIR$/templates/admin/createchannel.php" />
         <option value="$PROJECT_DIR$/app/controller/admin.php" />
-        <option value="$PROJECT_DIR$/templates/admin/channel.php" />
         <option value="$PROJECT_DIR$/templates/admin/header.php" />
+        <option value="$PROJECT_DIR$/templates/admin/channel.php" />
       </list>
     </option>
   </component>
@@ -142,7 +137,7 @@
     </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="142" />
     <option name="y" value="71" />
     <option name="width" value="1400" />
@@ -267,15 +262,15 @@
       <workItem from="1510106974120" duration="11722000" />
       <workItem from="1510543937332" duration="6403000" />
       <workItem from="1510626493165" duration="23514000" />
-      <workItem from="1510710244368" duration="10505000" />
+      <workItem from="1510710244368" duration="10761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179872000" />
+    <option name="totallyTimeSpent" value="180128000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13059701" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1147,16 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/channel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-          <folding>
-            <marker date="1510732762661" expanded="true" signature="521:531" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/createchannel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1022">
@@ -1188,8 +1173,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        <state relative-caret-position="342">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding>
             <marker date="1510733362324" expanded="true" signature="910:923" ph="..." />
             <marker date="1510733362324" expanded="true" signature="1135:1147" ph="..." />
@@ -1198,6 +1183,18 @@
             <marker date="1510733362324" expanded="true" signature="4028:4041" ph="..." />
             <marker date="1510733362324" expanded="true" signature="4082:4095" ph="..." />
             <marker date="1510733362324" expanded="true" signature="16737:16751" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/channel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <element signature="e#375#397#0#HTML" expanded="true" />
+            <element signature="e#529#550#0#HTML" expanded="true" />
+            <marker date="1510733626764" expanded="true" signature="550:560" ph="..." />
           </folding>
         </state>
       </provider>
