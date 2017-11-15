@@ -99,7 +99,7 @@ if ( $searchtype == "1" )
 }
 echo ">计划名称</option>\r\n                    </select>\r\n                    <input type=\"submit\" name=\"Submit22\" value=\"搜索\" class=\"submit-x\"/>\r\n                  </form></td>\r\n\t\t\t\t  \r\n              </tr>\r\n              <tr>\r\n                <td><form id=\"form\" name=\"form\" method=\"post\" action=\"do.php?action=";
 echo $action;
-echo "&actiontype=postchoose\">\r\n                    <input name=\"choosetype\"  id=\"choosetype\"  type=\"hidden\" value=\"\" />\r\n                    \r\n                    <table width=\"85%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"10\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"100\">Id</td>\r\n                        <td width=\"120\">计划名称</td>\r\n                        <td width=\"100\">广告商</td>\r\n                        <td width=\"100\">arpu值</td>\r\n                        <td width=\"100\">点击上限</td>\r\n                                             <td width=\"100\">报表查看</td>\r\n                        <td width=\"100\" align=\"center\">定向</td>\r\n                        <td width=\"120\">会员限制</td>\r\n                        <td width=\"100\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"100\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                        ";
+echo "&actiontype=postchoose\">\r\n                    <input name=\"choosetype\"  id=\"choosetype\"  type=\"hidden\" value=\"\" />\r\n                    \r\n                    <table width=\"85%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"border:0px #DFDFDF solid\">\r\n                      <tr class=\"td_b_2\">\r\n                        <td width=\"10\" height=\"33\" class=\"td_b_l\" >&nbsp;</td>\r\n                        <td width=\"30\"><input type=\"checkbox\" name=\"chkall\" onclick=\"checkall(this.form, 'uid')\" /></td>\r\n                        <td width=\"100\">Id</td>\r\n                        <td width=\"120\">计划名称</td>\r\n                        <td width=\"100\">广告商</td>\r\n                        <td width=\"100\">arpu值</td>\r\n                        <td width=\"100\">点击上限</td>\r\n                                             <td width=\"100\">报表查看</td>\r\n                        <td width=\"100\" align=\"center\">定向</td>\r\n                        <td width=\"100\">状态</td>\r\n                        <td>&nbsp;</td>\r\n                        <th width=\"100\" class=\"td_b_3\" >&nbsp;</th>\r\n                      </tr>\r\n                        ";
 foreach ( ( array )$plan as $p )
 {
 		$user = $usermodel->getusersuidrow( $p['uid'] );
@@ -127,24 +127,13 @@ foreach ( ( array )$plan as $p )
 		echo $user['username'] == "" ? "[已删除]<br>".$p['username'] : $user['username'];
 
 		echo "\t\t</td>\r\n                        <td>\r\n\t\t\t\t\t\t";
-		if ( $p['gradeprice'] )
-		{
-				echo "<font color=\"#FF0000\">分级</font>";
-		}
-		else
-		{
-				echo '实际:'.abs( $p['price'] );
-		}
-		if ( $p['plantype'] == "cps" )
-		{
-				echo "%";
-		}
-		echo "<br><font color=\"gray\">预设:".abs( $p['priceadv'] );
+
+		echo "<br><font color=\"gray\">￥ ".abs( $p['priceadv'] );
 		if ( $p['plantype'] == "cps" )
 		{
 				echo "% ";
 		}
-		echo "</font>\t\t\t\t\t\t</td>\r\n                        <td>";
+		echo "元</font>\t\t\t\t\t\t</td>\r\n                        <td>";
 		echo abs( $p['budget'] );
 		echo "</td>\r\n                                   <td> ";
 		
@@ -159,16 +148,6 @@ foreach ( ( array )$plan as $p )
 		{
 				echo "无";
 		}
-		echo "</td>\r\n                        <td>";
-		if ( $p['restrictions'] != "1" )
-		{
-				echo "有设置";
-		}
-		else
-		{
-				echo "不限制";
-		}
-
 		echo "</td>\r\n                        <td> \r\n\t\t\t\t\t\t  ";
 		if ( $user['status'] != "2" )
 		{

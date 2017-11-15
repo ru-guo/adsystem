@@ -409,7 +409,7 @@ if ( $action == "advertiser" )
 				echo $u['uid'];
 				echo "\" onclick=\"if ( confirm('您将删除这个会员“";
 				echo $u['username'];
-				echo "”\\n您确定么？') ) { return true;}return false;\">删除</a> | <a href=\"do.php?action=onlinepay&actiontype=add&username=";
+				echo "”\\n您确定么？') ) { return true;}return false;\">删除</a>  <a style='display: none;' href=\"do.php?action=onlinepay&actiontype=add&username=";
 				echo $u['username'];
 				echo "&type=";
 				echo $u['type'];

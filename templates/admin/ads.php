@@ -187,14 +187,14 @@ foreach ( ( array )$ads as $a )
 		echo ")\" >标记</a>&nbsp;|&nbsp; <a href=\"do.php?action=statsads&timerange=a&searchtype=1&searchval=";
 		echo $a['adsid'];
 		echo "\">报表</a>\r\n\t\t\t\t\t\t";
-		if ( $a['adstypeid'] != 13 )
-		{
-				echo " &nbsp;|&nbsp; <a href=\"do.php?action=ads&actiontype=inzone&adsid=";
-				echo $a['adsid'];
-				echo "&TB_iframe=true&height=120&width=400\"  title=\"“#";
-				echo $a['adsid'];
-				echo "”植入到广告位 \"   class=\"thickbox\" >植入到广告位</a>";
-		}
+//		if ( $a['adstypeid'] != 13 )
+//		{
+//				echo " &nbsp;|&nbsp; <a href=\"do.php?action=ads&actiontype=inzone&adsid=";
+//				echo $a['adsid'];
+//				echo "&TB_iframe=true&height=120&width=400\"  title=\"“#";
+//				echo $a['adsid'];
+//				echo "”植入到广告位 \"   class=\"thickbox\" >植入到广告位</a>";
+//		}
 		echo "\t\t\t\t\t\t </span>&nbsp;</td>\r\n                         <td colspan=\"2\" align=\"right\">";
 		echo $a['addtime'];
 		echo "</td>\r\n                         <td  class=\"td_b_5\">&nbsp;</td>\r\n                       </tr>\r\n\t\t\t\t\t   \r\n\t\t\t\t\t    ";
