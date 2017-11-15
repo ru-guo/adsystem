@@ -941,12 +941,7 @@ class Controller_Admin
 		$adstypeid = $_REQUEST['adstypeid'];
 		$planid = $_REQUEST['planid'];
 		if ($actiontype == "postcreateads") {
-			if (!$_REQUEST[$adstypeid]){
-				alert("广告类型未选择");
-			}
-			if (!$_POST[$adinfo]){
-				alert("广告");
-			}
+
 			$adsmodel = Z::getsingleton("model_adsclass");
 			$post = $adsmodel->getuploadadsid("admin");
 			redirect("do.php?action=ads&statetype=success");
