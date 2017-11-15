@@ -48,7 +48,7 @@ if ($_REQUEST['statetype']=="fail"){
 			<td><a href='".$value['complete_img']." ' target=\'_black\'>²é¿´</a></td>
 	 		<td>";
 			$adsid = explode(',',$value['adsid']);
-            foreach ($adsid as $value){
+            foreach ($adsid as $value1){
 				foreach ($plan as $val){
 				    if($val['planid'] == $value){
 				        echo $val['planname']." ";
