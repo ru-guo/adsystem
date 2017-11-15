@@ -50,7 +50,7 @@ if ($_REQUEST['statetype']=="fail"){
 			$adsid = explode(',',$value['adsid']);
             foreach ($adsid as $value1){
 				foreach ($plan as $val){
-				    if($val['planid'] == $value){
+				    if($val['planid'] == $value1){
 				        echo $val['planname']." ";
                     }
                 }
