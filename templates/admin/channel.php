@@ -63,6 +63,7 @@ if ($_REQUEST['statetype']=="fail"){
 	 		<td><a href=\"do.php?action=channel&actiontype=up&id=".$value['id']."  \">±à¼­</a>|<a href=\"do.php?action=channel&actiontype=del&id=".$value['id']."\">É¾³ý</a></td>";
 			echo "</tr>";
 		}
+		echo $viewpage;
 		?>
 
 	</table>

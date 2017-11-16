@@ -40,14 +40,9 @@ document.write("<script src="http://www.zylm-5.6.com/js/dl.js"></script>");
     'adstypeid' => '13',
     'htmltemplate' => '{text}',
   ),
-  24 => 
-  array (
-    'adstypeid' => '24',
-    'htmltemplate' => '',
-  ),
 );
 
 $cache_name       = 'atp';
-$cache_time       = 1509003290;
+$cache_time       = 1510802066;
 $cache_complete   = true;
 

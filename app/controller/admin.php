@@ -553,7 +553,9 @@ class Controller_Admin
 		$pager = new Pager();
 		$v = $this->unionurl . ("do.php?action=" . $action . ("&actiontype=" . $actiontype . "&searchtype={$searchtype}&searchval={$searchval}&status={$metadata}&clearing={$clearing}&checkplan={$checkplan}&restrictions={$restrictions}&audit={$audit}"));
 		$pager->url = $v;
+//		var_dump($v);die(	);
 		$admingetplanone = $pager->parse_sqls($planquerysqlandnum, $plancla->dbo);
+
 		$navbar = $pager->navbar();
 		$array = array(
 			"planmodel" => $plancla,
@@ -2506,11 +2508,22 @@ class Controller_Admin
 			};
 			redirect("do.php?action=channel&statetype=success");
 		}
-		$channeldata = $channel->show();
+//		$channeldata = $channel->show();
+		$channelnum = "select * from zyads_channel | SELECT count(*) from zyads_channel";
+		z::loadclass("pager");
+		$pager = new Pager();
+		$v = "do.php?action=channel";
+		$pager->url = $v;
+//		var_dump($v);die(	);
+		$channeldata = $pager->parse_sqls($channelnum, $channel->dbo);
+
+		$navbar = $pager->navbar();
+//		var_dump($navbar);die();
 		$array = array(
 			"actiontype" => $actiontype,
 			"plan" => $plandata,
-			"channel" => $channeldata
+			"channel" => $channeldata,
+			"viewpage" => $navbar,
 		);
 
 		Z::zrequire(TPL_DIR . "/channel.php", $array);

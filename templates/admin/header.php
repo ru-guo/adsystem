@@ -15,7 +15,7 @@ if (!$no) {
 $action = $_GET['action'];
 echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\r\n<html>\r\n<head>\r\n<script src=\"/javascript/jquery/jquery.js\" type=\"text/javascript\"></script>\r\n<script src=\"/javascript/function.js\" language='JavaScript'></script>\r\n<script language=\"JavaScript\" type=\"text/javascript\" src=\"/javascript/jquery/thickbox.js\"></script>\r\n<link href=\"/javascript/jquery/css/thickbox.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<link href=\"/templates/";
 echo Z_TPL;
-echo "/images/style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<title>管理后台</title>\r\n</head>\r\n<body>\r\n<div id=\"header-div\">\r\n  <div id=\"logo-div\"style=\"margin: 5 10;\"> <a href=\"do.php\"><img src=\"/templates/";
+echo "/images/style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<title>管理后台</title>\r\n</head>\r\n<body>\r\n<div id=\"header-div\">\r\n  <div id=\"logo-div\"style=\"margin-right: 10;\"> <a href=\"do.php\"><img src=\"/templates/";
 echo Z_TPL;
 echo "/images/admin_logo.jpg\" height=\"50\"  border=\"10\" ></a> </div>\r\n  <div id=\"menu-div\">\r\n    <ul>\r\n      <li  id=\"menu-active\" style='display:none'><a href=\"do.php?action=setting\" ";
 if ($action == "setting") {

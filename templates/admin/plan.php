@@ -68,12 +68,7 @@ if ( $sortingtype == "priceadv" )
 {
 		echo "selected";
 }
-echo ">单价</option>\r\n                      <option value=\"deduction\" ";
-if ( $sortingtype == "deduction" )
-{
-		echo "selected";
-}
-echo ">扣量</option>\r\n\t\t\t\t\t  <option value=\"budget\" ";
+echo ">arpu值</option>\r\n                      <option value=\"budget\" ";
 if ( $sortingtype == "budget" )
 {
 		echo "selected";

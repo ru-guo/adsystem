@@ -361,8 +361,8 @@ class Model_AdsClass
 				$v = strip_tags( $_POST['url'] );
 				$description = $_POST['description'];
 				$headline = $_POST['headline'];
-				$width = ( integer )$_POST['width'];
-				$height = ( integer )$_POST['height'];
+				$width = $_POST['width'];
+				$height = $_POST['height'];
 				$disscreen = $_POST['disscreen'];
 				if ( $htmlcode )
 				{
@@ -459,8 +459,8 @@ class Model_AdsClass
 				$url = strip_tags( $_POST['url'] );
 				$description = $_POST['description'];
 				$headline = $_POST['headline'];
-				$width = ( integer )$_POST['width'];
-				$height = ( integer )$_POST['height'];
+				$width = $_POST['width'];
+				$height = $_POST['height'];
 				$disscreen = $_POST['disscreen'];
 
 //ÉÏ´«

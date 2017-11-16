@@ -146,25 +146,11 @@ else
 {
 		echo "'none'";
 }
-echo "\">\r\n                        &nbsp;&nbsp;&nbsp;\r\n                        </span>\t\t\t\t\t\t</span>\t\t\t\t\t\t</td>\r\n                      </tr>\r\n                     <tr id=\"_specs_\" style=\"display:none\">\r\n                        <td valign=\"top\">常用尺寸</td>\r\n                        <td><select name=\"specs\" id=\"specs\"  ";
-if ( $action == "editplan" )
-{
-		echo "disabled='disabled'";
-}
-echo " onchange=\"doSpecs(this.value)\">\r\n                          <option value=\"\">----自定义----</option>\r\n                          ";
-foreach ( ( array )$GLOBALS['C_Specs'] as $as )
-{
-		echo "                          <option value=\"";
-		echo $as;
-		echo "\" >";
-		echo $as;
-		echo "</option>\r\n                          ";
-}
-echo "\t\t\t\t\t\t  <option value=\"0x0\">全屏弹出</option>\r\n                        </select>\r\n                          <br />\r\n                          <span class=\"gray\">快速度选取广告尺寸。</span></td>\r\n                      </tr>\r\n                      <tr id=\"_width_\" style=\"display:none\">\r\n                        <td valign=\"top\">宽度<font color=\"#FF0000\">*</font></td>\r\n                        <td><input name=\"width\" type=\"text\" id=\"width\" value=\"";
+echo "\">\r\n                        &nbsp;&nbsp;&nbsp;\r\n                        </span>\t\t\t\t\t\t</span>\t\t\t\t\t\t</td>\r\n                      </tr>\r\n                     <tr id=\"_width_\" style=\"display:none\">\r\n                        <td valign=\"top\">logo类型<font color=\"#FF0000\">*</font></td>\r\n                        <td><input name=\"width\" type=\"text\" id=\"width\" value=\"";
 echo $a['width'];
-echo "\" size=\"30\" maxlength=\"4\" />\r\n                          <br />\r\n                          <span class=\"gray\">广告宽度,弹窗类0既为全屏弹出。</span></td>\r\n                      </tr>\r\n                      <tr id=\"_height_\" style=\"display:none\">\r\n                        <td valign=\"top\">高度<font color=\"#FF0000\">*</font></td>\r\n                        <td><input name=\"height\" type=\"text\"  id=\"height\" value=\"";
+echo "\" size=\"30\" maxlength=\"10\" />\r\n                          <br />\r\n                          <span class=\"gray\">列表广告左上角小标.</span></td>\r\n                      </tr>\r\n                      <tr id=\"_height_\" style=\"display:none\">\r\n                        <td valign=\"top\">转盘位置<font color=\"#FF0000\">*</font></td>\r\n                        <td><input name=\"height\" type=\"text\"  id=\"height\" value=\"";
 echo $a['height'];
-echo "\" size=\"30\" maxlength=\"4\"/>\r\n                          <br />\r\n                          <span class=\"gray\">广告高度,弹窗类0既为全屏弹出。</span></td>\r\n                      </tr>\r\n\t\t\t\t\t    <tr id=\"_headline_\" style=\"display:none\">\r\n                        <td valign=\"top\">标题<font color=\"#FF0000\">*</font></td>\r\n                        <td><input name=\"headline\" type=\"text\" id=\"headline\" value=\"";
+echo "\" size=\"30\" maxlength=\"1\"/>\r\n                          <br />\r\n                          <span class=\"gray\">广告对应转盘的位置（0-6）。</span></td>\r\n                      </tr>\r\n\t\t\t\t\t    <tr id=\"_headline_\" style=\"display:none\">\r\n                        <td valign=\"top\">标题<font color=\"#FF0000\">*</font></td>\r\n                        <td><input name=\"headline\" type=\"text\" id=\"headline\" value=\"";
 echo $a['headline'];
 echo "\" size=\"30\" maxlength=\"40\"/>\r\n                          <br />\r\n                          <span class=\"gray\">主题广告标题内容,最多20个汉字。</span></td>\r\n                      </tr>\r\n\t\t\t\t\t    <tr id=\"_description_\" style=\"display:none\">\r\n                        <td valign=\"top\">内容描述<font color=\"#FF0000\">*</font></td>\r\n                        <td><textarea name=\"description\" cols=\"35\" rows=\"3\" id=\"description\">";
 echo $a['description'];
@@ -187,9 +173,9 @@ if ( $action == "createads" || $a['zlink'] == 0 )
 echo "/>\r\n                          禁用\r\n                          <br />\r\n                         <span class=\"gray\">启用广告的自定义地址，通过一个超链接地址投放广告,通称直链广告。</span></td>\r\n                      </tr>\r\n                    \r\n                       <tr>\r\n                        <td height=\"60\" valign=\"top\"><span class=\"t14b\">每日点击上限</span></td>                       <td>                         <input name=\"clickslimit\" type=\"text\" id=\"budget\"  size=\"8\" value=\"";
 echo $a['clickslimit'];
 echo " \" />\r\n 次 ";
-echo "<br/>\r\n <span class=\"gray\"> 每日预算控制您的费用。总体而言，在达到每日预算限额时，您的广告就会在当天停止展示</span ></td > \r\n                      </tr > \r\n<tr id=\"_adinfo_\">\r\n                        <td valign=\"top\">广告描述</td>\r\n                        <td>\r\n                          <input type=\"text\" name=\"adinfo\" cols=\"30\" id=\"adinfo\" ";
+echo "<br/>\r\n <span class=\"gray\"> 每日预算控制您的费用。总体而言，在达到每日预算限额时，您的广告就会在当天停止展示</span ></td > \r\n                      </tr > \r\n<tr id=\"_adinfo_\">\r\n                        <td valign=\"top\">广告描述</td>\r\n                        <td>\r\n                          <textarea name=\"adinfo\" cols=\"30\" id=\"adinfo\" style=\"width:400px;height:50px\">";
 echo $a['adinfo'];
-echo "</textarea> <br />\r\n                         <span class=\"gray\">列表广告类型（daikuan,jingpin,licai,hongbao...）或者转盘广告在转盘的位置(1-6),其他广告不做限制。</span></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td valign=\"top\">&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                    </table>                    </td>\r\n                </tr>\r\n                <tr>\r\n                  <td height=\"50\"><input type=\"submit\" name=\"Submit\" class=\"form-submit\" value=\" 提 交 \" />\r\n\t\t\t\t  ";
+echo "</textarea> <br />\r\n                         <span class=\"gray\">简要的描述。</span></td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td valign=\"top\">&nbsp;</td>\r\n                        <td>&nbsp;</td>\r\n                      </tr>\r\n                    </table>                    </td>\r\n                </tr>\r\n                <tr>\r\n                  <td height=\"50\"><input type=\"submit\" name=\"Submit\" class=\"form-submit\" value=\" 提 交 \" />\r\n\t\t\t\t  ";
 if ( $action != "editplan" )
 {
 		echo "                    <input name=\"status\" type=\"checkbox\" id=\"status\" value=\"1\" checked=\"checked\" />\r\n                    直接审核通过\r\n\t\t\t\t\t ";

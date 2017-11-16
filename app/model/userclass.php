@@ -844,6 +844,15 @@ class Model_UserClass extends Model_Ckuser
 
 		public function delzoneidcache( $uid, $sync = TRUE )
 		{
+//			    $choosetype = $_REQUEST['choosetype'];
+//				if($choosetype =="lock"){
+//					$sql = "Update zyads_plan SET status=4 Where uid=".( integer )$uid;
+//					$this->dbo->query( $sql );
+//				}
+//				if($choosetype =="unlock"){
+//					$sql = "Update zyads_plan SET status=1 Where uid=".( integer )$uid;
+//					$this->dbo->query( $sql );
+//				}
 
 		}
 
