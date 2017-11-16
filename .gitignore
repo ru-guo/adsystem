@@ -3,3 +3,4 @@ config.php
 settings.php
 a/
 log/
+cache/
